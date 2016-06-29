@@ -1,5 +1,6 @@
 from bottle import *
 import logging
+import json
 
 app = Bottle()
 
@@ -10,16 +11,24 @@ log = logging.getLogger('log')
 class Location():
     """geo location"""
     def __init__(self, _lat = None, _lon = None):
-        super(location, self).__init__()
         self.lat = _lat
         self.lon = _lon
 
+    def dump(self):
+        return '{"lat": ' + str(self.lat) + ', "lon": ' + str(self.lon) +'}'
+
 class Person():
     """docstring for Person"""
-    def __init__(self, _name, _status, _location = None):
+    def __init__(self, _name, _status = 0, _location = None):
         self.name = _name
         self.status = _status
         self.location = _location
+
+    def dump(self):
+        if self.location:
+            return '{"name":'+str(self.name)+', "status": '+str(self.status)+', "location": '+str(self.location.dump())+'}'
+        return '{"name":'+str(self.name)+', "status": '+str(self.status)+'}'
+
 
     def isSafe(self):
         if self.status == 1: # 1 is safe
@@ -35,16 +44,25 @@ class People():
         self.array = _array
         self.isEarthquake = False
 
-    def newPerson(self, _name, _status):
-        self.array.append(Person(_name, _status))
+    def newPerson(self, _name):
+        self.array.append(Person(_name))
 
     def whoIsSafe(self):
         isSafe = []
         for i in self.array:
             if i.isSafe():
                 isSafe.append(i)
-        return isSafe
+        ret = ""
+        for i in isSafe:
+            ret += i.dump()
+        return ret
 
+    def everyone(self):
+        ret = "["
+        for i in self.array:
+            ret += i.dump() +","
+        return ret[:-1] +"]"
+ 
     def setSafe(self, _name):
         for i in self.array:
             if i.name == _name:
@@ -79,18 +97,22 @@ def set_earthquake_now():
 def getSafePeople():
     return people.whoIsSafe()
 
+@app.get('/getPeople')
+def getSafePeople():
+    return people.everyone()
+
 @app.post('/newPerson')
 def newPerson():
-    return people.new(request.forms['name'])
+    return people.newPerson(request.forms['name'])
 
 @app.post('/setSafe')
-def setSafePerson(self):
+def setSafePerson():
     forms = request.forms
     people.setSafe(forms['name'])
 
     
 @app.post('/newLocation')
-def updateLocation(self):
+def updateLocation():
     forms = request.forms
     people.setNewLocation(forms['name'], Location(forms['lat'], forms['lon']))
 
