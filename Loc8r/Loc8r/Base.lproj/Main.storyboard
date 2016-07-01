@@ -41,8 +41,8 @@ You will be able to mark yourself safe from danger, see the status of family and
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cP4-FS-Pnd">
-                                <rect key="frame" x="154" y="487" width="293" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <rect key="frame" x="157" y="487" width="286" height="41"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <state key="normal" title="Set up Emergency Services"/>
                                 <connections>
                                     <action selector="setupButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bxh-Px-7jC"/>
@@ -267,7 +267,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJb-tC-2Kh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1609" y="719"/>
+            <point key="canvasLocation" x="1606" y="719"/>
         </scene>
         <!--Next View Controller-->
         <scene sceneID="AUa-bF-cPg">
