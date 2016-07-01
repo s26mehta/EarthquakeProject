@@ -10,6 +10,9 @@ import UIKit
 import Foundation
 
 class NameEntryViewController: UITableViewController {
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    
     // Keyboard hiding function
     // Return button on keyboard
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -22,8 +25,31 @@ class NameEntryViewController: UITableViewController {
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
     }
-
-    @IBAction func nextButtonPressed(sender: AnyObject) {
-        performSegueWithIdentifier("SetUp", sender: nil)
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
+        if (firstNameTextField.text == "") {
+            let title = "No First Name Entered"
+            let message = "Please enter in your first name"
+            inputAlert(title, message: message)
+            
+            return false
+        } else {
+            if (lastNameTextField.text == "") {
+                let title = "No Last Name Entered"
+                let message = "Please enter in your last name"
+                inputAlert(title, message: message)
+                
+                return false
+            } else {
+                return true
+            }
+        }
+    }
+    
+    func inputAlert(title: String, message: String) {
+        let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let defaultErrorAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(defaultErrorAction)
+        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
     }
 }

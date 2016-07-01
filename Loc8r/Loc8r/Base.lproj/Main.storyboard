@@ -259,11 +259,14 @@ You will be able to mark yourself safe from danger, see the status of family and
                     <navigationItem key="navigationItem" id="83Z-Yj-BLW" userLabel="Navigation Item">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="qul-Ur-EQo">
                             <connections>
-                                <action selector="nextButtonPressed:" destination="Zal-SK-6bM" id="7Fs-6E-Xvr"/>
                                 <segue destination="fD1-mO-Zfo" kind="show" id="aXo-0L-aAn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="firstNameTextField" destination="0fz-gX-q7B" id="4By-ep-FGM"/>
+                        <outlet property="lastNameTextField" destination="kGr-xY-57O" id="mw3-vF-ZrD"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJb-tC-2Kh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
