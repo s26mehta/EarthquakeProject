@@ -15,6 +15,7 @@
 		210530B71D2602FE00B9BDB4 /* Loc8rTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210530B61D2602FE00B9BDB4 /* Loc8rTests.swift */; };
 		210530C21D2602FE00B9BDB4 /* Loc8rUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210530C11D2602FE00B9BDB4 /* Loc8rUITests.swift */; };
 		210530D01D2609AD00B9BDB4 /* NameEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210530CF1D2609AD00B9BDB4 /* NameEntryViewController.swift */; };
+		210530D31D26CDDC00B9BDB4 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210530D21D26CDDC00B9BDB4 /* NextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		210530C11D2602FE00B9BDB4 /* Loc8rUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loc8rUITests.swift; sourceTree = "<group>"; };
 		210530C31D2602FE00B9BDB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		210530CF1D2609AD00B9BDB4 /* NameEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameEntryViewController.swift; sourceTree = "<group>"; };
+		210530D21D26CDDC00B9BDB4 /* NextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				210530A31D2602FE00B9BDB4 /* ViewController.swift */,
 				210530CF1D2609AD00B9BDB4 /* NameEntryViewController.swift */,
+				210530D21D26CDDC00B9BDB4 /* NextViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				210530D01D2609AD00B9BDB4 /* NameEntryViewController.swift in Sources */,
+				210530D31D26CDDC00B9BDB4 /* NextViewController.swift in Sources */,
 				210530A41D2602FE00B9BDB4 /* ViewController.swift in Sources */,
 				210530A21D2602FE00B9BDB4 /* AppDelegate.swift in Sources */,
 			);
@@ -496,6 +500,7 @@
 				210530C81D2602FE00B9BDB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		210530C91D2602FE00B9BDB4 /* Build configuration list for PBXNativeTarget "Loc8rTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +509,7 @@
 				210530CB1D2602FE00B9BDB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		210530CC1D2602FE00B9BDB4 /* Build configuration list for PBXNativeTarget "Loc8rUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +518,7 @@
 				210530CE1D2602FE00B9BDB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

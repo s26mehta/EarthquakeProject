@@ -10,5 +10,20 @@ import UIKit
 import Foundation
 
 class NameEntryViewController: UITableViewController {
+    // Keyboard hiding function
+    // Return button on keyboard
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // Touch anywhere outside of the keyboard
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
 
+    @IBAction func nextButtonPressed(sender: AnyObject) {
+        performSegueWithIdentifier("SetUp", sender: nil)
+    }
 }
