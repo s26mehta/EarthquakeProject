@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tF7-Hy-PAC">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Loc8r" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergency Services" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ug-zJ-PiI">
+                                <rect key="frame" x="24" y="98" width="552" height="38"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="32"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fO-co-mlm" userLabel="Message">
+                                <rect key="frame" x="24" y="160" width="552" height="95.5"/>
+                                <string key="text">In the event of an emergency, you will receive a push notification alerting you of potential danger in your area.
+
+You will be able to mark yourself safe from danger, see the status of family and friends, and get help finding your way to a safe zone.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjj-bd-HoM">
+                                <rect key="frame" x="24" y="272" width="552" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="About Emergency Services"/>
+                                <connections>
+                                    <action selector="aboutButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gOb-oR-rHW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cP4-FS-Pnd">
+                                <rect key="frame" x="154" y="487" width="293" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Set up Emergency Services"/>
+                                <connections>
+                                    <action selector="setupButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bxh-Px-7jC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cP4-FS-Pnd" secondAttribute="bottom" constant="72" id="0eR-G9-hQN"/>
+                            <constraint firstItem="6fO-co-mlm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1E6-BK-Lsz"/>
+                            <constraint firstItem="vjj-bd-HoM" firstAttribute="top" secondItem="6fO-co-mlm" secondAttribute="bottom" constant="16" id="3JK-5a-DpG"/>
+                            <constraint firstItem="6fO-co-mlm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="24" id="CrA-Oa-4x6"/>
+                            <constraint firstAttribute="trailing" secondItem="vjj-bd-HoM" secondAttribute="trailing" constant="24" id="Dpq-p0-ojp"/>
+                            <constraint firstItem="cP4-FS-Pnd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GlF-vK-R2Y"/>
+                            <constraint firstItem="vjj-bd-HoM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aGC-nf-7ga"/>
+                            <constraint firstItem="5Ug-zJ-PiI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="24" id="agv-F3-4ue"/>
+                            <constraint firstItem="5Ug-zJ-PiI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aiS-mv-PBh"/>
+                            <constraint firstItem="5Ug-zJ-PiI" firstAttribute="bottom" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="72" id="ceC-13-jUv"/>
+                            <constraint firstItem="vjj-bd-HoM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="24" id="iBM-EB-Lws"/>
+                            <constraint firstItem="6fO-co-mlm" firstAttribute="top" secondItem="5Ug-zJ-PiI" secondAttribute="bottom" constant="24" id="kVe-I1-YU0"/>
+                            <constraint firstAttribute="trailing" secondItem="5Ug-zJ-PiI" secondAttribute="trailing" constant="24" id="mar-Lg-UGh"/>
+                            <constraint firstAttribute="trailing" secondItem="6fO-co-mlm" secondAttribute="trailing" constant="24" id="qFx-C8-bz8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Bb-le-tf0"/>
+                    <connections>
+                        <outlet property="aboutEmergencyButton" destination="vjj-bd-HoM" id="Tub-dN-dAP"/>
+                        <outlet property="setupEmergencyButton" destination="cP4-FS-Pnd" id="MQi-2Q-5q6"/>
+                        <segue destination="Zal-SK-6bM" kind="show" identifier="SetUp" id="pxR-QP-GlG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="676" y="719"/>
+        </scene>
+        <!--Name Entry View Controller-->
+        <scene sceneID="iPj-fT-wOf">
+            <objects>
+                <tableViewController id="Zal-SK-6bM" customClass="NameEntryViewController" customModule="Loc8r" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="29" sectionHeaderHeight="28" sectionFooterHeight="28" id="9eU-yB-tGl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="f47-as-bld">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="7Ge-be-URF">
+                                        <rect key="frame" x="0.0" y="64" width="600" height="40"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Ge-be-URF" id="SSd-NJ-fwR">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="39.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r37-r2-9qo">
+                                                    <rect key="frame" x="16" y="10" width="83" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0fz-gX-q7B" userLabel="First Name Label">
+                                                    <rect key="frame" x="119" y="10" width="481" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="enM-cu-sQI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0fz-gX-q7B" firstAttribute="leading" secondItem="r37-r2-9qo" secondAttribute="trailing" constant="20" id="Q8k-iO-ETB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="r37-r2-9qo" firstAttribute="centerY" secondItem="7Ge-be-URF" secondAttribute="centerY" id="04L-Px-TP2"/>
+                                            <constraint firstItem="0fz-gX-q7B" firstAttribute="centerY" secondItem="7Ge-be-URF" secondAttribute="centerY" id="6ZT-e6-HoU"/>
+                                            <constraint firstItem="r37-r2-9qo" firstAttribute="leading" secondItem="7Ge-be-URF" secondAttribute="leading" constant="16" id="HyN-TE-iJH"/>
+                                            <constraint firstAttribute="trailing" secondItem="0fz-gX-q7B" secondAttribute="trailing" id="XUN-T2-FMR"/>
+                                            <constraint firstItem="r37-r2-9qo" firstAttribute="centerY" secondItem="7Ge-be-URF" secondAttribute="centerY" id="b4m-ar-9TM"/>
+                                            <constraint firstItem="0fz-gX-q7B" firstAttribute="centerY" secondItem="7Ge-be-URF" secondAttribute="centerY" id="f2c-Gj-znX"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="dDS-DX-CLD">
+                                        <rect key="frame" x="0.0" y="104" width="600" height="40"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dDS-DX-CLD" id="X2x-IZ-OMa">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="39.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Zal-SK-6bM" id="ChJ-03-udr"/>
+                            <outlet property="delegate" destination="Zal-SK-6bM" id="vfy-Fx-SKy"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OJb-tC-2Kh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1609" y="719"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="akp-Bt-aGx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tF7-Hy-PAC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9iD-1u-kCH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Aa4-VJ-1tD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fav-5L-hNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-136" y="719"/>
+        </scene>
+    </scenes>
+</document>
