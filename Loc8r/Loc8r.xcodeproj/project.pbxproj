@@ -16,6 +16,7 @@
 		210530C21D2602FE00B9BDB4 /* Loc8rUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210530C11D2602FE00B9BDB4 /* Loc8rUITests.swift */; };
 		210530D01D2609AD00B9BDB4 /* NameEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210530CF1D2609AD00B9BDB4 /* NameEntryViewController.swift */; };
 		210530D31D26CDDC00B9BDB4 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210530D21D26CDDC00B9BDB4 /* NextViewController.swift */; };
+		210530D51D2AD2B300B9BDB4 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210530D41D2AD2B300B9BDB4 /* LocationServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		210530C31D2602FE00B9BDB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		210530CF1D2609AD00B9BDB4 /* NameEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameEntryViewController.swift; sourceTree = "<group>"; };
 		210530D21D26CDDC00B9BDB4 /* NextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		210530D41D2AD2B300B9BDB4 /* LocationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				210530A11D2602FE00B9BDB4 /* AppDelegate.swift */,
 				210530D11D2609CD00B9BDB4 /* ViewControllers */,
+				210530D61D2AD2BA00B9BDB4 /* Helper Files */,
 				210530A51D2602FE00B9BDB4 /* Main.storyboard */,
 				210530A81D2602FE00B9BDB4 /* Assets.xcassets */,
 				210530AA1D2602FE00B9BDB4 /* LaunchScreen.storyboard */,
@@ -137,6 +140,14 @@
 				210530D21D26CDDC00B9BDB4 /* NextViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		210530D61D2AD2BA00B9BDB4 /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				210530D41D2AD2B300B9BDB4 /* LocationServices.swift */,
+			);
+			name = "Helper Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +284,7 @@
 				210530D01D2609AD00B9BDB4 /* NameEntryViewController.swift in Sources */,
 				210530D31D26CDDC00B9BDB4 /* NextViewController.swift in Sources */,
 				210530A41D2602FE00B9BDB4 /* ViewController.swift in Sources */,
+				210530D51D2AD2B300B9BDB4 /* LocationServices.swift in Sources */,
 				210530A21D2602FE00B9BDB4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
