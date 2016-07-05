@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
     @IBOutlet weak var aboutEmergencyButton: UIButton!
     @IBOutlet weak var setupEmergencyButton: UIButton!
+    
+    let notificationCenter = NSNotificationCenter.defaultCenter()
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -34,8 +37,9 @@ class ViewController: UIViewController {
         
     }
     
-    
     @IBAction func setupButtonAction(sender: AnyObject) {
+        notificationCenter.postNotificationName("RequestAuthorization", object: nil)
+        notificationCenter.postNotificationName("StartUpdating", object: nil)
         performSegueWithIdentifier("SetUp", sender: nil)
     }
 }

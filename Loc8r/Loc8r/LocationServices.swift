@@ -10,6 +10,29 @@ import UIKit
 import Foundation
 import CoreLocation
 
-class LocationServices {
-    var i = 0
+class LocationServices: CLLocationManager, CLLocationManagerDelegate {
+    let locationManager = CLLocationManager()
+    let notificationCenter = NSNotificationCenter.defaultCenter()
+    
+    func initialize() {
+        setUpNotifications()
+        locationManager.delegate = self
+    }
+    
+    func setUpNotifications() {
+        notificationCenter.addObserver(self, selector:#selector(LocationServices.requestAuthorization), name: "RequestAuthorization", object: nil)
+        notificationCenter.addObserver(self, selector:#selector(LocationServices.startUpdating), name: "StartUpdating", object: nil)
+    }
+    
+    @objc func requestAuthorization() {
+        locationManager.requestAlwaysAuthorization()
+    }
+    
+    @objc func startUpdating() {
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("Updating locationManager")
+    }
 }
