@@ -24,13 +24,17 @@
       font-family: 'Roboto','sans-serif';
       line-height: 30px;
       padding-left: 10px;
+      padding-right: 10px;
+      position: center;
+      width: 300px;
+      height: 50px;
     }
     #floating-panel {
       background-color: #fff;
       border: 1px solid #999;
       left: 25%;
       padding: 5px;
-      position: absolute;
+      position: center;
       top: 10px;
       z-index: 5;
     }
@@ -39,16 +43,13 @@
 
 <body>
   <div id="floating-panel">
-    <button onclick="toggleHeatmap()">Toggle Heatmap</button>
-    <button onclick="changeGradient()">Change gradient</button>
-    <button onclick="changeRadius()">Change radius</button>
-    <button onclick="changeOpacity()">Change opacity</button>
-    <button onclick="getPoints()">Refresh Map</button>
+    <button onclick="toggleMap()">Toggle Map</button>
+    <div id="currentMap">Severity Level</div>
   </div>
   <div id="map"></div>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
   <script>
-    var map, heatmap;
+    var map, heatmap, currentMap;
 
     function initMap() {
       map = new google.maps.Map(document.getElementById('map'), {
@@ -57,20 +58,22 @@
         mapTypeId: google.maps.MapTypeId.SATELLITE
       });
 
-      heatmap = new google.maps.visualization.HeatmapLayer({
+      unsafeheatmap = new google.maps.visualization.HeatmapLayer({
           map: map
         });
+      safeheatmap = new google.maps.visualization.HeatmapLayer({
+          map: map
+        });
+      L1_heatmap = new google.maps.visualization.HeatmapLayer({
+          map: null
+        });
+      L2_heatmap = new google.maps.visualization.HeatmapLayer({
+          map: null
+        });
+      L3_heatmap = new google.maps.visualization.HeatmapLayer({
+          map: null
+        });
 
-      window.setInterval(function() {
-        getPoints();
-      }, 1000);
-    }
-
-    function toggleHeatmap() {
-      heatmap.setMap(heatmap.getMap() ? null : map);
-    }
-
-    function changeGradient() {
       var gradient = [
       'rgba(0, 255, 255, 0)',
       'rgba(0, 255, 255, 1)',
@@ -87,19 +90,74 @@
       'rgba(191, 0, 31, 1)',
       'rgba(255, 0, 0, 1)'
       ]
-      heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+      var red = [
+      'rgba(255, 0, 0, 0)',
+      'rgba(255, 0, 0, 1)',
+      'rgba(255, 0, 0, 1)',
+      'rgba(255, 0, 0, 1)',
+      'rgba(255, 0, 0, 1)',
+      'rgba(255, 0, 0, 1)',
+      'rgba(255, 0, 0, 1)',
+      'rgba(255, 0, 0, 1)',
+      'rgba(255, 0, 0, 1)',
+      'rgba(255, 0, 0, 1)'
+      ]
+      var yellow = [
+      'rgba(255, 221, 56, 0)',
+      'rgba(255, 221, 56, 1)',
+      'rgba(255, 221, 56, 1)',
+      'rgba(255, 221, 56, 1)',
+      'rgba(255, 221, 56, 1)',
+      'rgba(255, 221, 56, 1)',
+      'rgba(255, 221, 56, 1)',
+      'rgba(255, 221, 56, 1)',
+      'rgba(255, 221, 56, 1)',
+      'rgba(255, 221, 56, 1)'
+      ]
+      var orange = [
+      'rgba(255, 138, 26, 0)',
+      'rgba(255, 138, 26, 1)',
+      'rgba(255, 138, 26, 1)',
+      'rgba(255, 138, 26, 1)',
+      'rgba(255, 138, 26, 1)',
+      'rgba(255, 138, 26, 1)',
+      'rgba(255, 138, 26, 1)',
+      'rgba(255, 138, 26, 1)',
+      'rgba(255, 138, 26, 1)',
+      'rgba(255, 138, 26, 1)'
+      ]
+      safeheatmap.set('gradient', gradient);
+      L1_heatmap.set('gradient', red);
+      L2_heatmap.set('gradient', orange);
+      L3_heatmap.set('gradient', yellow);
+
+      window.setInterval(function() {
+        getPoints();
+      }, 3000);
     }
 
-    function changeRadius() {
-      heatmap.set('radius', heatmap.get('radius') ? null : 20);
+    function toggleMap() {
+      safeheatmap.setMap(safeheatmap.getMap() ? null : map);
+      unsafeheatmap.setMap(unsafeheatmap.getMap() ? null : map);
+
+      L1_heatmap.setMap(L1_heatmap.getMap() ? null : map);
+      L2_heatmap.setMap(L2_heatmap.getMap() ? null : map);
+      L3_heatmap.setMap(L3_heatmap.getMap() ? null : map);
+      if (L1_heatmap.getMap() == null){
+        currentMap = "Severity Level";
+      }
+      else {
+        currentMap = "Safe VS Unsafe";
+      }
+      document.getElementById("currentMap").innerHTML = currentMap;
     }
 
-    function changeOpacity() {
-      heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
-    }
-    // Heatmap data: 500 Points
     function getPoints() {
-      var arr = [];
+      var safe_arr = [];
+      var unsafe_arr = [];
+      var L1_arr = [];
+      var L2_arr = [];
+      var L3_arr = [];
       $.getJSON('/getPeople', function(data) {
 
         people = data
@@ -107,11 +165,34 @@
           console.log(people[j].status)
           if (people[j].location && people[j].status == "unsafe"){
             var a = new google.maps.LatLng(people[j].location.lat, people[j].location.lon);
-            arr.push(a);
+            unsafe_arr.push(a);
+            if (people[j].severity == "L1"){
+              L1_arr.push(a);
+            }
+            else if (people[j].severity == "L2"){
+              L2_arr.push(a);
+            }
+            else if (people[j].severity == "L3"){
+              L3_arr.push(a);
+            }
+          }
+          else if (people[j].location && people[j].status == "safe"){
+            var a = new google.maps.LatLng(people[j].location.lat, people[j].location.lon);
+            safe_arr.push(a);
           }
         }
-        newdata = new google.maps.MVCArray(arr);
-        heatmap.set('data', newdata);
+       
+        newUnsafeData = new google.maps.MVCArray(unsafe_arr);
+        unsafeheatmap.set('data', newUnsafeData);
+        newSafeData = new google.maps.MVCArray(safe_arr);
+        safeheatmap.set('data', newSafeData);
+
+        L1_Data = new google.maps.MVCArray(L1_arr);
+        L1_heatmap.set('data', L1_Data);
+        L2_Data = new google.maps.MVCArray(L2_arr);
+        L2_heatmap.set('data', L2_Data);
+        L3_Data = new google.maps.MVCArray(L3_arr);
+        L3_heatmap.set('data', L3_Data);
       });
     }
 

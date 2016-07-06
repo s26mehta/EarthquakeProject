@@ -57,7 +57,7 @@ def setSafePerson():
 @app.post('/setUnSafe')
 def setSafePerson():
     forms = request.forms
-    people.setUnSafe(forms['name'])
+    people.setUnSafe(forms['name'], forms['severity'])
     
 @app.post('/newLocation')
 def updateLocation():

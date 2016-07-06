@@ -9,16 +9,16 @@ class Location():
 
 class Person():
     """docstring for Person"""
-    def __init__(self, _name, _status = "unsafe", _location = None):
+    def __init__(self, _name, _status = "unreported", _severity= "L0", _location = None):
         self.name = _name
         self.status = _status
+        self.severity = _severity
         self.location = _location
 
     def dump(self):
         if self.location:
-            return '{"name": "'+str(self.name)+'", "status": "'+str(self.status)+'", "location": '+str(self.location.dump())+'}'
-        return '{"name":"'+str(self.name)+'", "status": "'+str(self.status)+'""}'
-
+            return '{"name": "'+str(self.name)+'", "status": "'+str(self.status)+'","severity": "'+str(self.severity)+'", "location": '+str(self.location.dump())+'}'
+        return '{"name":"'+str(self.name)+'", "status": "'+str(self.status)+'","severity": "'+str(self.severity)+'"}'
 
     def isSafe(self):
         if self.status == "safe": # 1 is safe
@@ -60,10 +60,11 @@ class People():
             if i.name == _name:
                 i.status = "safe"
 
-    def setUnSafe(self, _name):
+    def setUnSafe(self, _name, _severity):
         for i in self.array:
             if i.name == _name:
                 i.status = "unsafe"
+                i.severity = _severity
 
     def setNewLocation(self, _name, _loc):
         for i in self.array:
