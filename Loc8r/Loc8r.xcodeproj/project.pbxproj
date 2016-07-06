@@ -18,6 +18,7 @@
 		210530D31D26CDDC00B9BDB4 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210530D21D26CDDC00B9BDB4 /* GroupViewController.swift */; };
 		210530D81D2AF18500B9BDB4 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210530D71D2AF18400B9BDB4 /* LocationServices.swift */; };
 		21A3F44F1D2CBB090074DDF9 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */; };
+		21A3F4531D2D82C80074DDF9 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		210530D21D26CDDC00B9BDB4 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		210530D71D2AF18400B9BDB4 /* LocationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
+		21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				210530A31D2602FE00B9BDB4 /* ViewController.swift */,
 				210530CF1D2609AD00B9BDB4 /* NameEntryViewController.swift */,
 				210530D21D26CDDC00B9BDB4 /* GroupViewController.swift */,
+				21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */,
 				21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */,
 			);
 			name = ViewControllers;
@@ -290,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				210530D01D2609AD00B9BDB4 /* NameEntryViewController.swift in Sources */,
+				21A3F4531D2D82C80074DDF9 /* AddGroupViewController.swift in Sources */,
 				210530D31D26CDDC00B9BDB4 /* GroupViewController.swift in Sources */,
 				21A3F44F1D2CBB090074DDF9 /* CreateGroupViewController.swift in Sources */,
 				210530A41D2602FE00B9BDB4 /* ViewController.swift in Sources */,

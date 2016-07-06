@@ -384,6 +384,137 @@ You will be able to mark yourself safe from danger, see the status of family and
             <point key="canvasLocation" x="2346" y="719"/>
         </scene>
         <!--Create New Group-->
+        <scene sceneID="FhF-sW-HLp">
+            <objects>
+                <tableViewController id="169-Iu-4gj" customClass="AddGroupViewController" customModule="Loc8r" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" id="zw8-WF-na6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="V04-tK-00O">
+                            <rect key="frame" x="0.0" y="64" width="600" height="102"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your group so you can find it easily later. Then, add members to your group." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sm0-Mh-Ilo">
+                                    <rect key="frame" x="24" y="32" width="552" height="38"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="sm0-Mh-Ilo" firstAttribute="top" secondItem="V04-tK-00O" secondAttribute="top" constant="32" id="4Gb-di-6AE"/>
+                                <constraint firstItem="sm0-Mh-Ilo" firstAttribute="leading" secondItem="V04-tK-00O" secondAttribute="leading" constant="24" id="DzF-MO-X9M"/>
+                                <constraint firstAttribute="trailing" secondItem="sm0-Mh-Ilo" secondAttribute="trailing" constant="24" id="PWM-L1-kD9"/>
+                            </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="4Ud-EI-P8C">
+                            <rect key="frame" x="0.0" y="352" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <sections>
+                            <tableViewSection id="ThA-x0-vVG">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="group" id="SNi-7M-NJU">
+                                        <rect key="frame" x="0.0" y="166" width="600" height="62"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SNi-7M-NJU" id="VSI-4b-ewQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="61.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPY-Sb-Rce">
+                                                    <rect key="frame" x="16" y="20" width="104" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Family" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQG-YO-weh">
+                                                    <rect key="frame" x="144" y="20" width="456" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="GQG-YO-weh" secondAttribute="trailing" id="PRr-Yc-NZ6"/>
+                                                <constraint firstItem="GQG-YO-weh" firstAttribute="centerY" secondItem="IPY-Sb-Rce" secondAttribute="centerY" id="ksU-qf-5Ls"/>
+                                                <constraint firstItem="GQG-YO-weh" firstAttribute="leading" secondItem="IPY-Sb-Rce" secondAttribute="trailing" constant="24" id="sKs-s4-l7r"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="IPY-Sb-Rce" firstAttribute="centerY" secondItem="SNi-7M-NJU" secondAttribute="centerY" id="8zC-7x-A9C"/>
+                                            <constraint firstItem="IPY-Sb-Rce" firstAttribute="leading" secondItem="SNi-7M-NJU" secondAttribute="leading" constant="16" id="JOI-6u-aYu"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="group1" id="Nn3-wV-8JP">
+                                        <rect key="frame" x="0.0" y="228" width="600" height="62"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nn3-wV-8JP" id="qQX-Qb-qq0">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="61.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaI-QF-TgO">
+                                                    <rect key="frame" x="16" y="20" width="134" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="MaI-QF-TgO" firstAttribute="leading" secondItem="Nn3-wV-8JP" secondAttribute="leading" constant="16" id="kHx-3J-UJm"/>
+                                            <constraint firstItem="MaI-QF-TgO" firstAttribute="centerY" secondItem="Nn3-wV-8JP" secondAttribute="centerY" id="t88-UQ-A3h"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="group2" id="Pb4-zq-U0X">
+                                        <rect key="frame" x="0.0" y="290" width="600" height="62"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pb4-zq-U0X" id="t1b-mm-xzT">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="61.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vv-bd-fYT">
+                                                    <rect key="frame" x="16" y="14" width="116" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <state key="normal" title="Add members"/>
+                                                    <connections>
+                                                        <segue destination="V5z-ng-dct" kind="show" id="sHP-32-PXa"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="1vv-bd-fYT" firstAttribute="centerY" secondItem="Pb4-zq-U0X" secondAttribute="centerY" id="OuP-yt-PS6"/>
+                                            <constraint firstItem="1vv-bd-fYT" firstAttribute="leading" secondItem="Pb4-zq-U0X" secondAttribute="leading" constant="16" id="aDQ-Ge-rVG"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="169-Iu-4gj" id="C10-gF-wsG"/>
+                            <outlet property="delegate" destination="169-Iu-4gj" id="fAj-hl-SVy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Create New Group" id="0fb-yz-mie">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="VVF-Oy-0UN">
+                            <connections>
+                                <action selector="cancelButton:" destination="169-Iu-4gj" id="Grq-13-YVf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ax8-Ar-CE8">
+                            <connections>
+                                <action selector="saveButton:" destination="169-Iu-4gj" id="wIx-2l-dXR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ou8-KG-53K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3182" y="1572"/>
+        </scene>
+        <!--Add People To Group-->
         <scene sceneID="KA4-6P-C9L">
             <objects>
                 <tableViewController storyboardIdentifier="StoryBoardController" id="VJL-wV-iZG" customClass="CreateGroupViewController" customModule="Loc8r" customModuleProvider="target" sceneMemberID="viewController">
@@ -415,15 +546,15 @@ You will be able to mark yourself safe from danger, see the status of family and
                             <outlet property="delegate" destination="VJL-wV-iZG" id="hwA-sC-Mrr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Create New Group" id="Lu8-3T-Kka">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="VmC-hX-7vO">
+                    <navigationItem key="navigationItem" title="Add People To Group" id="Pce-6M-N55">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HbL-6f-ULE">
                             <connections>
-                                <action selector="cancelGroup:" destination="VJL-wV-iZG" id="mon-fh-l6Y"/>
+                                <action selector="cancelPeople:" destination="VJL-wV-iZG" id="Dr4-qF-0AV"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="otR-D3-p1k">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="72b-um-F8R">
                             <connections>
-                                <action selector="saveGroup:" destination="VJL-wV-iZG" id="Vhu-zA-V2z"/>
+                                <action selector="addPeople:" destination="VJL-wV-iZG" id="Q8l-2H-TBJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -445,7 +576,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="3158" y="1572"/>
+            <point key="canvasLocation" x="4838" y="1572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="akp-Bt-aGx">
@@ -476,12 +607,30 @@ You will be able to mark yourself safe from danger, see the status of family and
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="VJL-wV-iZG" kind="relationship" relationship="rootViewController" id="uK4-IE-x6u"/>
+                        <segue destination="169-Iu-4gj" kind="relationship" relationship="rootViewController" id="3Kj-A1-hCK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEm-Hk-WJm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2346" y="1572"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VE0-NV-4E9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V5z-ng-dct" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DpD-bM-Ji4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VJL-wV-iZG" kind="relationship" relationship="rootViewController" id="iuX-Hs-EL9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D27-2s-Cq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4026" y="1572"/>
         </scene>
     </scenes>
 </document>

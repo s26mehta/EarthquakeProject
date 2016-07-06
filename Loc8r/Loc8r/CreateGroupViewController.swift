@@ -27,14 +27,15 @@ class CreateGroupViewController: UITableViewController, UISearchBarDelegate, UIS
         }
     }
     
-    @IBAction func cancelGroup(sender: AnyObject) {
+    @IBAction func cancelPeople(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func saveGroup(sender: AnyObject) {
-        print("Group Saved")
+    @IBAction func addPeople(sender: AnyObject) {
+        print("People Added")
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
