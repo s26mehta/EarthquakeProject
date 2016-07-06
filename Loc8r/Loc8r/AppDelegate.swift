@@ -9,6 +9,9 @@
 import UIKit
 import Foundation
 import CoreLocation
+import Contacts
+
+var contactList: [String] = []
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate{
@@ -19,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         locationServices.initialize()
+        getContacts()
         return true
     }
 
@@ -43,6 +47,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    func getContacts() {
+        // make sure user hadn't previously denied access
+        
+        let status = CNContactStore.authorizationStatusForEntityType(.Contacts)
+        if status == .Denied || status == .Restricted {
+            // user previously denied, so tell them to fix that in settings
+            return
+        }
+        
+        // open it
+        
+        let store = CNContactStore()
+        store.requestAccessForEntityType(.Contacts) { granted, error in
+            guard granted else {
+                dispatch_async(dispatch_get_main_queue()) {
+                    // user didn't grant authorization, so tell them to fix that in settings
+                    print(error)
+                }
+                return
+            }
+            
+            // get the contacts
+            
+            var contacts = [CNContact]()
+            let request = CNContactFetchRequest(keysToFetch: [CNContactIdentifierKey, CNContactFormatter.descriptorForRequiredKeysForStyle(.FullName)])
+            do {
+                try store.enumerateContactsWithFetchRequest(request) { contact, stop in
+                    contacts.append(contact)
+                }
+            } catch {
+                print(error)
+            }
+            
+            // do something with the contacts array (e.g. print the names)
+            
+            let formatter = CNContactFormatter()
+            formatter.style = .FullName
+            for contact in contacts {
+                contactList.append(formatter.stringFromContact(contact)!)
+            }
+        }
+    }
 }
 

@@ -386,21 +386,30 @@ You will be able to mark yourself safe from danger, see the status of family and
         <!--Create New Group-->
         <scene sceneID="KA4-6P-C9L">
             <objects>
-                <tableViewController id="VJL-wV-iZG" customClass="CreateGroupViewController" customModule="Loc8r" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="StoryBoardController" id="VJL-wV-iZG" customClass="CreateGroupViewController" customModule="Loc8r" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hMN-FG-e5p">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="JDT-XF-IAV">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="VJL-wV-iZG" id="umI-Nk-5d9"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qm5-Ep-H3q">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="person" id="4nl-x9-PA0">
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qm5-Ep-H3q" id="v7x-yQ-aFc">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4nl-x9-PA0" id="LGf-HU-PBH">
+                                    <rect key="frame" x="0.0" y="0.0" width="561" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="VJL-wV-iZG" id="Oce-3b-CAH"/>
                             <outlet property="delegate" destination="VJL-wV-iZG" id="hwA-sC-Mrr"/>
@@ -418,8 +427,23 @@ You will be able to mark yourself safe from danger, see the status of family and
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="JDT-XF-IAV" id="JOY-Z0-cX4"/>
+                        <outlet property="searchDisplayController" destination="4eT-gv-dZR" id="nTB-fX-axc"/>
+                        <outlet property="tableView" destination="hMN-FG-e5p" id="hn7-JN-0ic"/>
+                        <outlet property="tv" destination="hMN-FG-e5p" id="srH-pz-T9v"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TSj-Ym-Ks6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="4eT-gv-dZR">
+                    <connections>
+                        <outlet property="delegate" destination="VJL-wV-iZG" id="uR5-Q6-Ip7"/>
+                        <outlet property="searchBar" destination="JDT-XF-IAV" id="q7l-kr-sZy"/>
+                        <outlet property="searchContentsController" destination="VJL-wV-iZG" id="dWm-tD-RMB"/>
+                        <outlet property="searchResultsDataSource" destination="VJL-wV-iZG" id="GuH-gC-1zU"/>
+                        <outlet property="searchResultsDelegate" destination="VJL-wV-iZG" id="AMQ-7I-56P"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="3158" y="1572"/>
         </scene>
