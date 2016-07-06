@@ -11,7 +11,11 @@ import Foundation
 import CoreLocation
 import Contacts
 
+// MARK: Global Variables
 var contactList: [String] = []
+var firstName: String = ""
+var lastName: String = ""
+var groups: [String] = []
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate{

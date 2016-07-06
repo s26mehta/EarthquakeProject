@@ -41,6 +41,8 @@ class NameEntryViewController: UITableViewController {
                 
                 return false
             } else {
+                firstName = firstNameTextField.text!
+                lastName = lastNameTextField.text!
                 return true
             }
         }

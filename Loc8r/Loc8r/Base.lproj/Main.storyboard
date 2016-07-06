@@ -430,16 +430,29 @@ You will be able to mark yourself safe from danger, see the status of family and
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Family" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQG-YO-weh">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Family" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GQG-YO-weh">
                                                     <rect key="frame" x="144" y="20" width="456" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                 </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76G-DW-22v" userLabel="Grey Label Top">
+                                                    <rect key="frame" x="16" y="0.0" width="584" height="1"/>
+                                                    <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="gM6-NM-DpB"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="76G-DW-22v" firstAttribute="leading" secondItem="VSI-4b-ewQ" secondAttribute="leading" constant="16" id="7O0-Tw-fPf"/>
                                                 <constraint firstAttribute="trailing" secondItem="GQG-YO-weh" secondAttribute="trailing" id="PRr-Yc-NZ6"/>
                                                 <constraint firstItem="GQG-YO-weh" firstAttribute="centerY" secondItem="IPY-Sb-Rce" secondAttribute="centerY" id="ksU-qf-5Ls"/>
+                                                <constraint firstItem="76G-DW-22v" firstAttribute="top" secondItem="VSI-4b-ewQ" secondAttribute="top" id="o3E-SB-9Qa"/>
                                                 <constraint firstItem="GQG-YO-weh" firstAttribute="leading" secondItem="IPY-Sb-Rce" secondAttribute="trailing" constant="24" id="sKs-s4-l7r"/>
+                                                <constraint firstAttribute="trailing" secondItem="76G-DW-22v" secondAttribute="trailing" id="wRY-bM-4Z6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
@@ -482,7 +495,22 @@ You will be able to mark yourself safe from danger, see the status of family and
                                                         <segue destination="V5z-ng-dct" kind="show" id="sHP-32-PXa"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHU-Fp-14z">
+                                                    <rect key="frame" x="16" y="60" width="584" height="1"/>
+                                                    <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="pef-bn-k66"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="BHU-Fp-14z" firstAttribute="leading" secondItem="t1b-mm-xzT" secondAttribute="leading" constant="16" id="6fe-lx-YEy"/>
+                                                <constraint firstAttribute="bottom" secondItem="BHU-Fp-14z" secondAttribute="bottom" id="fJy-7P-coT"/>
+                                                <constraint firstAttribute="trailing" secondItem="BHU-Fp-14z" secondAttribute="trailing" id="oXN-VV-z0d"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
                                             <constraint firstItem="1vv-bd-fYT" firstAttribute="centerY" secondItem="Pb4-zq-U0X" secondAttribute="centerY" id="OuP-yt-PS6"/>
