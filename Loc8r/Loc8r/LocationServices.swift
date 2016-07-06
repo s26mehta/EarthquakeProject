@@ -24,11 +24,11 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
         notificationCenter.addObserver(self, selector:#selector(LocationServices.startUpdating), name: "StartUpdating", object: nil)
     }
     
-    @objc func requestAuthorization() {
+    func requestAuthorization() {
         locationManager.requestAlwaysAuthorization()
     }
     
-    @objc func startUpdating() {
+    func startUpdating() {
         locationManager.startUpdatingLocation()
     }
     

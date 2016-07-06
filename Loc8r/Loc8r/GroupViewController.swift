@@ -9,6 +9,6 @@
 import UIKit
 import Foundation
 
-class NextViewController: UIViewController {
-
+class GroupViewController: UITableViewController {
+    
 }

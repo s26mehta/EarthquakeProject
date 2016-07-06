@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
     @IBAction func setupButtonAction(sender: AnyObject) {
         notificationCenter.postNotificationName("RequestAuthorization", object: nil)
-        notificationCenter.postNotificationName("StartUpdating", object: nil)
+//        notificationCenter.postNotificationName("StartUpdating", object: nil)
         performSegueWithIdentifier("SetUp", sender: nil)
     }
 }
