@@ -1,204 +1,306 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Heatmaps</title>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    #map {
-      height: 100%;
-    }
-    #floating-panel {
-      position: absolute;
-      top: 10px;
-      left: 25%;
-      z-index: 5;
-      background-color: #fff;
-      padding: 5px;
-      border: 1px solid #999;
-      text-align: center;
-      font-family: 'Roboto','sans-serif';
-      line-height: 30px;
-      padding-left: 10px;
-      padding-right: 10px;
-      position: center;
-      width: 300px;
-      height: 50px;
-    }
-    #floating-panel {
-      background-color: #fff;
-      border: 1px solid #999;
-      left: 25%;
-      padding: 5px;
-      position: center;
-      top: 10px;
-      z-index: 5;
-    }
-  </style>
+    <meta charset="utf-8">
+    <title>Heatmaps</title>
+    <style>
+        html, body {
+            font-family: "Helvetica", "Arial", sans-serif;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: content-box|border-box|initial|inherit;
+        }
+        .clearfix:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0;
+            }
+        #map {
+            float: left;
+            width: 70%;
+            height: 100%;
+        }
+        #sidebar{
+            float: left;
+            width: 30%;
+            text-align:center;
+            padding-top: 10px;
+        }
+        #sidebar .toggle-button {
+            width: 40%;
+            height: 100px;
+            float: left;
+            color: #ffffff;
+            font-size: 14px;
+            background: #3498db;
+            border-radius: 2px;
+            border: none;
+            padding: 10px;
+        }
+        #sidebar .toggle-button.left {
+            margin-left: 10%;
+        }
+        #sidebar .toggle-button.right {
+            margin-right: 10%;
+        }
+
+        #sidebar .toggle-button img {
+            display: block;
+            width: 40px;
+            margin: 0 auto;
+        }
+        #sidebar .legend div {
+            float: left;
+            margin: 0;
+            padding: 0;
+        }
+
+        #sidebar .legend .legend-marker {
+            width: 20%;
+            clear: both;
+        }
+
+        #sidebar .legend .legend-marker img {
+            width: 18px;
+        }
+
+        #sidebar .legend .legend-title {
+            text-align: left;
+            width: 80%;
+        }
+
+    </style>
 </head>
 
 <body>
-  <div id="floating-panel">
-    <button onclick="toggleMap()">Toggle Map</button>
-    <div id="currentMap">Severity Level</div>
-  </div>
-  <div id="map"></div>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
-  <script>
-    var map, heatmap, currentMap;
+    <div id="map"></div>
+    <div id="sidebar">
+        <button onclick="heatMap()" class="toggle-button left"><img src="/img/heat-map.svg" alt=""><span>Heat Map</span></button>
+        <button onclick="severityMap()" class="toggle-button right"><img src="/img/first-aid.svg" alt=""><span>Severity Level Map</span></button>
 
-    function initMap() {
-      map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 13,
-        center: {lat: 43.460474, lng: -80.504281},
-        mapTypeId: google.maps.MapTypeId.SATELLITE
-      });
+        <div id="severity_map_info">
+            <div class="info_title"><h2>Severity Map</h2></div>
+            <div class="legend">
+                    <h3>Legend</h3>
+                    <div class="legend-marker"><img src="/img/yellow.png" alt=""></div>
+                    <div class="legend-title">Low</div>
+                    <div class="legend-marker"><img src="/img/orange.png" alt=""></div>
+                    <div class="legend-title">Medium</div>
+                    <div class="legend-marker"><img src="/img/red.png" alt=""></div>
+                    <div class="legend-title">High</div>
+            </div>
+        </div> 
+        <div id="heat_map_info">
+            <div class="info_title"><h2>Heat Map</h2></div>
+            <div class="legend">
+                    <h3>Legend</h3>
+                    <div class="legend-marker"><img src="/img/unsafe.png" alt=""></div>
+                    <div class="legend-title">Unsafe</div>
+                    <div class="legend-marker"><img src="/img/safe.png" alt=""></div>
+                    <div class="legend-title">Safe</div>
+            </div>
+        </div>     
+        <!-- <div id="currentMap">Location of Distressed Citizens</div> -->
+<!--         <p>Emergency State: </p><span id="emergencyState"></span> -->
 
-      unsafeheatmap = new google.maps.visualization.HeatmapLayer({
-          map: map
-        });
-      safeheatmap = new google.maps.visualization.HeatmapLayer({
-          map: map
-        });
-      L1_heatmap = new google.maps.visualization.HeatmapLayer({
-          map: null
-        });
-      L2_heatmap = new google.maps.visualization.HeatmapLayer({
-          map: null
-        });
-      L3_heatmap = new google.maps.visualization.HeatmapLayer({
-          map: null
-        });
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+    <script>
+        var map, heatmap, currentMap;
 
-      var gradient = [
-      'rgba(0, 255, 255, 0)',
-      'rgba(0, 255, 255, 1)',
-      'rgba(0, 191, 255, 1)',
-      'rgba(0, 127, 255, 1)',
-      'rgba(0, 63, 255, 1)',
-      'rgba(0, 0, 255, 1)',
-      'rgba(0, 0, 223, 1)',
-      'rgba(0, 0, 191, 1)',
-      'rgba(0, 0, 159, 1)',
-      'rgba(0, 0, 127, 1)',
-      'rgba(63, 0, 91, 1)',
-      'rgba(127, 0, 63, 1)',
-      'rgba(191, 0, 31, 1)',
-      'rgba(255, 0, 0, 1)'
-      ]
-      var red = [
-      'rgba(255, 0, 0, 0)',
-      'rgba(255, 0, 0, 1)',
-      'rgba(255, 0, 0, 1)',
-      'rgba(255, 0, 0, 1)',
-      'rgba(255, 0, 0, 1)',
-      'rgba(255, 0, 0, 1)',
-      'rgba(255, 0, 0, 1)',
-      'rgba(255, 0, 0, 1)',
-      'rgba(255, 0, 0, 1)',
-      'rgba(255, 0, 0, 1)'
-      ]
-      var yellow = [
-      'rgba(255, 221, 56, 0)',
-      'rgba(255, 221, 56, 1)',
-      'rgba(255, 221, 56, 1)',
-      'rgba(255, 221, 56, 1)',
-      'rgba(255, 221, 56, 1)',
-      'rgba(255, 221, 56, 1)',
-      'rgba(255, 221, 56, 1)',
-      'rgba(255, 221, 56, 1)',
-      'rgba(255, 221, 56, 1)',
-      'rgba(255, 221, 56, 1)'
-      ]
-      var orange = [
-      'rgba(255, 138, 26, 0)',
-      'rgba(255, 138, 26, 1)',
-      'rgba(255, 138, 26, 1)',
-      'rgba(255, 138, 26, 1)',
-      'rgba(255, 138, 26, 1)',
-      'rgba(255, 138, 26, 1)',
-      'rgba(255, 138, 26, 1)',
-      'rgba(255, 138, 26, 1)',
-      'rgba(255, 138, 26, 1)',
-      'rgba(255, 138, 26, 1)'
-      ]
-      safeheatmap.set('gradient', gradient);
-      L1_heatmap.set('gradient', yellow);
-      L2_heatmap.set('gradient', orange);
-      L3_heatmap.set('gradient', red);
+        function initMap() {
+            var mapOptions = {
+                    zoom: 13,
+                    center: {lat: 43.460474, lng: -80.504281},
+                    styles: [{"featureType":"administrative.province","elementType":"labels.text.fill","stylers":[{"color":"#434242"}]},{"featureType":"administrative.locality","elementType":"labels.text.fill","stylers":[{"color":"#434242"}]},{"featureType":"administrative.neighborhood","elementType":"labels.text.fill","stylers":[{"color":"#434242"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"hue":"#0073ff"}]}]
+                }
+            map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-      window.setInterval(function() {
-        getPoints();
-      }, 3000);
-    }
+            unsafeheatmap = new google.maps.visualization.HeatmapLayer({
+                map: map
+            });
+            safeheatmap = new google.maps.visualization.HeatmapLayer({
+                map: map
+            });
+            L1_heatmap = new google.maps.visualization.HeatmapLayer({
+                map: null
+            });
+            L2_heatmap = new google.maps.visualization.HeatmapLayer({
+                map: null
+            });
+            L3_heatmap = new google.maps.visualization.HeatmapLayer({
+                map: null
+            });
 
-    function toggleMap() {
-      safeheatmap.setMap(safeheatmap.getMap() ? null : map);
-      unsafeheatmap.setMap(unsafeheatmap.getMap() ? null : map);
+            var safeGradient = [
+                'rgba(0, 255, 255, 0)',
+                'rgba(0, 255, 255, 1)',
+                'rgba(0, 191, 255, 1)',
+                'rgba(0, 127, 255, 1)',
+                'rgba(0, 63, 255, 1)',
+                'rgba(0, 0, 255, 1)',
+                'rgba(0, 0, 223, 1)',
+                'rgba(0, 0, 191, 1)',
+                'rgba(0, 0, 159, 1)',
+                'rgba(0, 0, 127, 1)',
+                'rgba(63, 0, 91, 1)',
+                'rgba(127, 0, 63, 1)',
+                'rgba(191, 0, 31, 1)',
+                'rgba(255, 0, 0, 1)'
+                ]
+            var unSafeGradient = [
+                'rgba(255, 255, 0, 0)',
+                'rgba(255, 255, 0, 1)',
+                'rgba(255, 225, 0, 1)',
+                'rgba(255, 200, 0, 1)',
+                'rgba(255, 175, 0, 1)',
+                'rgba(255, 160, 0, 1)',
+                'rgba(255, 145, 0, 1)',
+                'rgba(255, 125, 0, 1)',
+                'rgba(255, 110, 0, 1)',
+                'rgba(255, 100, 0, 1)',
+                'rgba(255, 75, 0, 1)',
+                'rgba(255, 50, 0, 1)',
+                'rgba(255, 25, 0, 1)',
+                'rgba(255, 0, 0, 1)'
+              ]
+            var red = [
+                'rgba(255, 0, 0, 0)',
+                'rgba(255, 0, 0, 1)',
+                'rgba(255, 0, 0, 1)',
+                'rgba(255, 0, 0, 1)',
+                'rgba(255, 0, 0, 1)',
+                'rgba(255, 0, 0, 1)',
+                'rgba(255, 0, 0, 1)',
+                'rgba(255, 0, 0, 1)',
+                'rgba(255, 0, 0, 1)',
+                'rgba(255, 0, 0, 1)'
+                ]
+            var yellow = [
+                'rgba(255, 221, 56, 0)',
+                'rgba(255, 221, 56, 1)',
+                'rgba(255, 221, 56, 1)',
+                'rgba(255, 221, 56, 1)',
+                'rgba(255, 221, 56, 1)',
+                'rgba(255, 221, 56, 1)',
+                'rgba(255, 221, 56, 1)',
+                'rgba(255, 221, 56, 1)',
+                'rgba(255, 221, 56, 1)',
+                'rgba(255, 221, 56, 1)'
+                ]
+            var orange = [
+                'rgba(255, 138, 26, 0)',
+                'rgba(255, 138, 26, 1)',
+                'rgba(255, 138, 26, 1)',
+                'rgba(255, 138, 26, 1)',
+                'rgba(255, 138, 26, 1)',
+                'rgba(255, 138, 26, 1)',
+                'rgba(255, 138, 26, 1)',
+                'rgba(255, 138, 26, 1)',
+                'rgba(255, 138, 26, 1)',
+                'rgba(255, 138, 26, 1)'
+                ]
+            safeheatmap.set('gradient', safeGradient);
+            unsafeheatmap.set('gradient', unSafeGradient);
+            console.log(safeheatmap.get('gradient'))
+            L1_heatmap.set('gradient', yellow);
+            L2_heatmap.set('gradient', orange);
+            L3_heatmap.set('gradient', red);
+            heatMap();
 
-      L1_heatmap.setMap(L1_heatmap.getMap() ? null : map);
-      L2_heatmap.setMap(L2_heatmap.getMap() ? null : map);
-      L3_heatmap.setMap(L3_heatmap.getMap() ? null : map);
-      if (L1_heatmap.getMap() == null){
-        currentMap = "Severity Level";
-      }
-      else {
-        currentMap = "Safe VS Unsafe";
-      }
-      document.getElementById("currentMap").innerHTML = currentMap;
-    }
-
-    function getPoints() {
-      var safe_arr = [];
-      var unsafe_arr = [];
-      var L1_arr = [];
-      var L2_arr = [];
-      var L3_arr = [];
-      $.getJSON('/getPeople', function(data) {
-
-        people = data
-        for (var j=0; j < people.length; j++) {
-          console.log(people[j].status)
-          if (people[j].location && people[j].status == "unsafe"){
-            var a = new google.maps.LatLng(people[j].location.lat, people[j].location.lon);
-            unsafe_arr.push(a);
-            if (people[j].severity == "L1"){
-              L1_arr.push(a);
-            }
-            else if (people[j].severity == "L2"){
-              L2_arr.push(a);
-            }
-            else if (people[j].severity == "L3"){
-              L3_arr.push(a);
-            }
-          }
-          else if (people[j].location && people[j].status == "safe"){
-            var a = new google.maps.LatLng(people[j].location.lat, people[j].location.lon);
-            safe_arr.push(a);
-          }
+            window.setInterval(function() {
+                getPoints();
+                getStatus();
+            }, 3000);
         }
-       
-        newUnsafeData = new google.maps.MVCArray(unsafe_arr);
-        unsafeheatmap.set('data', newUnsafeData);
-        newSafeData = new google.maps.MVCArray(safe_arr);
-        safeheatmap.set('data', newSafeData);
 
-        L1_Data = new google.maps.MVCArray(L1_arr);
-        L1_heatmap.set('data', L1_Data);
-        L2_Data = new google.maps.MVCArray(L2_arr);
-        L2_heatmap.set('data', L2_Data);
-        L3_Data = new google.maps.MVCArray(L3_arr);
-        L3_heatmap.set('data', L3_Data);
-      });
-    }
+        function heatMap() {
+            safeheatmap.setMap(map);
+            unsafeheatmap.setMap(map);
 
-  </script>
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8Bs-ygEt44ThKg-EKrX9oLvMX2og3PWs&libraries=visualization&callback=initMap">
+            L1_heatmap.setMap(null);
+            L2_heatmap.setMap(null);
+            L3_heatmap.setMap(null);
+            // document.getElementById("currentMap").innerHTML = "Location of Distressed Citizens";
+            document.getElementById("severity_map_info").style.display = "none";
+            document.getElementById("heat_map_info").style.display = "block";
+        }
+        function severityMap() {
+            safeheatmap.setMap(null);
+            unsafeheatmap.setMap(null);
+
+            L1_heatmap.setMap(map);
+            L2_heatmap.setMap(map);
+            L3_heatmap.setMap(map);
+
+           
+           document.getElementById("severity_map_info").style.display = "block";
+            document.getElementById("heat_map_info").style.display = "none";
+
+        }
+
+        function getPoints() {
+            var safe_arr = [];
+            var unsafe_arr = [];
+            var L1_arr = [];
+            var L2_arr = [];
+            var L3_arr = [];
+            $.getJSON('/getPeople', function(data) {
+
+                people = data
+                for (var j=0; j < people.length; j++) {
+                    console.log(people[j].status)
+                    if (people[j].location && people[j].status == "unsafe"){
+                        var a = new google.maps.LatLng(people[j].location.lat, people[j].location.lon);
+                        unsafe_arr.push(a);
+                        if (people[j].severity == "L1"){
+                            L1_arr.push(a);
+                        }
+                        else if (people[j].severity == "L2"){
+                            L2_arr.push(a);
+                        }
+                        else if (people[j].severity == "L3"){
+                            L3_arr.push(a);
+                        }
+                    }
+                    else if (people[j].location && people[j].status == "safe"){
+                        var a = new google.maps.LatLng(people[j].location.lat, people[j].location.lon);
+                        safe_arr.push(a);
+                    }
+                }
+
+                newUnsafeData = new google.maps.MVCArray(unsafe_arr);
+                unsafeheatmap.set('data', newUnsafeData);
+                newSafeData = new google.maps.MVCArray(safe_arr);
+                safeheatmap.set('data', newSafeData);
+
+                L1_Data = new google.maps.MVCArray(L1_arr);
+                L1_heatmap.set('data', L1_Data);
+                L2_Data = new google.maps.MVCArray(L2_arr);
+                L2_heatmap.set('data', L2_Data);
+                L3_Data = new google.maps.MVCArray(L3_arr);
+                L3_heatmap.set('data', L3_Data);
+            });
+        }
+
+        function getStatus(){
+            // var xhttp = new XMLHttpRequest();
+            // xhttp.onreadystatechange = function() {
+            //     if (xhttp.readyState == 4 && xhttp.status == 200) {
+            //     document.getElementById("emergencyState").innerHTML = xhttp.responseText;
+            //     }
+            // };
+            // xhttp.open("GET", "isEarthquake", true);
+            // xhttp.send();
+        }
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8Bs-ygEt44ThKg-EKrX9oLvMX2og3PWs&libraries=visualization&callback=initMap">
 </script>
 </body>
 </html>

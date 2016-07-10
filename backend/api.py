@@ -26,6 +26,10 @@ def home():
 def map():
     return static_file("map.html", root='html')
 
+@app.route('/img/<filename>')
+def serve_static(filename):
+    return static_file(filename, root='./html/img')
+
 @app.route('/staticPeople')
 def staticPeople():
     return static_file("people.json", root='.')
