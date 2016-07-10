@@ -26,9 +26,12 @@ class Person():
         self.last_seen = _last_seen
 
     def dump(self):
+        time = 'null'
+        if self.last_seen != None:
+            time = int(self.last_seen.strftime("%s"))
         if self.location:
-            return '{"name": "'+str(self.name)+'", "status": "'+str(self.status)+'","severity": "'+str(self.severity)+'", "location": '+str(self.location.dump())+'}'
-        return '{"name":"'+str(self.name)+'", "status": "'+str(self.status)+'","severity": "'+str(self.severity)+'"}'
+            return '{"name": "'+str(self.name)+'", "status": "'+str(self.status)+'","severity": "'+str(self.severity)+'", "location": '+str(self.location.dump())+', "last_seen": '+str(time)+'}'
+        return '{"name":"'+str(self.name)+'", "status": "'+str(self.status)+'","severity": "'+str(self.severity)+', "last_seen": '+str(time)+'"}'
 
     def isSafe(self):
         if self.status == "safe": # 1 is safe
@@ -94,6 +97,9 @@ class People():
             with open('people.json', 'r') as infile:
                 everyone = json.loads(infile.read())
                 for i in everyone:
-                    self.array.append(Person(i['name'], i['status'], i['severity'], i['last_seen'], i['location']))
+                    time = None
+                    if i["last_seen"] != None:
+                        datetime.fromtimestamp(int(i['last_seen']))
+                    self.array.append(Person(i['name'], i['status'], i['severity'], time, i['location']))
         except Exception, e:
             log.error("Error reading file: " + e.message)
