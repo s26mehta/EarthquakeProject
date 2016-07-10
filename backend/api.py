@@ -10,6 +10,8 @@ logging.basicConfig(filename='log.log', format='%(asctime)s-%(name)s\t-%(levelna
 log = logging.getLogger('log')
 
 people = People()
+people.readFromFile()
+people.writeToFile()
 
 #######################################################
 ###                API Routes                       ###
@@ -22,6 +24,10 @@ def home():
 @app.route('/map')
 def map():
     return static_file("map.html", root='html')
+
+@app.route('/staticPeople')
+def staticPeople():
+    return static_file("people.json", root='.')
 
 @app.get('/isEarthquake')
 def get_earthquake_now():
@@ -40,6 +46,7 @@ def set_earthquake_now():
 @app.get('/getSafe')
 def getSafePeople():
     return people.whoIsSafe()
+    people.writeToFile()
 
 @app.get('/getPeople')
 def getSafePeople():
@@ -48,21 +55,30 @@ def getSafePeople():
 @app.post('/newPerson')
 def newPerson():
     return people.newPerson(request.forms['name'])
+    people.writeToFile()
 
 @app.post('/setSafe')
 def setSafePerson():
     forms = request.forms
+    try:
+        time = datetime.fromtimestamp(int(forms["time"]))
+        people.setSafe(forms['name'], time)
+    except KeyError, e:
+        pass
     people.setSafe(forms['name'])
+    people.writeToFile()
 
 @app.post('/setUnSafe')
 def setSafePerson():
     forms = request.forms
     people.setUnSafe(forms['name'], forms['severity'])
+    people.writeToFile()
     
 @app.post('/newLocation')
 def updateLocation():
     forms = request.forms
     people.setNewLocation(forms['name'], Location(forms['lat'], forms['lon']))
+    people.writeToFile()
 
 class StripPathMiddleware(object):
     '''

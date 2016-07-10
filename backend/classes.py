@@ -1,3 +1,10 @@
+from datetime import datetime
+import json
+import logging
+
+logging.basicConfig(filename='log.log', format='%(asctime)s-%(name)s\t-%(levelname)s\t-%(message)s',level=logging.DEBUG)
+log = logging.getLogger('log')
+
 class Location():
     """geo location"""
     def __init__(self, _lat = None, _lon = None):
@@ -9,11 +16,14 @@ class Location():
 
 class Person():
     """docstring for Person"""
-    def __init__(self, _name, _status = "unreported", _severity= "L0", _location = None):
+    def __init__(self, _name, _status = "unreported", _severity= "L0", _last_seen = None, _location = None):
         self.name = _name
         self.status = _status
         self.severity = _severity
         self.location = _location
+        if type(_location) == dict:
+            self.location = Location(_location['lat'], _location['lon'])
+        self.last_seen = _last_seen
 
     def dump(self):
         if self.location:
@@ -55,18 +65,35 @@ class People():
             return ret[:-1] +"]"
         return '[]'
  
-    def setSafe(self, _name):
+    def setSafe(self, _name, _time=datetime.now()):
         for i in self.array:
             if i.name == _name:
                 i.status = "safe"
+                i.last_seen = _time
 
-    def setUnSafe(self, _name, _severity):
+    def setUnSafe(self, _name, _severity, _time=datetime.now()):
         for i in self.array:
             if i.name == _name:
                 i.status = "unsafe"
                 i.severity = _severity
+                i.last_seen = _time
 
-    def setNewLocation(self, _name, _loc):
+    def setNewLocation(self, _name, _loc, _time=datetime.now()):
         for i in self.array:
             if i.name == _name:
                 i.location = _loc
+                i.last_seen = _time
+
+
+    def writeToFile(self):
+        with open("people.json", 'w') as outfile:
+            outfile.write(self.everyone())
+
+    def readFromFile(self):
+        try:
+            with open('people.json', 'r') as infile:
+                everyone = json.loads(infile.read())
+                for i in everyone:
+                    self.array.append(Person(i['name'], i['status'], i['severity'], i['last_seen'], i['location']))
+        except Exception, e:
+            log.error("Error reading file: " + e.message)
