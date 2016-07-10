@@ -62,27 +62,21 @@ def newPerson():
     return people.newPerson(request.forms['name'])
     people.writeToFile()
 
-@app.post('/setSafe')
-def setSafePerson():
-    forms = request.forms
-    try:
-        time = datetime.fromtimestamp(int(forms["time"]))
-        people.setSafe(forms['name'], time)
-    except KeyError, e:
-        pass
-    people.setSafe(forms['name'])
-    people.writeToFile()
 
-@app.post('/setUnSafe')
+@app.post('/setStatus')
 def setSafePerson():
-    forms = request.forms
-    people.setUnSafe(forms['name'], forms['severity'])
-    people.writeToFile()
-    
-@app.post('/newLocation')
-def updateLocation():
     forms = request.forms
     people.setNewLocation(forms['name'], Location(forms['lat'], forms['lon']))
+    if forms['status'] == "safe":
+        try:
+            time = datetime.fromtimestamp(int(forms["time"]))
+            people.setSafe(forms['name'], time)
+        except KeyError, e:
+            pass
+        people.setSafe(forms['name'])
+    elif forms['status'] == "unsafe":
+        forms = request.forms
+        people.setUnSafe(forms['name'], forms['severity'])
     people.writeToFile()
 
 class StripPathMiddleware(object):
