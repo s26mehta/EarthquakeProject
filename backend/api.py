@@ -22,9 +22,11 @@ people.writeToFile()
 def home():
     return static_file("index.html", root='.')
 
-@app.route('/map')
-def map():
-    return static_file("map.html", root='html')
+@app.route('/<filename>')
+def serve_static(filename):
+    if filename == "map":
+        return static_file("map.html", root='html')
+    return static_file(filename, root='./html/')
 
 @app.route('/img/<filename>')
 def serve_static(filename):

@@ -1,0 +1,71 @@
+html, body {
+    font-family: "Helvetica", "Arial", sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box|border-box|initial|inherit;
+}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+#map {
+    float: left;
+    width: 70%;
+    height: 100%;
+}
+#sidebar{
+    float: left;
+    width: 30%;
+    text-align:center;
+    padding-top: 10px;
+}
+#sidebar .toggle-button {
+    width: 40%;
+    height: 100px;
+    float: left;
+    color: #ffffff;
+    font-size: 14px;
+    background: #3498db;
+    border-radius: 2px;
+    border: none;
+    padding: 10px;
+}
+#sidebar .active {
+    background: #0098db;
+}
+#sidebar .toggle-button#heat-map-btn {
+    margin-left: 10%;
+}
+#sidebar .toggle-button#severity-map-btn {
+    margin-right: 10%;
+}
+
+#sidebar .toggle-button img {
+    display: block;
+    width: 40px;
+    margin: 0 auto;
+}
+#sidebar .legend div {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar .legend .legend-marker {
+    width: 20%;
+    clear: both;
+}
+
+#sidebar .legend .legend-marker img {
+    width: 18px;
+}
+
+#sidebar .legend .legend-title {
+    text-align: left;
+    width: 80%;
+}
