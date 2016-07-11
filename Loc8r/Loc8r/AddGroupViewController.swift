@@ -43,6 +43,8 @@ class AddGroupViewController: UITableViewController {
             inputAlert(title, message: message)
         } else {
             groupNames.append(groupNameTextField.text!)
+            groupNameMemberDict.updateValue(people, forKey: groupNames.last!)
+            defaults.setObject(groupNameMemberDict, forKey: "Groups")
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
@@ -53,17 +55,4 @@ class AddGroupViewController: UITableViewController {
         alert.addAction(defaultErrorAction)
         presentViewController(alert, animated: true, completion: nil)
     }
-    
-    // MARK: - Table view data source
-
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-
 }

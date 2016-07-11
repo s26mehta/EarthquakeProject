@@ -17,6 +17,12 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        let onboarding = defaults.boolForKey("OnboardingComplete")
+        
+        if onboarding {
+            performSegueWithIdentifier("onboardingComplete", sender: nil)
+        }
     }
 
     override func viewDidLoad() {

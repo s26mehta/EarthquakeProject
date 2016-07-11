@@ -23,6 +23,7 @@ class GroupViewController: UITableViewController {
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
         if (identifier == "completedOnboarding") {
             onboardingComplete = true
+            defaults.setBool(onboardingComplete, forKey: "OnboardingComplete")
         }
         return true
     }
@@ -36,20 +37,29 @@ class GroupViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groupNames.count
+        let groupDict: [String:[String]] = defaults.objectForKey("Groups") as! Dictionary
+        return groupDict.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let groupDict: [String:[String]] = defaults.objectForKey("Groups") as! Dictionary
+        
         let cell = tv.dequeueReusableCellWithIdentifier("firstCell") as! TableViewCell
-        cell.groupLabel.text = groupNames[indexPath.row]
-        
-        let names = groupMembers[indexPath.row]
         var nameLabelText = ""
+        var groupLabelText = ""
+        var count = 0
         
-        for name in names {
-            nameLabelText = nameLabelText + name + ", "
+        for (key, value) in groupDict {
+            if count == indexPath.row {
+                for name in value {
+                    nameLabelText = nameLabelText + name + ", "
+                }
+                groupLabelText = key
+            }
+            count += 1
         }
         
+        cell.groupLabel.text = groupLabelText
         cell.nameLabel.text = nameLabelText
         return cell
     }

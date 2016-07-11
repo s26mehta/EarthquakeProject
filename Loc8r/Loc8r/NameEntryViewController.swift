@@ -43,6 +43,8 @@ class NameEntryViewController: UITableViewController {
             } else {
                 firstName = firstNameTextField.text!
                 lastName = lastNameTextField.text!
+                fullName = firstName + " " + lastName
+                defaults.setObject(fullName, forKey: "Name")
                 return true
             }
         }

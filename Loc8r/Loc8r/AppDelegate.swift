@@ -15,9 +15,12 @@ import Contacts
 var contactList: [String] = []
 var firstName: String = ""
 var lastName: String = ""
+var fullName: String = ""
 var groupNames: [String] = []
 var groupMembers: [[String]] = []
+var groupNameMemberDict: [String:[String]] = [:]
 var onboardingComplete: Bool = false
+let defaults = NSUserDefaults.standardUserDefaults()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate{
@@ -29,6 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // Override point for customization after application launch.
         locationServices.initialize()
         getContacts()
+        
+        if (defaults.objectForKey("OnboardingComplete") != nil) {
+            onboardingComplete = defaults.boolForKey("OnboardingComplete")
+        } else {
+            defaults.setBool(onboardingComplete, forKey: "OnboardingComplete")
+        }
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert , .Badge], categories: nil))
         return true
@@ -54,6 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        defaults.synchronize()
     }
     
     func getContacts() {

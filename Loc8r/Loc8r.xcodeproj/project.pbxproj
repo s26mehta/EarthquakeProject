@@ -178,8 +178,8 @@
 		211248D81D33483C0049AE53 /* MainAppViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				211248D91D33F4880049AE53 /* WhereToGoViewController.swift */,
 				211248D61D3348320049AE53 /* EmergencyAlertViewController.swift */,
+				211248D91D33F4880049AE53 /* WhereToGoViewController.swift */,
 			);
 			name = MainAppViewControllers;
 			sourceTree = "<group>";
