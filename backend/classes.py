@@ -31,7 +31,7 @@ class Person():
             time = int(self.last_seen.strftime("%s"))
         if self.location:
             return '{"name": "'+str(self.name)+'", "status": "'+str(self.status)+'","severity": "'+str(self.severity)+'", "location": '+str(self.location.dump())+', "last_seen": '+str(time)+'}'
-        return '{"name":"'+str(self.name)+'", "status": "'+str(self.status)+'","severity": "'+str(self.severity)+', "last_seen": '+str(time)+'"}'
+        return '{"name":"'+str(self.name)+'", "status": "'+str(self.status)+'","severity": "'+str(self.severity)+'", "last_seen": '+str(time)+'}'
 
     def isSafe(self):
         if self.status == "safe": # 1 is safe

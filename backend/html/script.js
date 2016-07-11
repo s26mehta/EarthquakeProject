@@ -162,7 +162,7 @@ function getPoints() {
         people = data
         for (var j=0; j < people.length; j++) {
             // loop through each person in the json data
-
+            console.log(people[j].name)
             if (people[j].location){
                 var a = new google.maps.LatLng(people[j].location.lat, people[j].location.lon);
                 // create new maps point for this person

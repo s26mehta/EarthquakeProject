@@ -22,7 +22,7 @@ people.writeToFile()
 def home():
     return static_file("index.html", root='.')
 
-@app.route('/<filename>')
+@app.route('/file/<filename>')
 def serve_static(filename):
     if filename == "map":
         return static_file("map.html", root='html')
@@ -35,6 +35,10 @@ def serve_static(filename):
 @app.route('/staticPeople')
 def staticPeople():
     return static_file("people.json", root='.')
+
+@app.route('/map')
+def staticPeople():
+    return static_file("map.html", root='./html')
 
 @app.get('/isEarthquake')
 def get_earthquake_now():
