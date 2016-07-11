@@ -98,8 +98,9 @@ class People():
                 everyone = json.loads(infile.read())
                 for i in everyone:
                     time = None
+                    log.debug(i['name'])
                     if i["last_seen"] != None:
-                        datetime.fromtimestamp(int(i['last_seen']))
+                        time = datetime.fromtimestamp(int(i['last_seen']))
                     self.array.append(Person(i['name'], i['status'], i['severity'], time, i['location']))
         except Exception, e:
             log.error("Error reading file: " + e.message)
