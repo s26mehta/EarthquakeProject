@@ -20,6 +20,7 @@
 		211248D31D332F130049AE53 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211248D11D332F130049AE53 /* TableViewCell.swift */; };
 		211248D41D332F130049AE53 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 211248D21D332F130049AE53 /* TableViewCell.xib */; };
 		211248D71D3348320049AE53 /* EmergencyAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211248D61D3348320049AE53 /* EmergencyAlertViewController.swift */; };
+		211248DA1D33F4880049AE53 /* WhereToGoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211248D91D33F4880049AE53 /* WhereToGoViewController.swift */; };
 		21A3F44F1D2CBB090074DDF9 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */; };
 		21A3F4531D2D82C80074DDF9 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		211248D11D332F130049AE53 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		211248D21D332F130049AE53 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		211248D61D3348320049AE53 /* EmergencyAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyAlertViewController.swift; sourceTree = "<group>"; };
+		211248D91D33F4880049AE53 /* WhereToGoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhereToGoViewController.swift; sourceTree = "<group>"; };
 		21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,6 +178,7 @@
 		211248D81D33483C0049AE53 /* MainAppViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				211248D91D33F4880049AE53 /* WhereToGoViewController.swift */,
 				211248D61D3348320049AE53 /* EmergencyAlertViewController.swift */,
 			);
 			name = MainAppViewControllers;
@@ -249,6 +252,7 @@
 				TargetAttributes = {
 					2105309D1D2602FE00B9BDB4 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8HV35P9NWN;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -327,6 +331,7 @@
 				210530A41D2602FE00B9BDB4 /* ViewController.swift in Sources */,
 				210530D81D2AF18500B9BDB4 /* LocationServices.swift in Sources */,
 				210530A21D2602FE00B9BDB4 /* AppDelegate.swift in Sources */,
+				211248DA1D33F4880049AE53 /* WhereToGoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,10 +475,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Loc8r/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Loc8r;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -481,10 +489,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Loc8r/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Loc8r;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

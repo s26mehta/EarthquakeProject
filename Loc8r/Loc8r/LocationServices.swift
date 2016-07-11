@@ -11,6 +11,7 @@ import Foundation
 import CoreLocation
 
 var setEarthquakeNotifications: Bool = false
+var currentLocation: [Double] = []
 
 class LocationServices: CLLocationManager, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
@@ -21,6 +22,7 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
     func initialize() {
         setUpNotifications()
         locationManager.delegate = self
+        locationManager.allowsBackgroundLocationUpdates = true
     }
     
     func setUpNotifications() {
@@ -37,9 +39,12 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        currentLocation.removeAll()
+        currentLocation.append((locations.last?.coordinate.latitude)!)
+        currentLocation.append((locations.last?.coordinate.longitude)!)
         counter += 1
         
-        if (counter%20 == 0) {
+        if (counter%5 == 0) {
             checkForEarthquake()
         }
     }
