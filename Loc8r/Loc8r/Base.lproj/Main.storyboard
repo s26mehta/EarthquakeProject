@@ -93,11 +93,11 @@ You will be able to mark yourself safe from danger, see the status of family and
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjr-cp-YaM">
                                 <rect key="frame" x="24" y="178" width="552" height="244"/>
-                                <mutableString key="text">Emergency Services allows citizens in disaster-affected regions to respond to questions that provide first responders with real-time updates as to which areas of a region have been most hard-hit by a disaster.
+                                <string key="text">Emergency Services allows citizens in disaster-affected regions to respond to questions that provide first responders with real-time updates as to which areas of a region have been most hard-hit by a disaster.
 
 Before an emergency, citizens are able to set up groups of family or friends; in the event of an emergency, citizens will be able to verify the status of their loved ones to get a quick idea of how they are doing.
 
-In emergency situations, Emergency Services will also provide citizens with directions to locations that have been deemed safe, in order to help evacuation procedures proceed in an efficient manner.</mutableString>
+In emergency situations, Emergency Services will also provide citizens with directions to locations that have been deemed safe, in order to help evacuation procedures proceed in an efficient manner.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1132,7 +1132,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 unsafe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bw-y0-peE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 safe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bw-y0-peE">
                                 <rect key="frame" x="156" y="197" width="75" height="17"/>
                                 <color key="backgroundColor" red="0.46274509803921571" green="0.77647058823529413" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
