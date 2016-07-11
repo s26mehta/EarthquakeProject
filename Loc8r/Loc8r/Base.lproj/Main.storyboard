@@ -28,7 +28,7 @@
 
 You will be able to mark yourself safe from danger, see the status of family and friends, and get help finding your way to a safe zone.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjj-bd-HoM">
@@ -72,6 +72,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                         <outlet property="aboutEmergencyButton" destination="vjj-bd-HoM" id="Tub-dN-dAP"/>
                         <outlet property="setupEmergencyButton" destination="cP4-FS-Pnd" id="MQi-2Q-5q6"/>
                         <segue destination="Zal-SK-6bM" kind="show" identifier="SetUp" id="pxR-QP-GlG"/>
+                        <segue destination="jEd-sy-h1R" kind="presentation" identifier="onboardingComplete" id="aJG-X4-f7A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -93,7 +94,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loc8r Is developed by Godly people doing Godly things." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjr-cp-YaM">
                                 <rect key="frame" x="24" y="289" width="552" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -125,7 +126,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who are you?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8n-km-upx">
                                     <rect key="frame" x="24" y="32" width="552" height="38"/>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="32"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Family and friends will be able to search you by name to add you to a group." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94P-5l-6kf" userLabel="Message Label">
@@ -164,7 +165,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r37-r2-9qo">
                                                     <rect key="frame" x="16" y="20" width="88" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0fz-gX-q7B" userLabel="First Name Text Field">
@@ -173,7 +174,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                                                         <constraint firstAttribute="height" constant="21" id="enM-cu-sQI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vw-EH-0rE" userLabel="Grey Bar">
                                                     <rect key="frame" x="16" y="0.0" width="584" height="1"/>
@@ -182,7 +183,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                                                         <constraint firstAttribute="height" constant="1" id="UDS-5J-C5q"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -212,7 +213,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Z8-kJ-EjI">
                                                     <rect key="frame" x="16" y="20" width="86" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Doe" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kGr-xY-57O" userLabel="Last Name Text Field">
@@ -221,7 +222,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                                                         <constraint firstAttribute="height" constant="21" id="v5D-KN-w3t"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pe-Am-i3T">
                                                     <rect key="frame" x="16" y="60" width="584" height="1"/>
@@ -230,7 +231,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                                                         <constraint firstAttribute="height" constant="1" id="tqy-hy-Zqq"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -276,98 +277,123 @@ You will be able to mark yourself safe from danger, see the status of family and
         <scene sceneID="VOM-VZ-jcQ">
             <objects>
                 <tableViewController id="Def-3h-ede" customClass="GroupViewController" customModule="Loc8r" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" id="eNU-6N-TUJ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" id="eNU-6N-TUJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="y6V-mo-3ff">
-                            <rect key="frame" x="0.0" y="64" width="600" height="242"/>
+                            <rect key="frame" x="0.0" y="64" width="600" height="325"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Emergency Groups" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-3O-BTb">
                                     <rect key="frame" x="24" y="32" width="552" height="38"/>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="32"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zct-XW-ahU">
                                     <rect key="frame" x="24" y="94" width="552" height="20"/>
                                     <string key="text">Emergency groups allow you to check on the safety status of others in emergency situations. Once a friend or family member checks in as safe, you will be able to see this too.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3F-GE-m8N" userLabel="Top Grey Bar">
+                                    <rect key="frame" x="16" y="148" width="584" height="1"/>
+                                    <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="KeX-dq-Xv3"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzi-fE-Mbl" userLabel="Bottom Grey Bar">
+                                    <rect key="frame" x="16" y="211" width="584" height="1"/>
+                                    <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="NxN-ZP-Mi4"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJe-Ow-cqq">
+                                    <rect key="frame" x="16" y="163" width="107" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="+ New Group"/>
+                                    <connections>
+                                        <segue destination="eSc-6z-Dyc" kind="show" identifier="AddGroup" id="HBF-Jg-Vs2"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="lzi-fE-Mbl" secondAttribute="trailing" id="5MH-tP-KO2"/>
                                 <constraint firstAttribute="trailing" secondItem="8bC-3O-BTb" secondAttribute="trailing" constant="24" id="5yn-Jj-VlC"/>
                                 <constraint firstItem="zct-XW-ahU" firstAttribute="leading" secondItem="y6V-mo-3ff" secondAttribute="leading" constant="24" id="HCd-zG-mQY"/>
+                                <constraint firstItem="b3F-GE-m8N" firstAttribute="leading" secondItem="y6V-mo-3ff" secondAttribute="leading" constant="16" id="HTO-dt-5r3"/>
+                                <constraint firstItem="rJe-Ow-cqq" firstAttribute="top" secondItem="b3F-GE-m8N" secondAttribute="bottom" constant="14" id="K0U-Bq-kMo"/>
+                                <constraint firstItem="lzi-fE-Mbl" firstAttribute="leading" secondItem="y6V-mo-3ff" secondAttribute="leading" constant="16" id="Obj-4i-1rn"/>
+                                <constraint firstItem="rJe-Ow-cqq" firstAttribute="leading" secondItem="b3F-GE-m8N" secondAttribute="leading" id="Rof-pi-Cjj"/>
                                 <constraint firstAttribute="trailing" secondItem="zct-XW-ahU" secondAttribute="trailing" constant="24" id="XjV-pA-c9a"/>
                                 <constraint firstItem="8bC-3O-BTb" firstAttribute="top" secondItem="y6V-mo-3ff" secondAttribute="top" constant="32" id="cWm-QV-C4a"/>
+                                <constraint firstItem="b3F-GE-m8N" firstAttribute="top" secondItem="zct-XW-ahU" secondAttribute="bottom" constant="34" id="cc9-TM-xJQ"/>
                                 <constraint firstItem="zct-XW-ahU" firstAttribute="top" secondItem="8bC-3O-BTb" secondAttribute="bottom" constant="24" id="fMs-9a-s0p"/>
+                                <constraint firstAttribute="trailing" secondItem="b3F-GE-m8N" secondAttribute="trailing" id="jSC-9z-n18"/>
                                 <constraint firstItem="8bC-3O-BTb" firstAttribute="leading" secondItem="y6V-mo-3ff" secondAttribute="leading" constant="24" id="tP2-tR-PqX"/>
+                                <constraint firstItem="lzi-fE-Mbl" firstAttribute="top" secondItem="b3F-GE-m8N" secondAttribute="bottom" constant="62" id="y9P-nT-shN"/>
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Yyk-WS-Ydc">
-                            <rect key="frame" x="0.0" y="368" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="479" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
-                        <sections>
-                            <tableViewSection id="qKo-qc-2rn">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="c5P-xf-9Sq">
-                                        <rect key="frame" x="0.0" y="306" width="600" height="62"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c5P-xf-9Sq" id="3eI-NA-NBE">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="61.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hD-s2-BqX">
-                                                    <rect key="frame" x="16" y="16" width="91" height="30"/>
-                                                    <state key="normal" title="+ New Group"/>
-                                                    <connections>
-                                                        <segue destination="eSc-6z-Dyc" kind="show" id="4ze-r9-wgw"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvW-Cq-goW" userLabel="Grey Bar Top">
-                                                    <rect key="frame" x="16" y="0.0" width="584" height="1"/>
-                                                    <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="iPI-Ua-34z"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDY-iN-g3w" userLabel="Grey Bar Bottom">
-                                                    <rect key="frame" x="16" y="60" width="584" height="1"/>
-                                                    <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="rrb-09-BU0"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="secondCell" rowHeight="62" id="C00-3s-HC5" customClass="CustomTableViewCell" customModule="Loc8r" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="417" width="600" height="62"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C00-3s-HC5" id="nB4-Ov-QCN">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="61.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbc-li-XX0" userLabel="GroupLabel">
+                                            <rect key="frame" x="16" y="11" width="45" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CI6-Da-mNK" userLabel="MemberLabel">
+                                            <rect key="frame" x="16" y="32" width="210" height="17"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="NDY-iN-g3w" secondAttribute="bottom" id="1vF-Da-6cZ"/>
-                                                <constraint firstAttribute="trailing" secondItem="xvW-Cq-goW" secondAttribute="trailing" id="AkY-ks-clM"/>
-                                                <constraint firstItem="NDY-iN-g3w" firstAttribute="leading" secondItem="3eI-NA-NBE" secondAttribute="leading" constant="16" id="JxL-07-Acc"/>
-                                                <constraint firstItem="xvW-Cq-goW" firstAttribute="top" secondItem="3eI-NA-NBE" secondAttribute="top" id="Nsd-kh-pnj"/>
-                                                <constraint firstAttribute="trailing" secondItem="NDY-iN-g3w" secondAttribute="trailing" id="QhN-2H-wih"/>
-                                                <constraint firstItem="xvW-Cq-goW" firstAttribute="leading" secondItem="3eI-NA-NBE" secondAttribute="leading" constant="16" id="ohF-1s-Zg2"/>
+                                                <constraint firstAttribute="width" constant="210" id="SkS-vn-ziD"/>
                                             </constraints>
-                                        </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="8hD-s2-BqX" firstAttribute="leading" secondItem="c5P-xf-9Sq" secondAttribute="leading" constant="16" id="M5u-1m-pD9"/>
-                                            <constraint firstItem="8hD-s2-BqX" firstAttribute="centerY" secondItem="c5P-xf-9Sq" secondAttribute="centerY" id="Nf2-Vx-VQq"/>
-                                        </constraints>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="mbc-li-XX0" firstAttribute="top" secondItem="nB4-Ov-QCN" secondAttribute="top" constant="11" id="FfJ-f1-grn"/>
+                                        <constraint firstItem="mbc-li-XX0" firstAttribute="centerY" secondItem="nB4-Ov-QCN" secondAttribute="centerY" id="LP4-7P-Jfw"/>
+                                        <constraint firstItem="CI6-Da-mNK" firstAttribute="top" secondItem="mbc-li-XX0" secondAttribute="bottom" id="TjQ-GD-gwd"/>
+                                        <constraint firstItem="mbc-li-XX0" firstAttribute="leading" secondItem="nB4-Ov-QCN" secondAttribute="leading" constant="16" id="eut-Aj-4Fm"/>
+                                        <constraint firstItem="CI6-Da-mNK" firstAttribute="leading" secondItem="mbc-li-XX0" secondAttribute="leading" id="rxe-QS-18G"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="LP4-7P-Jfw"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="GroupLabel" destination="mbc-li-XX0" id="rbb-t3-khC"/>
+                                    <outlet property="NamesLabel" destination="CI6-Da-mNK" id="4Ro-AM-eFN"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Def-3h-ede" id="YxS-tO-ohg"/>
                             <outlet property="delegate" destination="Def-3h-ede" id="6Fl-QE-haf"/>
@@ -375,9 +401,19 @@ You will be able to mark yourself safe from danger, see the status of family and
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="ZM8-ng-ezK">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="77c-Z5-yK5"/>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="77c-Z5-yK5">
+                            <connections>
+                                <segue destination="jEd-sy-h1R" kind="popoverPresentation" identifier="completedOnboarding" popoverAnchorBarButtonItem="77c-Z5-yK5" id="vax-uk-Nnz">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="NextBarButtonItem" destination="77c-Z5-yK5" id="QkZ-R1-ZQp"/>
+                        <outlet property="tv" destination="eNU-6N-TUJ" id="bdz-rr-NQ4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KpC-WG-D5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -398,7 +434,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your group so you can find it easily later. Then, add members to your group." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sm0-Mh-Ilo">
                                     <rect key="frame" x="24" y="32" width="552" height="38"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -427,13 +463,13 @@ You will be able to mark yourself safe from danger, see the status of family and
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPY-Sb-Rce">
                                                     <rect key="frame" x="16" y="20" width="104" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Family" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GQG-YO-weh">
                                                     <rect key="frame" x="144" y="20" width="456" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76G-DW-22v" userLabel="Grey Label Top">
                                                     <rect key="frame" x="16" y="0.0" width="584" height="1"/>
@@ -442,7 +478,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                                                         <constraint firstAttribute="height" constant="1" id="gM6-NM-DpB"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -470,7 +506,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaI-QF-TgO">
                                                     <rect key="frame" x="16" y="20" width="134" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -502,7 +538,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                                                         <constraint firstAttribute="height" constant="1" id="pef-bn-k66"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -537,6 +573,9 @@ You will be able to mark yourself safe from danger, see the status of family and
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="groupNameTextField" destination="GQG-YO-weh" id="7dB-0N-LAc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ou8-KG-53K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -624,6 +663,323 @@ You will be able to mark yourself safe from danger, see the status of family and
             </objects>
             <point key="canvasLocation" x="-136" y="719"/>
         </scene>
+        <!--Emergency Alerts-->
+        <scene sceneID="tbw-kP-aPx">
+            <objects>
+                <viewController id="1Bu-On-IX8" customClass="EmergencyAlertViewController" customModule="Loc8r" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oXa-re-nyd"/>
+                        <viewControllerLayoutGuide type="bottom" id="Que-0c-cRw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7nZ-OW-r4o">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIX-u7-HbF">
+                                <rect key="frame" x="0.0" y="252" width="600" height="95"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdd-ER-R1u">
+                                        <rect key="frame" x="24" y="20" width="552" height="57.5"/>
+                                        <string key="text">Region-wide government alerts will be displayed here. If an alert does exist, you will be able to check in as safe, and check on the status of group members.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No current emergency alerts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wc-PZ-VNi">
+                                        <rect key="frame" x="24" y="0.0" width="552" height="20"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="6Wc-PZ-VNi" firstAttribute="top" secondItem="lIX-u7-HbF" secondAttribute="top" id="0re-uG-nwA"/>
+                                    <constraint firstItem="6Wc-PZ-VNi" firstAttribute="leading" secondItem="lIX-u7-HbF" secondAttribute="leading" constant="24" id="1Rv-I9-VEE"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zdd-ER-R1u" secondAttribute="trailing" constant="24" id="TGM-rZ-x6w"/>
+                                    <constraint firstItem="Zdd-ER-R1u" firstAttribute="leading" secondItem="lIX-u7-HbF" secondAttribute="leading" constant="24" id="TUG-T9-ohE"/>
+                                    <constraint firstItem="Zdd-ER-R1u" firstAttribute="top" secondItem="6Wc-PZ-VNi" secondAttribute="bottom" id="Vfe-IU-q0g"/>
+                                    <constraint firstAttribute="height" constant="95" id="Vur-dJ-Db1"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Wc-PZ-VNi" secondAttribute="trailing" constant="24" id="Yci-rh-QYj"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHy-pF-o7C">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An earthquake has been detected in your area. Please answer the questions below." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sq2-f1-eDE">
+                                        <rect key="frame" x="24" y="32" width="552" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IpY-Wq-9OR">
+                                        <rect key="frame" x="0.0" y="126" width="600" height="203"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you injured?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTm-Na-MKV">
+                                                <rect key="frame" x="24" y="0.0" width="552" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIZ-u3-Bpm">
+                                                <rect key="frame" x="24" y="37" width="552" height="57"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="57" id="Y25-su-wtn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <state key="normal" title="No, I am not injured">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="Question1No:" destination="1Bu-On-IX8" eventType="touchUpInside" id="Jq3-9W-FgA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ef8-4N-dwh">
+                                                <rect key="frame" x="24" y="106" width="552" height="57"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <state key="normal" title="Yes, I am injured">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="Question2Yes:" destination="1Bu-On-IX8" eventType="touchUpInside" id="hnu-Cw-dTO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="wTm-Na-MKV" firstAttribute="top" secondItem="IpY-Wq-9OR" secondAttribute="top" id="CWP-Sx-6CV"/>
+                                            <constraint firstItem="ef8-4N-dwh" firstAttribute="top" secondItem="kIZ-u3-Bpm" secondAttribute="bottom" constant="12" id="Fkj-ZM-awU"/>
+                                            <constraint firstAttribute="trailing" secondItem="kIZ-u3-Bpm" secondAttribute="trailing" constant="24" id="GhM-Sn-3o0"/>
+                                            <constraint firstItem="ef8-4N-dwh" firstAttribute="height" secondItem="kIZ-u3-Bpm" secondAttribute="height" id="Glh-gX-P7S"/>
+                                            <constraint firstItem="kIZ-u3-Bpm" firstAttribute="top" secondItem="wTm-Na-MKV" secondAttribute="bottom" constant="16" id="LRQ-LU-tol"/>
+                                            <constraint firstItem="kIZ-u3-Bpm" firstAttribute="leading" secondItem="IpY-Wq-9OR" secondAttribute="leading" constant="24" id="VTB-y6-MJW"/>
+                                            <constraint firstAttribute="height" constant="203" id="a8J-6e-4JT"/>
+                                            <constraint firstItem="ef8-4N-dwh" firstAttribute="leading" secondItem="IpY-Wq-9OR" secondAttribute="leading" constant="24" id="cVQ-jS-P6O"/>
+                                            <constraint firstItem="wTm-Na-MKV" firstAttribute="leading" secondItem="IpY-Wq-9OR" secondAttribute="leading" constant="24" id="g6L-1w-bED"/>
+                                            <constraint firstAttribute="trailing" secondItem="ef8-4N-dwh" secondAttribute="trailing" constant="24" id="iaF-Ur-TwF"/>
+                                            <constraint firstAttribute="trailing" secondItem="wTm-Na-MKV" secondAttribute="trailing" constant="24" id="wf7-a2-jdm"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uNg-Ta-yCt">
+                                        <rect key="frame" x="0.0" y="126" width="600" height="203"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you in immediate danger?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9S8-u6-IVA">
+                                                <rect key="frame" x="24" y="0.0" width="552" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8G-eh-qQq">
+                                                <rect key="frame" x="24" y="37" width="552" height="57"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="57" id="THF-YZ-0Br"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <state key="normal" title="No, I am not in danger">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="Question2SafeNo:" destination="1Bu-On-IX8" eventType="touchUpInside" id="A37-Tm-YBv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ie-GK-Vw0">
+                                                <rect key="frame" x="24" y="106" width="552" height="57"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <state key="normal" title="Yes, I am in danger">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="Question2SafeYes:" destination="1Bu-On-IX8" eventType="touchUpInside" id="eCP-Jc-bpz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="1ie-GK-Vw0" firstAttribute="height" secondItem="X8G-eh-qQq" secondAttribute="height" id="7m6-Ux-jan"/>
+                                            <constraint firstItem="1ie-GK-Vw0" firstAttribute="leading" secondItem="uNg-Ta-yCt" secondAttribute="leading" constant="24" id="AlX-tP-a1d"/>
+                                            <constraint firstItem="9S8-u6-IVA" firstAttribute="top" secondItem="uNg-Ta-yCt" secondAttribute="top" id="GXe-Hu-cdl"/>
+                                            <constraint firstItem="1ie-GK-Vw0" firstAttribute="top" secondItem="X8G-eh-qQq" secondAttribute="bottom" constant="12" id="JWd-cW-lX2"/>
+                                            <constraint firstAttribute="trailing" secondItem="X8G-eh-qQq" secondAttribute="trailing" constant="24" id="Nih-eW-GqP"/>
+                                            <constraint firstItem="9S8-u6-IVA" firstAttribute="leading" secondItem="uNg-Ta-yCt" secondAttribute="leading" constant="24" id="R4I-SG-9YV"/>
+                                            <constraint firstAttribute="trailing" secondItem="9S8-u6-IVA" secondAttribute="trailing" constant="24" id="cos-ka-Lnh"/>
+                                            <constraint firstAttribute="trailing" secondItem="1ie-GK-Vw0" secondAttribute="trailing" constant="24" id="jyy-lm-eA8"/>
+                                            <constraint firstAttribute="height" constant="203" id="k7e-u9-PEy"/>
+                                            <constraint firstItem="X8G-eh-qQq" firstAttribute="top" secondItem="9S8-u6-IVA" secondAttribute="bottom" constant="16" id="pZf-7V-U36"/>
+                                            <constraint firstItem="X8G-eh-qQq" firstAttribute="leading" secondItem="uNg-Ta-yCt" secondAttribute="leading" constant="24" id="zCk-N1-S7L"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALh-gv-xY9">
+                                        <rect key="frame" x="0.0" y="126" width="600" height="203"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you able to get yourself to a treatment facility?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAe-NQ-W9d">
+                                                <rect key="frame" x="24" y="0.0" width="552" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOC-IQ-nk9">
+                                                <rect key="frame" x="24" y="37" width="552" height="57"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="57" id="Lry-qZ-rHu"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <state key="normal" title="No, I am not mobile">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="Question2HelpNo:" destination="1Bu-On-IX8" eventType="touchUpInside" id="2Ro-j9-jLq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLE-ZC-cxp">
+                                                <rect key="frame" x="24" y="106" width="552" height="57"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <state key="normal" title="Yes, I am mobile">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="Question2HelpYes:" destination="1Bu-On-IX8" eventType="touchUpInside" id="WGA-7A-Uhz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="sAe-NQ-W9d" firstAttribute="leading" secondItem="ALh-gv-xY9" secondAttribute="leading" constant="24" id="3ap-gB-AaK"/>
+                                            <constraint firstItem="CLE-ZC-cxp" firstAttribute="leading" secondItem="ALh-gv-xY9" secondAttribute="leading" constant="24" id="7Jl-9S-sWg"/>
+                                            <constraint firstAttribute="trailing" secondItem="tOC-IQ-nk9" secondAttribute="trailing" constant="24" id="96X-8r-rB1"/>
+                                            <constraint firstItem="tOC-IQ-nk9" firstAttribute="top" secondItem="sAe-NQ-W9d" secondAttribute="bottom" constant="16" id="H1J-1L-vy7"/>
+                                            <constraint firstItem="CLE-ZC-cxp" firstAttribute="height" secondItem="tOC-IQ-nk9" secondAttribute="height" id="Ly7-ek-G6B"/>
+                                            <constraint firstItem="CLE-ZC-cxp" firstAttribute="top" secondItem="tOC-IQ-nk9" secondAttribute="bottom" constant="12" id="Mtq-ZX-nSC"/>
+                                            <constraint firstAttribute="height" constant="203" id="Ygk-nR-uaN"/>
+                                            <constraint firstItem="sAe-NQ-W9d" firstAttribute="top" secondItem="ALh-gv-xY9" secondAttribute="top" id="i7E-LU-jiv"/>
+                                            <constraint firstAttribute="trailing" secondItem="CLE-ZC-cxp" secondAttribute="trailing" constant="24" id="jvm-Lb-K7X"/>
+                                            <constraint firstAttribute="trailing" secondItem="sAe-NQ-W9d" secondAttribute="trailing" constant="24" id="tb0-Bd-4Cv"/>
+                                            <constraint firstItem="tOC-IQ-nk9" firstAttribute="leading" secondItem="ALh-gv-xY9" secondAttribute="leading" constant="24" id="tbq-6w-UmM"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ALh-gv-xY9" firstAttribute="top" secondItem="sq2-f1-eDE" secondAttribute="bottom" constant="56" id="2hI-Dc-E7a"/>
+                                    <constraint firstAttribute="trailing" secondItem="sq2-f1-eDE" secondAttribute="trailing" constant="24" id="9P5-iB-uPw"/>
+                                    <constraint firstItem="sq2-f1-eDE" firstAttribute="leading" secondItem="mHy-pF-o7C" secondAttribute="leading" constant="24" id="As0-px-2VQ"/>
+                                    <constraint firstItem="sq2-f1-eDE" firstAttribute="top" secondItem="mHy-pF-o7C" secondAttribute="top" constant="32" id="JFP-wI-hAc"/>
+                                    <constraint firstItem="ALh-gv-xY9" firstAttribute="leading" secondItem="mHy-pF-o7C" secondAttribute="leading" id="MDh-CJ-c0j"/>
+                                    <constraint firstItem="uNg-Ta-yCt" firstAttribute="leading" secondItem="mHy-pF-o7C" secondAttribute="leading" id="MkI-2s-9qO"/>
+                                    <constraint firstItem="uNg-Ta-yCt" firstAttribute="top" secondItem="sq2-f1-eDE" secondAttribute="bottom" constant="56" id="VZX-l8-Pia"/>
+                                    <constraint firstAttribute="trailing" secondItem="ALh-gv-xY9" secondAttribute="trailing" id="gLk-G0-2hg"/>
+                                    <constraint firstAttribute="trailing" secondItem="uNg-Ta-yCt" secondAttribute="trailing" id="hpw-qz-sPP"/>
+                                    <constraint firstItem="IpY-Wq-9OR" firstAttribute="top" secondItem="sq2-f1-eDE" secondAttribute="bottom" constant="56" id="q4b-Lp-O2u"/>
+                                    <constraint firstItem="IpY-Wq-9OR" firstAttribute="leading" secondItem="mHy-pF-o7C" secondAttribute="leading" id="qFf-oD-CeB"/>
+                                    <constraint firstItem="uNg-Ta-yCt" firstAttribute="top" secondItem="mHy-pF-o7C" secondAttribute="top" constant="56" id="r2A-Vf-uLL"/>
+                                    <constraint firstAttribute="trailing" secondItem="IpY-Wq-9OR" secondAttribute="trailing" id="xgW-wU-Y0I"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="r2A-Vf-uLL"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mHy-pF-o7C" firstAttribute="leading" secondItem="7nZ-OW-r4o" secondAttribute="leading" id="8fx-Wp-bJS"/>
+                            <constraint firstAttribute="bottom" secondItem="mHy-pF-o7C" secondAttribute="bottom" id="B71-SH-rNh"/>
+                            <constraint firstItem="oXa-re-nyd" firstAttribute="bottom" secondItem="mHy-pF-o7C" secondAttribute="top" id="CDb-gb-mud"/>
+                            <constraint firstAttribute="trailing" secondItem="lIX-u7-HbF" secondAttribute="trailing" id="Wi6-XX-l86"/>
+                            <constraint firstItem="lIX-u7-HbF" firstAttribute="centerY" secondItem="7nZ-OW-r4o" secondAttribute="centerY" id="cDx-Ln-m8f"/>
+                            <constraint firstItem="lIX-u7-HbF" firstAttribute="leading" secondItem="7nZ-OW-r4o" secondAttribute="leading" id="h4a-Mu-cST"/>
+                            <constraint firstItem="mHy-pF-o7C" firstAttribute="top" secondItem="7nZ-OW-r4o" secondAttribute="top" id="wGn-fj-XSz"/>
+                            <constraint firstAttribute="trailing" secondItem="mHy-pF-o7C" secondAttribute="trailing" id="xM6-Ib-u4p"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="wGn-fj-XSz"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Emergency Alerts" id="oTT-cM-Pqr">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="7vA-kZ-bmZ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Groups" id="EcM-BF-SJD">
+                            <connections>
+                                <segue destination="Def-3h-ede" kind="show" id="K9O-nv-5GK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="Question1View" destination="IpY-Wq-9OR" id="YdW-hI-Wf9"/>
+                        <outlet property="Question2View" destination="uNg-Ta-yCt" id="HQL-uv-rIu"/>
+                        <outlet property="Question3View" destination="ALh-gv-xY9" id="sO0-gZ-FGa"/>
+                        <outlet property="alertQuestionView" destination="mHy-pF-o7C" id="5eV-Q1-EAF"/>
+                        <outlet property="negativeButton" destination="kIZ-u3-Bpm" id="yPa-Gl-DCi"/>
+                        <outlet property="noAlertView" destination="lIX-u7-HbF" id="gz5-4n-Cla"/>
+                        <outlet property="positiveButton" destination="ef8-4N-dwh" id="lMN-VV-JSN"/>
+                        <outlet property="questionTitleLabel" destination="wTm-Na-MKV" id="4Sq-pC-IX8"/>
+                        <segue destination="bBH-8S-6Su" kind="show" identifier="mapView" id="W3f-2q-VYz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZSp-xA-gJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1022" y="2722"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0gb-d0-VcC">
+            <objects>
+                <viewController id="bBH-8S-6Su" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OdQ-YZ-9VE"/>
+                        <viewControllerLayoutGuide type="bottom" id="W7p-zc-pGd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Evj-ne-Uw9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tj1-he-2VU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1824" y="2722"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="R4g-kn-bwl">
             <objects>
@@ -660,5 +1016,27 @@ You will be able to mark yourself safe from danger, see the status of family and
             </objects>
             <point key="canvasLocation" x="4026" y="1572"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="olW-34-s2b">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jEd-sy-h1R" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zLD-WD-ziw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1Bu-On-IX8" kind="relationship" relationship="rootViewController" id="HkX-ds-f08"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lhy-H6-ihC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="210" y="2722"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="K9O-nv-5GK"/>
+        <segue reference="aJG-X4-f7A"/>
+    </inferredMetricsTieBreakers>
 </document>

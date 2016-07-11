@@ -32,7 +32,12 @@ class CreateGroupViewController: UITableViewController, UISearchBarDelegate, UIS
     }
     
     @IBAction func addPeople(sender: AnyObject) {
-        print("People Added")
+        for index in 0...checked.count - 1 {
+            if (checked[index]) {
+                people.append(contactList[index])
+            }
+        }
+        groupMembers.append(people)
         dismissViewControllerAnimated(true, completion: nil)
     }
     

@@ -8,7 +8,10 @@
 
 import UIKit
 
+var people:[String] = []
+
 class AddGroupViewController: UITableViewController {
+    @IBOutlet weak var groupNameTextField: UITextField! // Text Field for group name
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +21,10 @@ class AddGroupViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +37,21 @@ class AddGroupViewController: UITableViewController {
     }
     
     @IBAction func saveButton(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        if (groupNameTextField.text! == "") {
+            let title = "No Group Name Entered"
+            let message = "Please enter in a group name"
+            inputAlert(title, message: message)
+        } else {
+            groupNames.append(groupNameTextField.text!)
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+    
+    func inputAlert(title: String, message: String) {
+        let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let defaultErrorAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(defaultErrorAction)
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     // MARK: - Table view data source

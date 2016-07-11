@@ -15,7 +15,9 @@ import Contacts
 var contactList: [String] = []
 var firstName: String = ""
 var lastName: String = ""
-var groups: [String] = []
+var groupNames: [String] = []
+var groupMembers: [[String]] = []
+var onboardingComplete: Bool = false
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate{
@@ -27,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // Override point for customization after application launch.
         locationServices.initialize()
         getContacts()
+        
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert , .Badge], categories: nil))
         return true
     }
 

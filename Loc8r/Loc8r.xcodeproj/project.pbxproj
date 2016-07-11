@@ -17,6 +17,9 @@
 		210530D01D2609AD00B9BDB4 /* NameEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210530CF1D2609AD00B9BDB4 /* NameEntryViewController.swift */; };
 		210530D31D26CDDC00B9BDB4 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210530D21D26CDDC00B9BDB4 /* GroupViewController.swift */; };
 		210530D81D2AF18500B9BDB4 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210530D71D2AF18400B9BDB4 /* LocationServices.swift */; };
+		211248D31D332F130049AE53 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211248D11D332F130049AE53 /* TableViewCell.swift */; };
+		211248D41D332F130049AE53 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 211248D21D332F130049AE53 /* TableViewCell.xib */; };
+		211248D71D3348320049AE53 /* EmergencyAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211248D61D3348320049AE53 /* EmergencyAlertViewController.swift */; };
 		21A3F44F1D2CBB090074DDF9 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */; };
 		21A3F4531D2D82C80074DDF9 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +58,9 @@
 		210530CF1D2609AD00B9BDB4 /* NameEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameEntryViewController.swift; sourceTree = "<group>"; };
 		210530D21D26CDDC00B9BDB4 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		210530D71D2AF18400B9BDB4 /* LocationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
+		211248D11D332F130049AE53 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		211248D21D332F130049AE53 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		211248D61D3348320049AE53 /* EmergencyAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyAlertViewController.swift; sourceTree = "<group>"; };
 		21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,9 +114,11 @@
 			isa = PBXGroup;
 			children = (
 				210530A11D2602FE00B9BDB4 /* AppDelegate.swift */,
-				210530D11D2609CD00B9BDB4 /* ViewControllers */,
+				211248D81D33483C0049AE53 /* MainAppViewControllers */,
+				210530D11D2609CD00B9BDB4 /* OnboardingViewControllers */,
 				210530D61D2AD2BA00B9BDB4 /* Helper Files */,
 				210530A51D2602FE00B9BDB4 /* Main.storyboard */,
+				211248D51D333C0A0049AE53 /* Custom Cell */,
 				210530A81D2602FE00B9BDB4 /* Assets.xcassets */,
 				210530AA1D2602FE00B9BDB4 /* LaunchScreen.storyboard */,
 				210530AD1D2602FE00B9BDB4 /* Info.plist */,
@@ -136,7 +144,7 @@
 			path = Loc8rUITests;
 			sourceTree = "<group>";
 		};
-		210530D11D2609CD00B9BDB4 /* ViewControllers */ = {
+		210530D11D2609CD00B9BDB4 /* OnboardingViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				210530A31D2602FE00B9BDB4 /* ViewController.swift */,
@@ -145,7 +153,7 @@
 				21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */,
 				21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */,
 			);
-			name = ViewControllers;
+			name = OnboardingViewControllers;
 			sourceTree = "<group>";
 		};
 		210530D61D2AD2BA00B9BDB4 /* Helper Files */ = {
@@ -154,6 +162,23 @@
 				210530D71D2AF18400B9BDB4 /* LocationServices.swift */,
 			);
 			name = "Helper Files";
+			sourceTree = "<group>";
+		};
+		211248D51D333C0A0049AE53 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				211248D11D332F130049AE53 /* TableViewCell.swift */,
+				211248D21D332F130049AE53 /* TableViewCell.xib */,
+			);
+			name = "Custom Cell";
+			sourceTree = "<group>";
+		};
+		211248D81D33483C0049AE53 /* MainAppViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				211248D61D3348320049AE53 /* EmergencyAlertViewController.swift */,
+			);
+			name = MainAppViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				210530AC1D2602FE00B9BDB4 /* LaunchScreen.storyboard in Resources */,
+				211248D41D332F130049AE53 /* TableViewCell.xib in Resources */,
 				210530A91D2602FE00B9BDB4 /* Assets.xcassets in Resources */,
 				210530A71D2602FE00B9BDB4 /* Main.storyboard in Resources */,
 			);
@@ -292,8 +318,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				211248D71D3348320049AE53 /* EmergencyAlertViewController.swift in Sources */,
 				210530D01D2609AD00B9BDB4 /* NameEntryViewController.swift in Sources */,
 				21A3F4531D2D82C80074DDF9 /* AddGroupViewController.swift in Sources */,
+				211248D31D332F130049AE53 /* TableViewCell.swift in Sources */,
 				210530D31D26CDDC00B9BDB4 /* GroupViewController.swift in Sources */,
 				21A3F44F1D2CBB090074DDF9 /* CreateGroupViewController.swift in Sources */,
 				210530A41D2602FE00B9BDB4 /* ViewController.swift in Sources */,
