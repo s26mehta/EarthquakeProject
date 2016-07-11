@@ -21,7 +21,7 @@ html, body {
 #sidebar{
     float: left;
     width: 30%;
-    text-align:center;
+    /*text-align:center;*/
     padding-top: 10px;
 }
 #sidebar .toggle-button {
@@ -30,13 +30,16 @@ html, body {
     float: left;
     color: #ffffff;
     font-size: 14px;
-    background: #3498db;
+    background: #b3b3b3;
+    border: 1px solid #e7e7e7;
     border-radius: 2px;
     border: none;
     padding: 10px;
 }
 #sidebar .active {
-    background: #0098db;
+    color: #ffffff;
+    background: #3498db;
+    border: none;
 }
 #sidebar .toggle-button#heat-map-btn {
     margin-left: 10%;
@@ -50,6 +53,16 @@ html, body {
     width: 40px;
     margin: 0 auto;
 }
+
+#sidebar #severity_map_info, #sidebar #heat_map_info {
+    margin-top: 24px;
+    padding: 40px;
+}
+
+#sidebar .info_title h2 {
+    margin-top: 56px;
+}
+
 #sidebar .legend div {
     float: left;
     margin: 0;
