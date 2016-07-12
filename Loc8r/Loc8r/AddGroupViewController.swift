@@ -15,16 +15,18 @@ class AddGroupViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(NameEntryViewController.handleTap(_:)))
+        self.view.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(animated: Bool) {
         
+    }
+    
+    func handleTap(sender: UITapGestureRecognizer? = nil) {
+        // handling code
+        self.view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +46,6 @@ class AddGroupViewController: UITableViewController {
         } else {
             groupNames.append(groupNameTextField.text!)
             groupNameMemberDict.updateValue(people, forKey: groupNames.last!)
-            defaults.setObject(groupNameMemberDict, forKey: "Groups")
             dismissViewControllerAnimated(true, completion: nil)
         }
     }

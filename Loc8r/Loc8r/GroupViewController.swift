@@ -37,12 +37,11 @@ class GroupViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let groupDict: [String:[String]] = defaults.objectForKey("Groups") as! Dictionary
-        return groupDict.count
+        return groupNameMemberDict.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let groupDict: [String:[String]] = defaults.objectForKey("Groups") as! Dictionary
+        let groupDict: [String:[String]] = groupNameMemberDict
         
         let cell = tv.dequeueReusableCellWithIdentifier("firstCell") as! TableViewCell
         var nameLabelText = ""

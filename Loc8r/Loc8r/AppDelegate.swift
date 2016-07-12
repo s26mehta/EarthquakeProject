@@ -20,6 +20,8 @@ var groupNames: [String] = []
 var groupMembers: [[String]] = []
 var groupNameMemberDict: [String:[String]] = [:]
 var onboardingComplete: Bool = false
+var safetyStatus: String = ""
+var safetyLevel: Int = 3
 let defaults = NSUserDefaults.standardUserDefaults()
 
 @UIApplicationMain
@@ -32,12 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // Override point for customization after application launch.
         locationServices.initialize()
         getContacts()
-        
-        if (defaults.objectForKey("OnboardingComplete") != nil) {
-            onboardingComplete = defaults.boolForKey("OnboardingComplete")
-        } else {
-            defaults.setBool(onboardingComplete, forKey: "OnboardingComplete")
-        }
+        getData()
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert , .Badge], categories: nil))
         return true
@@ -63,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        defaults.synchronize()
+        setData()
     }
     
     func getContacts() {
@@ -107,6 +104,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 contactList.append(formatter.stringFromContact(contact)!)
             }
         }
+    }
+    
+    func getData() {
+        // Onboarding key
+        if (defaults.objectForKey("OnboardingComplete") != nil) {
+            onboardingComplete = defaults.boolForKey("OnboardingComplete")
+        } else {
+            defaults.setBool(onboardingComplete, forKey: "OnboardingComplete")
+        }
+        
+        // Group Member Dictionary
+        if (defaults.objectForKey("Groups") != nil) {
+            groupNameMemberDict = defaults.objectForKey("Groups") as! Dictionary
+        } else {
+            defaults.setObject(groupNameMemberDict, forKey: "Groups")
+        }
+        
+        // Full Name
+        if (defaults.objectForKey("Name") != nil) {
+            fullName = defaults.objectForKey("Name") as? String ?? ""
+        } else {
+            defaults.setObject(fullName, forKey: "Name")
+        }
+        
+        if (defaults.objectForKey("SafetyStatus") != nil) {
+            safetyStatus = defaults.objectForKey("SafetyStatus") as? String ?? ""
+        } else {
+            defaults.setObject("unsafe", forKey: "SafetyStatus")
+        }
+        
+        if (defaults.objectForKey("SafetyLevel") != nil) {
+            safetyLevel = defaults.integerForKey("SafetyLevel") ?? 3
+        } else {
+            defaults.setInteger(3, forKey: "SafetyLevel")
+        }
+    }
+    
+    func setData() {
+        defaults.setBool(onboardingComplete, forKey: "OnboardingComplete")
+        defaults.setObject(groupNameMemberDict, forKey: "Groups")
+        defaults.setObject(fullName, forKey: "Name")
+        defaults.setObject("unsafe", forKey: "SafetyStatus")
+        defaults.setInteger(3, forKey: "SafetyLevel")
+        defaults.synchronize()
     }
 }
 

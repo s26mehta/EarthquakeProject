@@ -92,7 +92,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjr-cp-YaM">
-                                <rect key="frame" x="24" y="178" width="552" height="244"/>
+                                <rect key="frame" x="24" y="178" width="552" height="243.5"/>
                                 <string key="text">Emergency Services allows citizens in disaster-affected regions to respond to questions that provide first responders with real-time updates as to which areas of a region have been most hard-hit by a disaster.
 
 Before an emergency, citizens are able to set up groups of family or friends; in the event of an emergency, citizens will be able to verify the status of their loved ones to get a quick idea of how they are doing.
@@ -400,7 +400,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="V04-tK-00O">
-                            <rect key="frame" x="0.0" y="64" width="600" height="102"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="102"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your group so you can find it easily later. Then, add members to your group." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sm0-Mh-Ilo">
@@ -418,7 +418,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="4Ud-EI-P8C">
-                            <rect key="frame" x="0.0" y="352" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="288" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -426,7 +426,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                             <tableViewSection id="ThA-x0-vVG">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="group" id="SNi-7M-NJU">
-                                        <rect key="frame" x="0.0" y="166" width="600" height="62"/>
+                                        <rect key="frame" x="0.0" y="102" width="600" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SNi-7M-NJU" id="VSI-4b-ewQ">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="61.5"/>
@@ -469,7 +469,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="group1" id="Nn3-wV-8JP">
-                                        <rect key="frame" x="0.0" y="228" width="600" height="62"/>
+                                        <rect key="frame" x="0.0" y="164" width="600" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nn3-wV-8JP" id="qQX-Qb-qq0">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="61.5"/>
@@ -489,7 +489,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="group2" id="Pb4-zq-U0X">
-                                        <rect key="frame" x="0.0" y="290" width="600" height="62"/>
+                                        <rect key="frame" x="0.0" y="226" width="600" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pb4-zq-U0X" id="t1b-mm-xzT">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="61.5"/>
@@ -625,6 +625,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9iD-1u-kCH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1182,6 +1183,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DpD-bM-Ji4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1197,9 +1199,10 @@ In emergency situations, Emergency Services will also provide citizens with dire
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jEd-sy-h1R" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zLD-WD-ziw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="zLD-WD-ziw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1212,7 +1215,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aJG-X4-f7A"/>
+        <segue reference="vax-uk-Nnz"/>
         <segue reference="K9O-nv-5GK"/>
     </inferredMetricsTieBreakers>
 </document>

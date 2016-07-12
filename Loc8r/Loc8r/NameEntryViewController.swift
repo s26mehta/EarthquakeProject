@@ -13,17 +13,14 @@ class NameEntryViewController: UITableViewController {
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     
-    // Keyboard hiding function
-    // Return button on keyboard
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+    override func viewDidLoad() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(NameEntryViewController.handleTap(_:)))
+        self.view.addGestureRecognizer(tap)
     }
     
-    // Touch anywhere outside of the keyboard
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        view.endEditing(true)
-        super.touchesBegan(touches, withEvent: event)
+    func handleTap(sender: UITapGestureRecognizer? = nil) {
+        // handling code
+        self.view.endEditing(true)
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
@@ -44,7 +41,6 @@ class NameEntryViewController: UITableViewController {
                 firstName = firstNameTextField.text!
                 lastName = lastNameTextField.text!
                 fullName = firstName + " " + lastName
-                defaults.setObject(fullName, forKey: "Name")
                 return true
             }
         }
