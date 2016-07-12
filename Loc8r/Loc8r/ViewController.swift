@@ -18,9 +18,9 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
-        let onboarding = defaults.boolForKey("OnboardingComplete")
+//        let onboarding = defaults.boolForKey("OnboardingComplete")
         
-        if onboarding {
+        if onboardingComplete {
             performSegueWithIdentifier("onboardingComplete", sender: nil)
         }
     }
@@ -37,8 +37,6 @@ class ViewController: UIViewController {
     
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-//        self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
-//        self.navigationController?.navigationBar.translucent = true
     }
     
     @IBAction func aboutButtonAction(sender: AnyObject) {

@@ -12,6 +12,7 @@ import Foundation
 class GroupViewController: UITableViewController {
     @IBOutlet var tv: UITableView!
     @IBOutlet weak var NextBarButtonItem: UIBarButtonItem!
+    var shouldPerformSegue: Bool = false
     
     override func viewDidLoad() {
         tableView.registerNib(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "firstCell")
@@ -21,13 +22,24 @@ class GroupViewController: UITableViewController {
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
-        if (identifier == "completedOnboarding") {
-            onboardingComplete = true
-            defaults.setBool(onboardingComplete, forKey: "OnboardingComplete")
+        // TODO: Check for groups
+        if identifier == "FinishOnboarding" {
+            if shouldPerformSegue {
+                return true
+            } else {
+                if (groupNameMemberDict.count < 1) {
+                    let title = "No Groups Added!"
+                    let message = "Are you sure you don't want to add groups now. If not, you can always add them later by hitting groups."
+                    inputAlert(title, message: message)
+                    return false
+                }
+                return true
+            }
+        } else {
+            return true
         }
-        return true
     }
-    
+
     override func viewWillAppear(animated: Bool) {
         tv.reloadData()
     }
@@ -61,5 +73,21 @@ class GroupViewController: UITableViewController {
         cell.groupLabel.text = groupLabelText
         cell.nameLabel.text = nameLabelText
         return cell
+    }
+    
+    func finishOnboarding() {
+        performSegueWithIdentifier("FinishOnboarding", sender: nil)
+    }
+    
+    func inputAlert(title: String, message: String) {
+        let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let defaultErrorAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        let addLaterAction = UIAlertAction(title: "Add Groups Later", style: .Default) { (action) in
+            self.shouldPerformSegue = true
+            self.finishOnboarding()
+        }
+        alert.addAction(defaultErrorAction)
+        alert.addAction(addLaterAction)
+        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
     }
 }

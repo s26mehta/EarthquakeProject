@@ -15,13 +15,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4c-GV-NLO">
-                        <rect key="frame" x="55" y="11" width="45" height="21"/>
+                        <rect key="frame" x="24" y="11" width="45" height="21"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQN-8m-9wJ">
-                        <rect key="frame" x="55" y="36" width="36" height="17"/>
+                        <rect key="frame" x="24" y="36" width="36" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -31,7 +31,7 @@
                     <constraint firstItem="iQN-8m-9wJ" firstAttribute="top" secondItem="t4c-GV-NLO" secondAttribute="bottom" constant="4" id="2GB-fq-h67"/>
                     <constraint firstItem="iQN-8m-9wJ" firstAttribute="leading" secondItem="t4c-GV-NLO" secondAttribute="leading" id="8YJ-B4-jp4"/>
                     <constraint firstItem="t4c-GV-NLO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="b6n-4S-rkc"/>
-                    <constraint firstItem="t4c-GV-NLO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="55" id="y1Z-di-mIQ"/>
+                    <constraint firstItem="t4c-GV-NLO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="y1Z-di-mIQ"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

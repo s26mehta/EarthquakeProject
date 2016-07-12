@@ -27,6 +27,8 @@ class EmergencyAlertViewController: UIViewController {
     let notificationCenter = NSNotificationCenter.defaultCenter()
     
     override func viewWillAppear(animated: Bool) {
+//        self.navigationController
+        
         if (setEarthquakeNotifications) {
             alertQuestionView.hidden = false
             noAlertView.hidden = true
