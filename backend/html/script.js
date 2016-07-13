@@ -20,82 +20,51 @@ function initMap() {
     L1_heatmap = new google.maps.visualization.HeatmapLayer({
         map: null
     });
-    L2_heatmap = new google.maps.visualization.HeatmapLayer({
+
+    L3_heatmap = new google.maps.visualization.HeatmapLayer({
         map: null
     });
-    L3_heatmap = new google.maps.visualization.HeatmapLayer({
+    L2_heatmap = new google.maps.visualization.HeatmapLayer({
         map: null
     });
 
     // define gradients for each heatmap
     var safeGradient = [
-    'rgba(0, 255, 255, 0)',
-    'rgba(0, 255, 255, 1)',
-    'rgba(0, 191, 255, 1)',
-    'rgba(0, 127, 255, 1)',
-    'rgba(0, 63, 255, 1)',
-    'rgba(0, 0, 255, 1)',
-    'rgba(0, 0, 223, 1)',
-    'rgba(0, 0, 191, 1)',
-    'rgba(0, 0, 159, 1)',
-    'rgba(0, 0, 127, 1)',
-    'rgba(63, 0, 91, 1)',
-    'rgba(127, 0, 63, 1)',
-    'rgba(191, 0, 31, 1)',
-    'rgba(255, 0, 0, 1)'
-    ]
+        'rgba(0, 255, 255, 0)',
+        'rgba(0, 255, 255, 1)',
+        'rgba(0, 191, 255, 1)',
+        'rgba(0, 127, 255, 1)',
+        'rgba(0, 63, 255, 1)',
+        'rgba(0, 0, 255, 1)',
+        'rgba(0, 0, 223, 1)',
+        'rgba(0, 0, 191, 1)',
+        'rgba(0, 0, 159, 1)',
+        'rgba(0, 0, 127, 1)',
+        'rgba(63, 0, 91, 1)',
+        'rgba(127, 0, 63, 1)',
+        'rgba(191, 0, 31, 1)',
+        'rgba(255, 0, 0, 1)'
+        ]
     var unSafeGradient = [
-    'rgba(255, 255, 0, 0)',
-    'rgba(255, 255, 0, 1)',
-    'rgba(255, 225, 0, 1)',
-    'rgba(255, 200, 0, 1)',
-    'rgba(255, 175, 0, 1)',
-    'rgba(255, 160, 0, 1)',
-    'rgba(255, 145, 0, 1)',
-    'rgba(255, 125, 0, 1)',
-    'rgba(255, 110, 0, 1)',
-    'rgba(255, 100, 0, 1)',
-    'rgba(255, 75, 0, 1)',
-    'rgba(255, 50, 0, 1)',
-    'rgba(255, 25, 0, 1)',
-    'rgba(255, 0, 0, 1)'
-    ]
-    var red = [
-    'rgba(255, 0, 0, 0)',
-    'rgba(255, 0, 0, 1)',
-    'rgba(255, 0, 0, 1)',
-    'rgba(255, 0, 0, 1)',
-    'rgba(255, 0, 0, 1)',
-    'rgba(255, 0, 0, 1)',
-    'rgba(255, 0, 0, 1)',
-    'rgba(255, 0, 0, 1)',
-    'rgba(255, 0, 0, 1)',
-    'rgba(255, 0, 0, 1)'
-    ]
-    var yellow = [
-    'rgba(255, 221, 56, 0)',
-    'rgba(255, 221, 56, 1)',
-    'rgba(255, 221, 56, 1)',
-    'rgba(255, 221, 56, 1)',
-    'rgba(255, 221, 56, 1)',
-    'rgba(255, 221, 56, 1)',
-    'rgba(255, 221, 56, 1)',
-    'rgba(255, 221, 56, 1)',
-    'rgba(255, 221, 56, 1)',
-    'rgba(255, 221, 56, 1)'
-    ]
-    var orange = [
-    'rgba(255, 138, 26, 0)',
-    'rgba(255, 138, 26, 1)',
-    'rgba(255, 138, 26, 1)',
-    'rgba(255, 138, 26, 1)',
-    'rgba(255, 138, 26, 1)',
-    'rgba(255, 138, 26, 1)',
-    'rgba(255, 138, 26, 1)',
-    'rgba(255, 138, 26, 1)',
-    'rgba(255, 138, 26, 1)',
-    'rgba(255, 138, 26, 1)'
-    ]
+        'rgba(255, 255, 0, 0)',
+        'rgba(255, 255, 0, 1)',
+        'rgba(255, 225, 0, 1)',
+        'rgba(255, 200, 0, 1)',
+        'rgba(255, 175, 0, 1)',
+        'rgba(255, 160, 0, 1)',
+        'rgba(255, 145, 0, 1)',
+        'rgba(255, 125, 0, 1)',
+        'rgba(255, 110, 0, 1)',
+        'rgba(255, 100, 0, 1)',
+        'rgba(255, 75, 0, 1)',
+        'rgba(255, 50, 0, 1)',
+        'rgba(255, 25, 0, 1)',
+        'rgba(255, 0, 0, 1)'
+        ]
+    // var red = 'rgba(255, 0, 0, 0)';
+    var red = [ 'rgba(255, 0, 0, 0)'].concat(Array(9).fill('rgba(255, 0, 0, 1)'))
+    var yellow = [ 'rgba(255, 221, 56, 0)'].concat(Array(9).fill('rgba(255, 221, 56, 1)'))
+    var orange = ['rgba(255, 138, 26, 0)'].concat(Array(9).fill('rgba(255, 138, 26, 1)'))
 
     safeheatmap.set('gradient', safeGradient);
     unsafeheatmap.set('gradient', unSafeGradient);

@@ -6,7 +6,6 @@ import json
 
 app = Bottle()
 
-
 logging.basicConfig(filename='log.log', format='%(asctime)s-%(name)s\t-%(levelname)s\t-%(message)s',level=logging.DEBUG)
 log = logging.getLogger('log')
 
@@ -72,18 +71,17 @@ def newPerson():
 @app.post('/setStatus')
 def setSafePerson():
     forms = request.forms
-    people.setNewLocation(forms['name'], Location(forms['lat'], forms['lon']))
-    if forms['status'] == "safe":
+    if people.isInList(forms['name']):
+        people.setNewLocation(forms['name'], Location(forms['lat'], forms['lon']))
         try:
             time = datetime.fromtimestamp(int(forms["time"]))
-            people.setSafe(forms['name'], time)
+            people.setStatus(forms['name'], int(forms['status']), time)
         except KeyError, e:
-            pass
-        people.setSafe(forms['name'])
-    elif forms['status'] == "unsafe":
-        forms = request.forms
-        people.setUnSafe(forms['name'], forms['severity'])
-    people.writeToFile()
+            return "Key Error!: " + str(e.message)
+        people.writeToFile()
+        return "successuflly updated person!"
+    else:
+        return "failed to update person"
 
 class StripPathMiddleware(object):
     '''
