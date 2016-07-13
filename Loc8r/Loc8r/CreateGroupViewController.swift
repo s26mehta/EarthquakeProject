@@ -34,7 +34,12 @@ class CreateGroupViewController: UITableViewController, UISearchBarDelegate, UIS
     @IBAction func addPeople(sender: AnyObject) {
         for index in 0...checked.count - 1 {
             if (checked[index]) {
-                people.append(contactList[index])
+                if people.contains(contactList[index]) {
+                    // Do not add person to list
+                } else {
+                    people.append(contactList[index])
+                }
+                
             }
         }
         groupMembers.append(people)

@@ -12,16 +12,19 @@ var people:[String] = []
 
 class AddGroupViewController: UITableViewController {
     @IBOutlet weak var groupNameTextField: UITextField! // Text Field for group name
+    @IBOutlet var tv: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.registerNib(UINib(nibName: "GroupMemberTableViewCell", bundle: nil), forCellReuseIdentifier: "personCell")
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(NameEntryViewController.handleTap(_:)))
         self.view.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(animated: Bool) {
-        
+        tv.reloadData()
     }
     
     func handleTap(sender: UITapGestureRecognizer? = nil) {
@@ -55,5 +58,19 @@ class AddGroupViewController: UITableViewController {
         let defaultErrorAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         alert.addAction(defaultErrorAction)
         presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return people.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tv.dequeueReusableCellWithIdentifier("personCell") as! GroupMemberTableViewCell
+        cell.memberName.text = people[indexPath.row]
+        return cell
     }
 }

@@ -27,7 +27,7 @@ class EmergencyAlertViewController: UIViewController {
     let notificationCenter = NSNotificationCenter.defaultCenter()
     
     override func viewWillAppear(animated: Bool) {
-//        self.navigationController
+        self.navigationItem.title = "Emergency Alerts"
         
         if (setEarthquakeNotifications) {
             alertQuestionView.hidden = false
@@ -44,6 +44,10 @@ class EmergencyAlertViewController: UIViewController {
         
         notificationCenter.addObserver(self, selector:#selector(EmergencyAlertViewController.hideNoAlertView), name: "HideNoAlert", object: nil)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationItem.title = "Back"
     }
 
     override func didReceiveMemoryWarning() {

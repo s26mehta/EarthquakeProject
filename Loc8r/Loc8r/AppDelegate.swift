@@ -128,12 +128,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             defaults.setObject(fullName, forKey: "Name")
         }
         
+        // Safety Status Key
         if (defaults.objectForKey("SafetyStatus") != nil) {
             safetyStatus = defaults.objectForKey("SafetyStatus") as? String ?? ""
         } else {
             defaults.setObject("unsafe", forKey: "SafetyStatus")
         }
         
+        // Safety Level Key
         if (defaults.objectForKey("SafetyLevel") != nil) {
             safetyLevel = defaults.integerForKey("SafetyLevel") ?? 3
         } else {
@@ -145,8 +147,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         defaults.setBool(onboardingComplete, forKey: "OnboardingComplete")
         defaults.setObject(groupNameMemberDict, forKey: "Groups")
         defaults.setObject(fullName, forKey: "Name")
-        defaults.setObject("unsafe", forKey: "SafetyStatus")
-        defaults.setInteger(3, forKey: "SafetyLevel")
+        defaults.setObject(safetyStatus, forKey: "SafetyStatus")
+        defaults.setInteger(safetyLevel, forKey: "SafetyLevel")
         defaults.synchronize()
     }
 }
