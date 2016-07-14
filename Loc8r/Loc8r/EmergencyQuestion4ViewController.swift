@@ -1,26 +1,27 @@
 //
-//  EmergencyQuestion2ViewController.swift
+//  EmergencyQuestion4ViewController.swift
 //  Loc8r
 //
-//  Created by Nehal Kanetkar on 2016-07-13.
+//  Created by Nehal Kanetkar on 2016-07-14.
 //  Copyright © 2016 SYDE361. All rights reserved.
 //
 
 import UIKit
 
-class EmergencyQuestion2ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EmergencyQuestion4ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var tv: UITableView!
     var medical: Bool = false
     var fire: Bool = false
     var police: Bool = false
-
-    @IBOutlet weak var nextViewControllerButton: UIButton!
     
+    @IBOutlet weak var nextViewControllerButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tv.delegate = self
         tv.dataSource = self
-
+        
         tv.alwaysBounceVertical = false
         
         nextViewControllerButton.enabled = false
@@ -141,4 +142,5 @@ class EmergencyQuestion2ViewController: UIViewController, UITableViewDelegate, U
         })
         task.resume()
     }
+
 }
