@@ -1,15 +1,17 @@
 //
-//  OnboardingCompleteViewController.swift
+//  UpdateNameViewController.swift
 //  Loc8r
 //
-//  Created by Nehal Kanetkar on 2016-07-12.
+//  Created by Nehal Kanetkar on 2016-07-13.
 //  Copyright © 2016 SYDE361. All rights reserved.
 //
 
 import UIKit
 
-class OnboardingCompleteViewController: UIViewController {
-
+class UpdateNameViewController: UIViewController {
+    @IBOutlet weak var firstNameTextLabel: UITextField!
+    @IBOutlet weak var lastNameTextLabel: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,14 +22,26 @@ class OnboardingCompleteViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
-        if (identifier == "completedOnboarding") {
-            onboardingComplete = true
+
+    @IBAction func saveButton(sender: AnyObject) {
+        if ((firstNameTextLabel.text == "") || (lastNameTextLabel.text == "")) {
+            let title = "No Name Entered"
+            let message = "Please enter a name before saving"
+            inputAlert(title, message: message)
+        } else {
+            firstName = firstNameTextLabel.text!
+            lastName = lastNameTextLabel.text!
+            fullName = firstName + " " + lastName
             sendNewPerson()
-            defaults.setBool(onboardingComplete, forKey: "OnboardingComplete")
+            dismissViewControllerAnimated(true, completion: nil)
         }
-        return true
+    }
+    
+    func inputAlert(title: String, message: String) {
+        let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let defaultErrorAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(defaultErrorAction)
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     func sendNewPerson() {
@@ -41,7 +55,6 @@ class OnboardingCompleteViewController: UIViewController {
         
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
             if error == nil {
-                print("Data sent")
             } else {
                 // TODO: Deal with the Error of the user not having a data connection or the server being down
                 

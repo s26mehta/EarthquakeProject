@@ -39,6 +39,7 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(counter)
         currentLocation.removeAll()
         currentLocation.append((locations.last?.coordinate.latitude)!)
         currentLocation.append((locations.last?.coordinate.longitude)!)
@@ -46,6 +47,7 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
         
         if (counter%5 == 0) {
             checkForEarthquake()
+            print("Checking for earthquakes")
         }
     }
     
@@ -82,6 +84,7 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
                         localNotification.alertBody = "Earthquake detected in your area. Slide to mark yourself safe."
                         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
                         setEarthquakeNotifications = true
+                        defaults.setBool(setEarthquakeNotifications, forKey: "EarthquakeStatus")
                         notificationCenter.postNotificationName("HideNoAlert", object: nil)
                     } else {
                         // Don't have full authorization, need to figure out what to do here

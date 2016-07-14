@@ -90,10 +90,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             let request = CNContactFetchRequest(keysToFetch: [CNContactIdentifierKey, CNContactFormatter.descriptorForRequiredKeysForStyle(.FullName)])
             do {
                 try store.enumerateContactsWithFetchRequest(request) { contact, stop in
-                    contacts.append(contact)
+                    if (contact.givenName != "" || contact.familyName != "") {
+                        contacts.append(contact)
+                    }
+                    
                 }
             } catch {
-                print(error)
+                print("Hello")
             }
             
             // do something with the contacts array (e.g. print the names)
@@ -141,6 +144,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         } else {
             defaults.setInteger(3, forKey: "SafetyLevel")
         }
+        
+        if (defaults.objectForKey("EarthquakeStatus") != nil) {
+            setEarthquakeNotifications = defaults.boolForKey("EarthquakeStatus")
+        } else {
+            defaults.setBool(setEarthquakeNotifications, forKey: "EarthquakeStatus")
+        }
     }
     
     func setData() {
@@ -149,6 +158,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         defaults.setObject(fullName, forKey: "Name")
         defaults.setObject(safetyStatus, forKey: "SafetyStatus")
         defaults.setInteger(safetyLevel, forKey: "SafetyLevel")
+        defaults.setBool(setEarthquakeNotifications, forKey: "EarthquakeStatus")
         defaults.synchronize()
     }
 }

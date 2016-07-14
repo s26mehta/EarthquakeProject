@@ -12,16 +12,6 @@ class EmergencyAlertViewController: UIViewController {
     var level = 1
     var safetyStatus = 0 // Value between 0 and 3 corresponding to their safety status [Safe, Unsafe Low, Unsafe Med, Unsafe High]
     var safety: Int = 2
-    @IBOutlet weak var noAlertView: UIView!
-    @IBOutlet weak var alertQuestionView: UIView!
-    @IBOutlet weak var questionTitleLabel: UILabel!
-    
-    @IBOutlet weak var Question1View: UIView!
-    @IBOutlet weak var Question2View: UIView!
-    @IBOutlet weak var Question3View: UIView!
-    
-    @IBOutlet weak var negativeButton: UIButton!
-    @IBOutlet weak var positiveButton: UIButton!
     
     
     let notificationCenter = NSNotificationCenter.defaultCenter()
@@ -30,12 +20,11 @@ class EmergencyAlertViewController: UIViewController {
         self.navigationItem.title = "Emergency Alerts"
         
         if (setEarthquakeNotifications) {
-            alertQuestionView.hidden = false
-            noAlertView.hidden = true
+            
         } else {
-            alertQuestionView.hidden = true
-            noAlertView.hidden = false
+            self.navigationItem.leftBarButtonItem?.title = "Settings"
         }
+        performSegueWithIdentifier("earthquake", sender: self)
     }
 
     override func viewDidLoad() {
@@ -44,6 +33,7 @@ class EmergencyAlertViewController: UIViewController {
         
         notificationCenter.addObserver(self, selector:#selector(EmergencyAlertViewController.hideNoAlertView), name: "HideNoAlert", object: nil)
         // Do any additional setup after loading the view.
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -55,43 +45,8 @@ class EmergencyAlertViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func Question1No(sender: AnyObject) {
-        Question1View.hidden = true
-        Question2View.hidden = false
-        Question3View.hidden = true
-    }
-    
-    @IBAction func Question2Yes(sender: AnyObject) {
-        Question1View.hidden = true
-        Question2View.hidden = true
-        Question3View.hidden = false
-    }
-    
-    @IBAction func Question2SafeNo(sender: AnyObject) {
-        safetyStatus = 0
-        performSegueWithIdentifier("mapView", sender: nil)
-    }
-    
-    @IBAction func Question2SafeYes(sender: AnyObject) {
-        safetyStatus = 1
-        performSegueWithIdentifier("mapView", sender: nil)
-    }
-    
-    @IBAction func Question2HelpNo(sender: AnyObject) {
-        safetyStatus = 2
-        performSegueWithIdentifier("mapView", sender: nil)
-    }
-    
-    @IBAction func Question2HelpYes(sender: AnyObject) {
-        safetyStatus = 3
-        performSegueWithIdentifier("mapView", sender: nil)
-    }
-    
     func hideNoAlertView() {
-        noAlertView.hidden = true
-        alertQuestionView.hidden = false
-        Question1View.hidden = false
-        Question2View.hidden = true
-        Question3View.hidden = true
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.rightBarButtonItem = nil
     }
 }

@@ -85,13 +85,14 @@ class GroupViewController: UITableViewController {
     
     func inputAlert(title: String, message: String) {
         let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let defaultErrorAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
-        let addLaterAction = UIAlertAction(title: "Add Groups Later", style: .Default) { (action) in
+        let defaultErrorAction = UIAlertAction(title: "Add Groups Now", style: .Default, handler: nil)
+        let addLaterAction = UIAlertAction(title: "Ok", style: .Default) { (action) in
             self.shouldPerformSegue = true
             self.finishOnboarding()
         }
-        alert.addAction(defaultErrorAction)
         alert.addAction(addLaterAction)
+        alert.addAction(defaultErrorAction)
+        
         UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
     }
 }

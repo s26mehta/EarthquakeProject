@@ -24,6 +24,10 @@
 		211248DC1D3595BF0049AE53 /* OnboardingCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211248DB1D3595BF0049AE53 /* OnboardingCompleteViewController.swift */; };
 		211248E01D35F6E20049AE53 /* GroupMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211248DE1D35F6E20049AE53 /* GroupMemberTableViewCell.swift */; };
 		211248E11D35F6E20049AE53 /* GroupMemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 211248DF1D35F6E20049AE53 /* GroupMemberTableViewCell.xib */; };
+		214E68021D36CCF600FD1233 /* UpdateNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E68011D36CCF600FD1233 /* UpdateNameViewController.swift */; };
+		214E68041D36E2A200FD1233 /* EmergencyQuestion1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E68031D36E2A200FD1233 /* EmergencyQuestion1ViewController.swift */; };
+		214E68071D36FD6C00FD1233 /* EmergencyQuestion2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E68061D36FD6C00FD1233 /* EmergencyQuestion2ViewController.swift */; };
+		214E680D1D37489F00FD1233 /* EmergencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E680C1D37489F00FD1233 /* EmergencyTableViewCell.swift */; };
 		21A3F44F1D2CBB090074DDF9 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */; };
 		21A3F4531D2D82C80074DDF9 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +73,10 @@
 		211248DB1D3595BF0049AE53 /* OnboardingCompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCompleteViewController.swift; sourceTree = "<group>"; };
 		211248DE1D35F6E20049AE53 /* GroupMemberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMemberTableViewCell.swift; sourceTree = "<group>"; };
 		211248DF1D35F6E20049AE53 /* GroupMemberTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupMemberTableViewCell.xib; sourceTree = "<group>"; };
+		214E68011D36CCF600FD1233 /* UpdateNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateNameViewController.swift; sourceTree = "<group>"; };
+		214E68031D36E2A200FD1233 /* EmergencyQuestion1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyQuestion1ViewController.swift; sourceTree = "<group>"; };
+		214E68061D36FD6C00FD1233 /* EmergencyQuestion2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyQuestion2ViewController.swift; sourceTree = "<group>"; };
+		214E680C1D37489F00FD1233 /* EmergencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyTableViewCell.swift; sourceTree = "<group>"; };
 		21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +183,7 @@
 		211248D51D333C0A0049AE53 /* Custom Cell */ = {
 			isa = PBXGroup;
 			children = (
+				214E680C1D37489F00FD1233 /* EmergencyTableViewCell.swift */,
 				211248D11D332F130049AE53 /* TableViewCell.swift */,
 				211248D21D332F130049AE53 /* TableViewCell.xib */,
 				211248DE1D35F6E20049AE53 /* GroupMemberTableViewCell.swift */,
@@ -186,7 +195,9 @@
 		211248D81D33483C0049AE53 /* MainAppViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				214E68011D36CCF600FD1233 /* UpdateNameViewController.swift */,
 				211248D61D3348320049AE53 /* EmergencyAlertViewController.swift */,
+				214E68051D36E2AD00FD1233 /* EmergencyQuestionViewControllers */,
 				211248D91D33F4880049AE53 /* WhereToGoViewController.swift */,
 			);
 			name = MainAppViewControllers;
@@ -199,6 +210,15 @@
 				21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */,
 			);
 			name = CreateGroupViewControllers;
+			sourceTree = "<group>";
+		};
+		214E68051D36E2AD00FD1233 /* EmergencyQuestionViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				214E68031D36E2A200FD1233 /* EmergencyQuestion1ViewController.swift */,
+				214E68061D36FD6C00FD1233 /* EmergencyQuestion2ViewController.swift */,
+			);
+			name = EmergencyQuestionViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,13 +360,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				214E68071D36FD6C00FD1233 /* EmergencyQuestion2ViewController.swift in Sources */,
 				211248D71D3348320049AE53 /* EmergencyAlertViewController.swift in Sources */,
 				211248E01D35F6E20049AE53 /* GroupMemberTableViewCell.swift in Sources */,
+				214E68021D36CCF600FD1233 /* UpdateNameViewController.swift in Sources */,
 				210530D01D2609AD00B9BDB4 /* NameEntryViewController.swift in Sources */,
+				214E68041D36E2A200FD1233 /* EmergencyQuestion1ViewController.swift in Sources */,
 				21A3F4531D2D82C80074DDF9 /* AddGroupViewController.swift in Sources */,
 				211248D31D332F130049AE53 /* TableViewCell.swift in Sources */,
 				210530D31D26CDDC00B9BDB4 /* GroupViewController.swift in Sources */,
 				21A3F44F1D2CBB090074DDF9 /* CreateGroupViewController.swift in Sources */,
+				214E680D1D37489F00FD1233 /* EmergencyTableViewCell.swift in Sources */,
 				210530A41D2602FE00B9BDB4 /* ViewController.swift in Sources */,
 				210530D81D2AF18500B9BDB4 /* LocationServices.swift in Sources */,
 				211248DC1D3595BF0049AE53 /* OnboardingCompleteViewController.swift in Sources */,
