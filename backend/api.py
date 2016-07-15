@@ -76,9 +76,11 @@ def newPerson():
 def setSafePerson():
     forms = request.forms
     if people.isInList(forms['name']):
+        log.log(forms['name'] + "is trying to set, lat: " + str(forms['lat'] + " lon: " + str(forms['lon'])))
         people.setNewLocation(forms['name'], Location(forms['lat'], forms['lon']))
         try:
             time = datetime.fromtimestamp(int(forms["time"]))
+            log.log("setting to status: " + str(forms['status']) + "at time: " + str(time))
             people.setStatus(forms['name'], int(forms['status']), time)
         except KeyError, e:
             return "Key Error!: " + str(e.message)
