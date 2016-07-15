@@ -41,7 +41,6 @@ def staticPeople():
 
 @app.get('/isEarthquake')
 def get_earthquake_now():
-    log.debug("isearthquake: " + str(people.isEarthquake))
     return str(people.isEarthquake)
 
 @app.post('/setEarthquake')
@@ -51,7 +50,7 @@ def set_earthquake_now():
         people.isEarthquake = True
     else:
         people.isEarthquake = False
-    log.debug(people.isEarthquake)
+    log.debug("setting earthquake to: " + str(people.isEarthquake))
 
 @app.get('/getSafe')
 def getSafePeople():
@@ -69,6 +68,7 @@ def getCells():
 @app.post('/newPerson')
 def newPerson():
     return people.newPerson(request.forms['name'])
+    log.debug("new person: " + str(request.forms['name']))
     people.writeToFile()
 
 
@@ -76,11 +76,11 @@ def newPerson():
 def setSafePerson():
     forms = request.forms
     if people.isInList(forms['name']):
-        log.log(forms['name'] + "is trying to set, lat: " + str(forms['lat'] + " lon: " + str(forms['lon'])))
+        log.debug(forms['name'] + "is trying to set, lat: " + str(forms['lat'] + " lon: " + str(forms['lon'])))
         people.setNewLocation(forms['name'], Location(forms['lat'], forms['lon']))
         try:
             time = datetime.fromtimestamp(int(forms["time"]))
-            log.log("setting to status: " + str(forms['status']) + "at time: " + str(time))
+            log.debug(str(forms(['name']) + "setting to status: " + str(forms['status']) + "at time: " + str(time))
             people.setStatus(forms['name'], int(forms['status']), time)
         except KeyError, e:
             return "Key Error!: " + str(e.message)
