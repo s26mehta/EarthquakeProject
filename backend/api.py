@@ -75,8 +75,9 @@ def newPerson():
 @app.post('/setStatus')
 def setSafePerson():
     forms = request.forms
+    log.debug(forms['name'] + "is trying to set, lat: " + str(forms['lat'] + " lon: " + str(forms['lon'])))
+    log.debug(forms['name'] + "isInList: " + str(people.isInList(forms['name'])))
     if people.isInList(forms['name']):
-        log.debug(forms['name'] + "is trying to set, lat: " + str(forms['lat'] + " lon: " + str(forms['lon'])))
         people.setNewLocation(forms['name'], Location(forms['lat'], forms['lon']))
         try:
             time = datetime.fromtimestamp(int(forms["time"]))
