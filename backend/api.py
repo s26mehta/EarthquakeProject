@@ -80,7 +80,7 @@ def setSafePerson():
         people.setNewLocation(forms['name'], Location(forms['lat'], forms['lon']))
         try:
             time = datetime.fromtimestamp(int(forms["time"]))
-            log.debug(str(forms(['name']) + "setting to status: " + str(forms['status']) + "at time: " + str(time))
+            log.debug(str(forms(['name'])) + "setting to status: " + str(forms['status']) + "at time: " + str(time))
             people.setStatus(forms['name'], int(forms['status']), time)
         except KeyError, e:
             return "Key Error!: " + str(e.message)
