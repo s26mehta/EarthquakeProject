@@ -24,7 +24,6 @@ class EmergencyAlertViewController: UIViewController {
         } else {
             self.navigationItem.leftBarButtonItem?.title = "Settings"
         }
-        performSegueWithIdentifier("earthquake", sender: self)
     }
 
     override func viewDidLoad() {
@@ -48,5 +47,6 @@ class EmergencyAlertViewController: UIViewController {
     func hideNoAlertView() {
         self.navigationItem.leftBarButtonItem = nil
         self.navigationItem.rightBarButtonItem = nil
+        performSegueWithIdentifier("earthquake", sender: self)
     }
 }

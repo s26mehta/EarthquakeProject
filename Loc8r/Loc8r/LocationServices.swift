@@ -36,10 +36,11 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
     
     func startUpdating() {
         locationManager.startUpdatingLocation()
+        setEarthquakeNotifications = false
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(counter)
+//        print(counter)
         currentLocation.removeAll()
         currentLocation.append((locations.last?.coordinate.latitude)!)
         currentLocation.append((locations.last?.coordinate.longitude)!)
@@ -47,7 +48,7 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
         
         if (counter%5 == 0) {
             checkForEarthquake()
-            print("Checking for earthquakes")
+//            print("Checking for earthquakes")
         }
     }
     
@@ -71,10 +72,18 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
     
     private func parseResponse(data: NSData) {
         let response = NSString(data: data, encoding: NSUTF8StringEncoding)
+        var flag: Bool = false
         
-        if (response == "true" || response == "True") {
+        if response! == "True" {
+            flag = true
+        } else {
+            flag = false
+        }
+        
+        if (flag) {
             // Send the notification
             if (!setEarthquakeNotifications) {
+                
                 if let notificationSettings = UIApplication.sharedApplication().currentUserNotificationSettings() {
                     if notificationSettings.types.contains([.Alert, .Badge]) {
                         // Have full notification access

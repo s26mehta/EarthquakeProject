@@ -9,8 +9,9 @@
 import UIKit
 import MapKit
 
-class WhereToGoViewController: UIViewController {
+class WhereToGoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var tv: UITableView!
     
     let initialLocation = CLLocation(latitude: currentLocation[0], longitude: currentLocation[1])
     let hospital = CLLocation(latitude: 43.458543, longitude: -80.5185419)
@@ -18,6 +19,10 @@ class WhereToGoViewController: UIViewController {
     
     let request: MKDirectionsRequest = MKDirectionsRequest()
 
+    override func viewWillAppear(animated: Bool) {
+        self.navigationItem.leftBarButtonItem = nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.showsUserLocation = true
@@ -33,5 +38,21 @@ class WhereToGoViewController: UIViewController {
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tv.dequeueReusableCellWithIdentifier("goBack") as! MapPageTableViewCell
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 1 {
+            print("Should perform segue")
+        }
     }
 }

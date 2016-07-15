@@ -144,12 +144,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         } else {
             defaults.setInteger(3, forKey: "SafetyLevel")
         }
-        
-        if (defaults.objectForKey("EarthquakeStatus") != nil) {
-            setEarthquakeNotifications = defaults.boolForKey("EarthquakeStatus")
-        } else {
-            defaults.setBool(setEarthquakeNotifications, forKey: "EarthquakeStatus")
-        }
     }
     
     func setData() {
@@ -158,7 +152,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         defaults.setObject(fullName, forKey: "Name")
         defaults.setObject(safetyStatus, forKey: "SafetyStatus")
         defaults.setInteger(safetyLevel, forKey: "SafetyLevel")
-        defaults.setBool(setEarthquakeNotifications, forKey: "EarthquakeStatus")
         defaults.synchronize()
     }
 }

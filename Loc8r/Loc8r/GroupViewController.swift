@@ -71,8 +71,10 @@ class GroupViewController: UITableViewController {
         }
         
         // Removes the last two indicies
-        nameLabelText.removeAtIndex(nameLabelText.endIndex.predecessor())
-        nameLabelText.removeAtIndex(nameLabelText.endIndex.predecessor())
+        if nameLabelText != "" {
+            nameLabelText.removeAtIndex(nameLabelText.endIndex.predecessor())
+            nameLabelText.removeAtIndex(nameLabelText.endIndex.predecessor())
+        }
         
         cell.groupLabel.text = groupLabelText
         cell.nameLabel.text = nameLabelText
