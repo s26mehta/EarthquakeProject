@@ -62,6 +62,10 @@ def getSafePeople():
 def getSafePeople():
     return people.everyone()
 
+@app.get("/getCells")
+def getCells():
+    return '[{"name": "cell1", "location": {"lat": 43.473065, "lng": -80.540156}}]'
+
 @app.post('/newPerson')
 def newPerson():
     return people.newPerson(request.forms['name'])
