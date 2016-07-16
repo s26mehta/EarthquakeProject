@@ -47,7 +47,8 @@ class People():
         self.isEarthquake = False
 
     def newPerson(self, _name):
-        self.array.append(Person(_name))
+        if not self.isInList(_name):
+            self.array.append(Person(_name))
 
     def whoIsSafe(self):
         isSafe = []
