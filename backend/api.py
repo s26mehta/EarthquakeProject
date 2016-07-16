@@ -19,7 +19,7 @@ people.writeToFile()
 
 @app.route('/')
 def home():
-    return static_file("index.html", root='.')
+    return static_file("index.html", root='./html')
 
 @app.route('/file/<filename>')
 def serve_static(filename):
@@ -57,14 +57,15 @@ def set_earthquake_now():
 def getEmergData():
     return people.region + " " + people.emergencyType
 
-
 @app.post('/setEmergData')
 def set_earthquake_now():
     forms = request.forms
-    people.region = forms['region']
-    people.emergencyType = forms['type']
+    people.region = forms['emergencyregion']
+    people.emergencyType = forms['emergencytype']
+    people.isEmergency = True
     log.debug("setting region to: " + people.region + " Setting type to: " + people.emergencyType)
     people.writeToFile()
+    redirect("/map")
 
 @app.get('/getSafe')
 def getSafePeople():

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Set Emergency</title>
+    <link rel="stylesheet" type="text/css" href="/file/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<div class='header'> 
+    <img src="/img/triangle.png" alt="">
+    <h1>Loc8r Emergency Services</h1>
+</div>
+
+<div class="wrapper">
+    <h2>New Emergency</h2>
+    <div class="body">
+        <form class="new-emergency-form" action="/setEmergData" method="post">
+            <label for="emergencytype">What type of emergency is this?</label>
+            <input type="text" placeholder="Type of emergency" name="emergencytype">
+
+            <label for="emergencyregion">What region is affected by this emergency?</label>
+            <input type="text" placeholder="Affected region" name="emergencyregion">
+
+            <p>When this emergency is created, people within the region defined above will receive notifications on their mobile devices to check in. They will have the ability to indicate the type of assistance they require, if any.</p>
+            <p>This data will be displayed real time on a map for use.</p>
+            <input type="submit" name="Submit" class="blue-button">
+        </form>
+    </div>
+</div>
+ 
+</body>
+</html>
