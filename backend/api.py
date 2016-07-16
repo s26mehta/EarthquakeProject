@@ -74,11 +74,11 @@ def getSafePeople():
 
 @app.get('/countSafe')
 def getSafePeople():
-    return people.countSafe()
+    return str(people.countSafe())
 
 @app.get('/countUnSafe')
 def getSafePeople():
-    return people.countUnsafe()
+    return str(people.countUnsafe())
 
 @app.get('/getPeople')
 def getSafePeople():

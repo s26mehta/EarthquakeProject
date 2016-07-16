@@ -61,13 +61,13 @@ function initMap() {
     // var red = 'rgba(255, 0, 0, 0)';
     var green = [ 'rgba(66, 147, 33, 0)'].concat(Array(9).fill('rgba(66, 147, 33, 1)'))
     var red = [ 'rgba(255, 0, 0, 0)'].concat(Array(9).fill('rgba(255, 0, 0, 1)'))
-    var yellow = [ 'rgba(255, 221, 56, 0)'].concat(Array(9).fill('rgba(255, 221, 56, 1)'))
+    var yellow = [ 'rgba(255, 207, 4, 0)'].concat(Array(9).fill('rgba(255, 207, 4, 1)'))
     var orange = ['rgba(255, 138, 26, 0)'].concat(Array(9).fill('rgba(255, 138, 26, 1)'))
     var blue = ['rgba(48, 35, 174, 0)'].concat(Array(9).fill('rgba(48, 35, 174, 1)'))
 
     safeheatmap.set('gradient', green);
-    Medical_heatmap.set('gradient', orange);
-    Fire_heatmap.set('gradient', yellow);
+    Medical_heatmap.set('gradient', red);
+    Fire_heatmap.set('gradient', orange);
     Police_heatmap.set('gradient', blue);
     // turn on heatMap initially
     getPoints();
@@ -171,12 +171,17 @@ function getPoints() {
 }
 
 function getStatus(){
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 && xhttp.status == 200) {
-        document.getElementById("emergencyInfo").innerHTML = xhttp.responseText;
-        }
+
+    var doSomethingAJAX = function (el, url) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.onload = function () { el.innerHTML = xhr.responseText; };
+        xhr.onerror = function () { /* ... */ };
+        xhr.send();
     };
-    xhttp.open("GET", "getEmergData", true);
-    xhttp.send();
+
+    doSomethingAJAX(document.getElementById("emergencyInfo"), '/getEmergData')
+    doSomethingAJAX(document.getElementById("countUnsafe"), '/countUnSafe')
+    doSomethingAJAX(document.getElementById("countSafe"), '/countSafe')
+
 }

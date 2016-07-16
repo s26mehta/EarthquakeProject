@@ -47,7 +47,10 @@ class People():
         self.isEmergency = False
         self.region = "null"
         self.emergencyType = "null"
+        
     def countSafe(self):
+        if len(self.array) == 0:
+            return 0
         j = 0
         for i in self.array:
             if i.isSafe():
@@ -55,6 +58,8 @@ class People():
         return j
 
     def countUnsafe(self):
+        if len(self.array) == 0:
+            return 0
         j = 0
         for i in self.array:
             if not i.isSafe():
