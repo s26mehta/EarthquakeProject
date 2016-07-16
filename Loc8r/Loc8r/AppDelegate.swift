@@ -24,16 +24,20 @@ var safetyStatus: String = ""
 var safetyLevel: Int = 3
 let defaults = NSUserDefaults.standardUserDefaults()
 
+var firstTimeOpenComplete: Bool = false
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate{
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
     let locationServices = LocationServices()
+    let notificationCenter = NSNotificationCenter.defaultCenter()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         locationServices.initialize()
-        getContacts()
+//        getContacts()
+        notificationCenter.addObserver(self, selector:#selector(AppDelegate.getContacts), name: "GetContacts", object: nil)
         getData()
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert , .Badge], categories: nil))

@@ -25,6 +25,7 @@ class CreateGroupViewController: UITableViewController, UISearchBarDelegate, UIS
         for _ in contactList {
             checked.append(false)
         }
+        print(checked)
     }
     
     @IBAction func cancelPeople(sender: AnyObject) {

@@ -94,8 +94,8 @@ class WhereToGoViewController: UIViewController, MKMapViewDelegate, UITableViewD
             
             for route in unwrappedResponse.routes {
                 self.displayDistance(route.distance)
-                self.mapView.addOverlay(route.polyline, level: .AboveLabels)
-                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+                self.mapView.addOverlay(route.polyline, level: .AboveRoads)
+                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0), animated: true)
             }
         }
     }

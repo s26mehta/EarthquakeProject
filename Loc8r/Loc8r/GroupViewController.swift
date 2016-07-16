@@ -14,6 +14,8 @@ class GroupViewController: UITableViewController {
     @IBOutlet weak var NextBarButtonItem: UIBarButtonItem!
     var shouldPerformSegue: Bool = false
     
+    let notificationCenter = NSNotificationCenter.defaultCenter()
+    
     override func viewDidLoad() {
         tableView.registerNib(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "firstCell")
         if (onboardingComplete) {
@@ -29,13 +31,14 @@ class GroupViewController: UITableViewController {
             } else {
                 if (groupNameMemberDict.count < 1) {
                     let title = "No Groups Added!"
-                    let message = "Are you sure you don't want to add groups now. If not, you can always add them later by hitting groups."
+                    let message = "Are you sure you don't want to add groups now. If not, you can always add them later by hitting Groups."
                     inputAlert(title, message: message)
                     return false
                 }
                 return true
             }
         } else {
+            notificationCenter.postNotificationName("GetContacts", object: nil)
             return true
         }
     }
@@ -88,7 +91,7 @@ class GroupViewController: UITableViewController {
     func inputAlert(title: String, message: String) {
         let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let defaultErrorAction = UIAlertAction(title: "Add Groups Now", style: .Default, handler: nil)
-        let addLaterAction = UIAlertAction(title: "Ok", style: .Default) { (action) in
+        let addLaterAction = UIAlertAction(title: "Ok, Add Groups Later", style: .Default) { (action) in
             self.shouldPerformSegue = true
             self.finishOnboarding()
         }
