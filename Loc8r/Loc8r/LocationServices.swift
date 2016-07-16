@@ -11,6 +11,7 @@ import Foundation
 import CoreLocation
 
 var setEarthquakeNotifications: Bool = false
+var earthquakeOver: Bool = false
 var currentLocation: [Double] = []
 
 class LocationServices: CLLocationManager, CLLocationManagerDelegate {
@@ -93,12 +94,19 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
                         localNotification.alertBody = "Earthquake detected in your area. Slide to mark yourself safe."
                         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
                         setEarthquakeNotifications = true
+                        earthquakeOver = false
                         defaults.setBool(setEarthquakeNotifications, forKey: "EarthquakeStatus")
                         notificationCenter.postNotificationName("HideNoAlert", object: nil)
                     } else {
                         // Don't have full authorization, need to figure out what to do here
                     }
                 }
+            }
+        } else {
+            if !earthquakeOver {
+                notificationCenter.postNotificationName("EarthquakeEnd", object: nil)
+                setEarthquakeNotifications = false
+                earthquakeOver = true
             }
         }
     }

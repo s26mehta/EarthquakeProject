@@ -18,6 +18,8 @@ class WhereToGoViewController: UIViewController, MKMapViewDelegate, UITableViewD
     
     @IBOutlet weak var mapViewHeightConstraint: NSLayoutConstraint!
     
+    let notificationCenter = NSNotificationCenter.defaultCenter()
+    
     let initialLocation = CLLocation(latitude: currentLocation[0], longitude: currentLocation[1])
     let hospital = CLLocationCoordinate2D(latitude: 43.470090, longitude: -80.553779)
 //    let hospital = CLLocationCoordinate2D(latitude: 43.473449, longitude: -80.532994)
@@ -47,6 +49,8 @@ class WhereToGoViewController: UIViewController, MKMapViewDelegate, UITableViewD
         tv.alwaysBounceVertical = false
         tv.separatorColor = UIColor.clearColor()
         // Do any additional setup after loading the view.
+        
+        notificationCenter.addObserver(self, selector:#selector(WhereToGoViewController.earthquakeOver), name: "EarthquakeEnd", object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -114,5 +118,9 @@ class WhereToGoViewController: UIViewController, MKMapViewDelegate, UITableViewD
                 self.distanceLabel.text = String(round(distance * 100) / 100) + " m"
             })
         }
+    }
+    
+    func earthquakeOver() {
+        performSegueWithIdentifier("earthquakeComplete", sender: nil)
     }
 }

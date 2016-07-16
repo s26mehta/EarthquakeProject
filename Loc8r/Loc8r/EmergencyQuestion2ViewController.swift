@@ -127,11 +127,8 @@ class EmergencyQuestion2ViewController: UIViewController, UITableViewDelegate, U
         let location = "&lon=" + String(currentLocation[1]) + "&status=" + status + "&time=" + time
         let message = name + location
         
-        print(status)
-        
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)
-        
-        print(request)
+
         request.HTTPBody = message.dataUsingEncoding(NSUTF8StringEncoding)
         let session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"

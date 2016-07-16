@@ -14,6 +14,8 @@ class EmergencyQuestion4ViewController: UIViewController, UITableViewDelegate, U
     var medical: Bool = false
     var fire: Bool = false
     var police: Bool = false
+    var newPerson = fullName
+    var count = 0
     
     @IBOutlet weak var nextViewControllerButton: UIButton!
     
@@ -119,19 +121,16 @@ class EmergencyQuestion4ViewController: UIViewController, UITableViewDelegate, U
     }
     
     func setStatus() {
+        sendNewPerson()
         let status = String(Int(medical)) + String(Int(fire)) + String(Int(police))
         let time = String(Int(NSDate().timeIntervalSince1970))
         
         let url = "http://waterloo.matthewgougeon.me:1801/setStatus"
-        let name = "name=" + fullName + "&lat=" + String(currentLocation[0])
+        let name = "name=" + newPerson + "&lat=" + String(currentLocation[0])
         let location = "&lon=" + String(currentLocation[1]) + "&status=" + status + "&time=" + time
         let message = name + location
         
-        print(status)
-        print(message)
-        
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)
-        print(request)
         request.HTTPBody = message.dataUsingEncoding(NSUTF8StringEncoding)
         let session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
@@ -145,5 +144,26 @@ class EmergencyQuestion4ViewController: UIViewController, UITableViewDelegate, U
             }
         })
         task.resume()
+    }
+    
+    func sendNewPerson() {
+        newPerson = newPerson + String(count)
+        let url = "http://waterloo.matthewgougeon.me:1801/newPerson"
+        let message = "name=" + newPerson
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        request.HTTPBody = message.dataUsingEncoding(NSUTF8StringEncoding)
+        let session = NSURLSession.sharedSession()
+        request.HTTPMethod = "POST"
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            if error == nil {
+            } else {
+                // TODO: Deal with the Error of the user not having a data connection or the server being down
+                
+            }
+        })
+        task.resume()
+        count += 1
     }
 }

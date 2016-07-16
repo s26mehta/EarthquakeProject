@@ -455,7 +455,7 @@ In an emergency, check in using the app; you will be able to request help if nec
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="V04-tK-00O">
-                            <rect key="frame" x="0.0" y="64" width="600" height="300"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your group so you can find it easily later. Then, add members to your group." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sm0-Mh-Ilo">
@@ -561,7 +561,7 @@ In an emergency, check in using the app; you will be able to request help if nec
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="4Ud-EI-P8C">
-                            <rect key="frame" x="0.0" y="364" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="300" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
@@ -882,7 +882,7 @@ Please answer the questions below.</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="bBH-8S-6Su" kind="show" id="SLx-Xn-fUp"/>
+                                    <segue destination="bBH-8S-6Su" kind="show" identifier="mapView" id="SLx-Xn-fUp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWj-S5-7Wf">
@@ -1347,11 +1347,12 @@ Please answer the questions below.</string>
                         <outlet property="mapViewHeightConstraint" destination="8S7-vs-OAH" id="XjV-cU-970"/>
                         <outlet property="tv" destination="4UK-m7-poj" id="VIY-om-Ob5"/>
                         <segue destination="iq0-V9-der" kind="show" identifier="resetStatus" id="jHx-rx-DN5"/>
+                        <segue destination="jEd-sy-h1R" kind="show" identifier="earthquakeComplete" id="te7-L7-czT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tj1-he-2VU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4200" y="2722"/>
+            <point key="canvasLocation" x="4134" y="2722"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R4g-kn-bwl">
@@ -1541,9 +1542,9 @@ Please answer the questions below.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aJG-X4-f7A"/>
-        <segue reference="K9O-nv-5GK"/>
+        <segue reference="te7-L7-czT"/>
         <segue reference="SLx-Xn-fUp"/>
         <segue reference="jHx-rx-DN5"/>
+        <segue reference="K9O-nv-5GK"/>
     </inferredMetricsTieBreakers>
 </document>
