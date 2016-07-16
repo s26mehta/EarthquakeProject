@@ -30,7 +30,7 @@ class Person():
             time = int(self.last_seen.strftime("%s"))
         if self.location:
             return '{"name": "'+str(self.name)+'", "status": '+str(self.status)+', "location": '+str(self.location.dump())+', "last_seen": '+str(time)+'}'
-        return '{"name":"'+str(self.name)+'", "status": '+str(self.status)+', "last_seen": '+str(time)+'}'
+        return '{"name":"'+str(self.name)+'", "status": '+str(self.status)+', "location": null, "last_seen": '+str(time)+'}'
 
     def isSafe(self):
         if self.status == 000: # 1 is safe
