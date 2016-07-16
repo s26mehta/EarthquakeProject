@@ -44,19 +44,20 @@ class People():
     """Object for all people in the database"""
     def __init__(self, _array = []):
         self.array = _array
-        self.isEarthquake = False
-
+        self.isEmergency = False
+        self.region = "null"
+        self.emergencyType = "null"
     def countSafe(self):
         j = 0
         for i in self.array:
-            if i.isSafe()
+            if i.isSafe():
                 j+=1
         return j
 
     def countUnsafe(self):
         j = 0
         for i in self.array:
-            if not i.isSafe()
+            if not i.isSafe():
                 j+=1
         return j
 
@@ -102,12 +103,23 @@ class People():
 
     def writeToFile(self):
         with open("people.json", 'w') as outfile:
+            if self.isEmergency:
+                outfile.write('{"isEmergency": ' + str(self.isEmergency).lower() + ', "region": "' + str(self.region) + '", "emergencyType": "' + self.emergencyType + '", "everyone": ')
+            else:
+                outfile.write('{"isEmergency": ' + str(self.isEmergency).lower() + ', "everyone": ')
             outfile.write(self.everyone())
+            outfile.write('}')
 
     def readFromFile(self):
         try:
             with open('people.json', 'r') as infile:
-                everyone = json.loads(infile.read())
+                data = json.loads(infile.read())
+                self.isEmergency = bool(data['isEmergency'])
+                if self.isEmergency:
+                    self.region = data['region']
+                    self.emergencyType = data['emergencyType']
+
+                everyone = data['everyone']
                 for i in everyone:
                     time = None
                     log.debug(i['name'])

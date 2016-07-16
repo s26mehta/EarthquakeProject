@@ -41,16 +41,30 @@ def staticPeople():
 
 @app.get('/isEarthquake')
 def get_earthquake_now():
-    return str(people.isEarthquake)
+    return str(people.isEmergency)
 
 @app.post('/setEarthquake')
 def set_earthquake_now():
     forms = request.forms
     if forms['eq'] == str(1):
-        people.isEarthquake = True
+        people.isEmergency = True
     else:
-        people.isEarthquake = False
-    log.debug("setting earthquake to: " + str(people.isEarthquake))
+        people.isEmergency = False
+    log.debug("setting earthquake to: " + str(people.isEmergency))
+    people.writeToFile()
+
+@app.get('/getEmergData')
+def getEmergData():
+    return people.region + " " + people.emergencyType
+
+
+@app.post('/setEmergData')
+def set_earthquake_now():
+    forms = request.forms
+    people.region = forms['region']
+    people.emergencyType = forms['type']
+    log.debug("setting region to: " + people.region + " Setting type to: " + people.emergencyType)
+    people.writeToFile()
 
 @app.get('/getSafe')
 def getSafePeople():
