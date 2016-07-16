@@ -9,10 +9,44 @@
 <body>
     <div id="map"></div>
     <div id="sidebar">
-        <button onclick="heatMap()" class="toggle-button" id="heat-map-btn"><img src="/img/heat-map.svg" alt=""><span>Heat Map</span></button>
-        <button onclick="severityMap()" class="toggle-button" id="severity-map-btn"><img src="/img/first-aid.svg" alt=""><span>Severity Level Map</span></button>
+        <div class="sidebar-header clearfix">
+            <p>Displaying real-time data for</p>
+            <h3 id="emergencyInfo">Waterloo Earthquake</h3>
+    
+            <div class="population-numbers">
+                <div class="assistance-people">
+                    <h4 class="count-people" id="countUnsafe">1,500</h4>
+                    <p class="label">Requiring Assistance</p>
+                </div>
+                <div class="safe-people">
+                    <h4 class="count-people" id="countSafe">300k</h4>
+                    <p class="label">People Safe</p>
+                </div>
+            </div>
+        </div>
 
-        <div id="severity_map_info">
+        <div class="map-layers">
+            <h3>Map Layers</h3>
+            <p>Select layers to display on map.</p>
+        </div>
+
+        <div class="legend">
+            <h3>Legend</h3>
+            <div class="legend-marker"><img src="/img/unsafe.png" alt=""></div>
+            <div class="legend-title">Unsafe</div>
+            <div class="legend-marker"><img src="/img/safe.png" alt=""></div>
+            <div class="legend-title">Safe</div>
+        </div>
+
+
+
+
+        <!-- old heatmap and severity map code that toggles -->
+
+        <!-- <button onclick="heatMap()" class="toggle-button" id="heat-map-btn"><img src="/img/heat-map.svg" alt=""><span>Heat Map</span></button>
+        <button onclick="severityMap()" class="toggle-button" id="severity-map-btn"><img src="/img/first-aid.svg" alt=""><span>Severity Level Map</span></button> -->
+
+<!--         <div id="severity_map_info">
             <div class="info_title"><h2>Severity Map</h2></div>
             <div class="legend">
                     <h3>Legend</h3>
@@ -33,7 +67,7 @@
                     <div class="legend-marker"><img src="/img/safe.png" alt=""></div>
                     <div class="legend-title">Safe</div>
             </div>
-        </div>     
+        </div>    -->  
         <!-- <div id="currentMap">Location of Distressed Citizens</div> -->
 <!--         <p>Emergency State: </p><span id="emergencyState"></span> -->
 
