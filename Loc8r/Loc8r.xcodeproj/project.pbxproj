@@ -34,6 +34,7 @@
 		214E68151D39CBA900FD1233 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E68141D39CBA900FD1233 /* extension.swift */; };
 		21A3F44F1D2CBB090074DDF9 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */; };
 		21A3F4531D2D82C80074DDF9 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */; };
+		21D39CE01D3A71B900FAA620 /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D39CDF1D3A71B900FAA620 /* GroupTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		214E68141D39CBA900FD1233 /* extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
+		21D39CDF1D3A71B900FAA620 /* GroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 				211248D61D3348320049AE53 /* EmergencyAlertViewController.swift */,
 				214E68051D36E2AD00FD1233 /* EmergencyQuestionViewControllers */,
 				211248D91D33F4880049AE53 /* WhereToGoViewController.swift */,
+				21D39CDF1D3A71B900FAA620 /* GroupTableViewController.swift */,
 			);
 			name = MainAppViewControllers;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				214E680D1D37489F00FD1233 /* EmergencyTableViewCell.swift in Sources */,
 				214E68131D38AD0C00FD1233 /* MapPageTableViewCell.swift in Sources */,
 				214E680F1D383E3D00FD1233 /* EmergencyQuestion3ViewController.swift in Sources */,
+				21D39CE01D3A71B900FAA620 /* GroupTableViewController.swift in Sources */,
 				210530A41D2602FE00B9BDB4 /* ViewController.swift in Sources */,
 				210530D81D2AF18500B9BDB4 /* LocationServices.swift in Sources */,
 				211248DC1D3595BF0049AE53 /* OnboardingCompleteViewController.swift in Sources */,
