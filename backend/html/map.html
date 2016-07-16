@@ -9,31 +9,41 @@
 <body>
     <div id="map"></div>
     <div id="sidebar">
+        <div class="sidebar-header">
+            <p>Displaying real-time data for</p>
+            <h2 id="emergencyDescription"></h2>
+
+        </div>
+<!-- 
         <button onclick="heatMap()" class="toggle-button" id="heat-map-btn"><img src="/img/heat-map.svg" alt=""><span>Heat Map</span></button>
         <button onclick="severityMap()" class="toggle-button" id="severity-map-btn"><img src="/img/first-aid.svg" alt=""><span>Severity Level Map</span></button>
-
-        <div id="severity_map_info">
-            <div class="info_title"><h2>Severity Map</h2></div>
+ -->
+        <div id="map_info">
+            <div class="map_options">
+                    <form action="">
+                        <input type="checkbox" onclick="updateChecks()" id="medical_check"><img src="/img/yellow.png" alt="">Requiring Medical Assistance<br>
+                        <input type="checkbox" onclick="updateChecks()" id="fire_check"><img src="/img/orange.png" alt="">Requiring Fire Assistance<br>
+                        <input type="checkbox" onclick="updateChecks()" id="police_check"><img src="/img/blue.png" alt="">Requiring Police Assistance<br>
+                        <input type="checkbox" onclick="updateChecks()" id="safe_check"><img src="/img/green.png" alt="">Safe Respondents<br>
+                        <input type="checkbox" onclick="updateChecks()" id="cell_check"><img src="/img/green.png" alt="">Downed Cell Towers<br>
+                    </form>
+            </div>
             <div class="legend">
                     <h3>Legend</h3>
                     <div class="legend-marker"><img src="/img/yellow.png" alt=""></div>
-                    <div class="legend-title">Low</div>
+                    <div class="legend-title">Fire Assistance Required</div>
                     <div class="legend-marker"><img src="/img/orange.png" alt=""></div>
-                    <div class="legend-title">Medium</div>
-                    <div class="legend-marker"><img src="/img/red.png" alt=""></div>
-                    <div class="legend-title">High</div>
+                    <div class="legend-title">Medical Assistance Required</div>
+                    <div class="legend-marker"><img src="/img/blue.png" alt=""></div>
+                    <div class="legend-title">Police Assistance Required</div>
+                    <div class="legend-marker"><img src="/img/blue.png" alt=""></div>
+                    <div class="legend-title">Safe Respondents</div>
+                    <div class="legend-marker"><img src="/img/green.png" alt=""></div>
+                    <div class="legend-title">Downed Cell Tower</div>
+
             </div>
-        </div> 
-        <div id="heat_map_info">
-            <div class="info_title clearfix"><h2>Heat Map</h2></div>
-            <div class="legend">
-                    <h3>Legend</h3>
-                    <div class="legend-marker"><img src="/img/unsafe.png" alt=""></div>
-                    <div class="legend-title">Unsafe</div>
-                    <div class="legend-marker"><img src="/img/safe.png" alt=""></div>
-                    <div class="legend-title">Safe</div>
-            </div>
-        </div>     
+        </div>
+   
         <!-- <div id="currentMap">Location of Distressed Citizens</div> -->
 <!--         <p>Emergency State: </p><span id="emergencyState"></span> -->
 

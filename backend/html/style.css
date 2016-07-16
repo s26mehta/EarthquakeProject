@@ -59,6 +59,17 @@ html, body {
     padding: 40px;
 }
 
+#sidebar .map_info{
+    align: left;
+}
+#sidebar .map_options{
+    padding: 2px;
+}
+
+#sidebar .map_options img{
+    width: 18px;
+}
+
 #sidebar .info_title h2 {
     margin-top: 56px;
 }
@@ -157,7 +168,10 @@ form input[type="submit"] {
     border: none;
 }
 
-
+.sidebar-header{
+    background: #447AD4;
+    height: 100px;
+}
 
 
 

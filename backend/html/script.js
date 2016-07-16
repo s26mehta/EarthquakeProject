@@ -25,7 +25,7 @@ function initMap() {
         map: null
     });
 
-    // define gradients for each heatmap
+    // define gradients for eaB4EC51ch heatmap
     var safeGradient = [
         'rgba(0, 255, 255, 0)',
         'rgba(0, 255, 255, 1)',
@@ -59,12 +59,13 @@ function initMap() {
         'rgba(255, 0, 0, 1)'
         ]
     // var red = 'rgba(255, 0, 0, 0)';
+    var green = [ 'rgba(66, 147, 33, 0)'].concat(Array(9).fill('rgba(66, 147, 33, 1)'))
     var red = [ 'rgba(255, 0, 0, 0)'].concat(Array(9).fill('rgba(255, 0, 0, 1)'))
     var yellow = [ 'rgba(255, 221, 56, 0)'].concat(Array(9).fill('rgba(255, 221, 56, 1)'))
     var orange = ['rgba(255, 138, 26, 0)'].concat(Array(9).fill('rgba(255, 138, 26, 1)'))
-    var blue = ['rgba(255, 138, 26, 0)'].concat(Array(9).fill('rgba(52, 85, 224, 1)'))
+    var blue = ['rgba(48, 35, 174, 0)'].concat(Array(9).fill('rgba(48, 35, 174, 1)'))
 
-    safeheatmap.set('gradient', safeGradient);
+    safeheatmap.set('gradient', green);
     Medical_heatmap.set('gradient', orange);
     Fire_heatmap.set('gradient', yellow);
     Police_heatmap.set('gradient', blue);
@@ -116,22 +117,27 @@ function heatMap() {
     document.getElementById("heat_map_info").style.display = "block";
 }
 
-function severityMap() {
+function updateChecks() {
+    console.log(document.getElementById("medical_check").checked)
     // remove save and unsafe heatmaps from the map
     safeheatmap.setMap(null);
-
+    Medical_heatmap.setMap(null);
+    Fire_heatmap.setMap(null);
+    Police_heatmap.setMap(null);
     // add severity level maps to the map
-    Medical_heatmap.setMap(map);
-    Fire_heatmap.setMap(map);
-    Police_heatmap.setMap(map);
-
-    // change classes on buttons so that their styles change
-    $("#heat-map-btn").removeClass("active");
-    $("#severity-map-btn").addClass("active");
-
-    // show the correct legend and other information
-    document.getElementById("severity_map_info").style.display = "block";
-    document.getElementById("heat_map_info").style.display = "none";
+    
+    if (document.getElementById("medical_check").checked){
+        Medical_heatmap.setMap(map);
+    }
+    if (document.getElementById("fire_check").checked){
+        Fire_heatmap.setMap(map);
+    }
+    if (document.getElementById("police_check").checked){
+        Police_heatmap.setMap(map);
+    }
+    if (document.getElementById("safe_check").checked){
+        safeheatmap.setMap(map);
+    }
 
 }
 
