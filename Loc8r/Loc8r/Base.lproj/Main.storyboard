@@ -1338,7 +1338,11 @@ Please answer the questions below.</string>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Emergency Alerts" id="ZxN-Oi-tay">
-                        <barButtonItem key="rightBarButtonItem" title="Groups" id="QgS-fJ-y19"/>
+                        <barButtonItem key="rightBarButtonItem" title="Groups" id="QgS-fJ-y19">
+                            <connections>
+                                <segue destination="1U6-Uj-fkn" kind="show" id="MEc-uU-Ssy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -1503,6 +1507,34 @@ Please answer the questions below.</string>
             </objects>
             <point key="canvasLocation" x="210" y="3464"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="YSR-vV-rZv">
+            <objects>
+                <tableViewController id="1U6-Uj-fkn" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BRB-2N-ysJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PQw-0J-n8E">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PQw-0J-n8E" id="akl-Ej-y7T">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1U6-Uj-fkn" id="nR4-P4-A9O"/>
+                            <outlet property="delegate" destination="1U6-Uj-fkn" id="UPt-0a-x4d"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZAa-vD-jLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1374" y="4186"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="olW-34-s2b">
             <objects>
@@ -1542,9 +1574,9 @@ Please answer the questions below.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="te7-L7-czT"/>
         <segue reference="SLx-Xn-fUp"/>
         <segue reference="jHx-rx-DN5"/>
+        <segue reference="te7-L7-czT"/>
         <segue reference="K9O-nv-5GK"/>
     </inferredMetricsTieBreakers>
 </document>
