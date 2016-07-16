@@ -33,7 +33,7 @@ class Person():
         return '{"name":"'+str(self.name)+'", "status": '+str(self.status)+', "location": null, "last_seen": '+str(time)+'}'
 
     def isSafe(self):
-        if self.status == 000: # 1 is safe
+        if self.status == 000: # 000 is safe
             return True
         return False
 
@@ -45,6 +45,20 @@ class People():
     def __init__(self, _array = []):
         self.array = _array
         self.isEarthquake = False
+
+    def countSafe(self):
+        j = 0
+        for i in self.array:
+            if i.isSafe()
+                j+=1
+        return j
+
+    def countUnsafe(self):
+        j = 0
+        for i in self.array:
+            if not i.isSafe()
+                j+=1
+        return j
 
     def newPerson(self, _name):
         if not self.isInList(_name):

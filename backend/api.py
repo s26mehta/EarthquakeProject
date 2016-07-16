@@ -57,13 +57,21 @@ def getSafePeople():
     return people.whoIsSafe()
     people.writeToFile()
 
+@app.get('/countSafe')
+def getSafePeople():
+    return people.countSafe()
+
+@app.get('/countUnSafe')
+def getSafePeople():
+    return people.countUnsafe()
+
 @app.get('/getPeople')
 def getSafePeople():
     return people.everyone()
 
 @app.get("/getCells")
 def getCells():
-    return '[{"name": "cell1", "location": {"lat": 43.473065, "lng": -80.540156}}]'
+    return static_file("cells.json", root='.')
 
 @app.post('/newPerson')
 def newPerson():
