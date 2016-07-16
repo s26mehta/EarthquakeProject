@@ -3,7 +3,14 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: content-box|border-box|initial|inherit;
+    font-size: 14px;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 .clearfix:after {
     visibility: hidden;
@@ -13,65 +20,62 @@ html, body {
     clear: both;
     height: 0;
 }
+
 #map {
     float: left;
     width: 70%;
     height: 100%;
 }
-#sidebar{
+#sidebar {
     float: left;
     width: 30%;
-    /*text-align:center;*/
-    padding-top: 10px;
+    margin: 0;
 }
-#sidebar .toggle-button {
-    width: 40%;
-    height: 100px;
-    float: left;
+
+#sidebar > * {
+    padding: 32px 24px;
+}
+
+#sidebar .sidebar-header {
+    background: #447ad7;
     color: #ffffff;
+    margin: 0;
+    // padding: 32px 24px;
+}
+
+#sidebar .sidebar-header p {
     font-size: 14px;
-    background: #b3b3b3;
-    border: 1px solid #e7e7e7;
-    border-radius: 2px;
-    border: none;
-    padding: 10px;
-}
-#sidebar .active {
-    color: #ffffff;
-    background: #3498db;
-    border: none;
-}
-#sidebar .toggle-button#heat-map-btn {
-    margin-left: 10%;
-}
-#sidebar .toggle-button#severity-map-btn {
-    margin-right: 10%;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
 }
 
-#sidebar .toggle-button img {
-    display: block;
-    width: 40px;
-    margin: 0 auto;
+#sidebar .sidebar-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 6px;
 }
 
-#sidebar #severity_map_info, #sidebar #heat_map_info {
-    margin-top: 24px;
-    padding: 40px;
+#sidebar .sidebar-header p.label {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
 }
 
-#sidebar .map_info{
-    align: left;
-}
-#sidebar .map_options{
-    padding: 2px;
+#sidebar .sidebar-header .count-people {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
 }
 
 #sidebar .map_options img{
     width: 18px;
 }
 
-#sidebar .info_title h2 {
-    margin-top: 56px;
+#sidebar .sidebar-header .assistance-people, #sidebar .sidebar-header .safe-people {
+    float: left;
+    width: 50%;
 }
 
 #sidebar .legend div {
@@ -155,12 +159,15 @@ form label {
 
 form input {
     font-size: 14px;
-    width: 250px;
     padding: 10px 12px;
-    margin: 12px 0 36px 0;
     background: #f2f2f2;
     border-radius: 3px;
     border: 1px solid #afafaf;
+}
+
+form input[type="text"] {
+    width: 250px;
+    margin: 12px 0 36px 0;
 }
 
 form input[type="submit"] {
@@ -168,10 +175,6 @@ form input[type="submit"] {
     border: none;
 }
 
-.sidebar-header{
-    background: #447AD4;
-    height: 100px;
-}
 
 
 

@@ -71,7 +71,6 @@ function initMap() {
     Police_heatmap.set('gradient', blue);
     // turn on heatMap initially
     getPoints();
-    heatMap();
 
     $.getJSON('/getCells', function(data) {
     for (var j=0; j < data.length; j++) {
@@ -100,22 +99,6 @@ function initMap() {
     }, 3000);
 }
 
-function heatMap() {
-    // put safe and unsafe heatmaps on map
-    safeheatmap.setMap(map);
-    // remove severity maps from map
-    Medical_heatmap.setMap(null);
-    Fire_heatmap.setMap(null);
-    Police_heatmap.setMap(null);
-
-    // change classes on buttons so that their styles change
-    $("#heat-map-btn").addClass("active");
-    $("#severity-map-btn").removeClass("active");
-
-    // show the correct legend and other information
-    document.getElementById("severity_map_info").style.display = "none";
-    document.getElementById("heat_map_info").style.display = "block";
-}
 
 function updateChecks() {
     console.log(document.getElementById("medical_check").checked)
