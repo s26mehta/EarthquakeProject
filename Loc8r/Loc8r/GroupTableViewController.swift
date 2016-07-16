@@ -19,6 +19,7 @@ class GroupTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         tv.reloadData()
+        tv.rowHeight = 62
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -55,6 +56,7 @@ class GroupTableViewController: UITableViewController {
         
         cell.groupLabel.text = groupLabelText
         cell.nameLabel.text = nameLabelText
+        cell
         return cell
     }
 }

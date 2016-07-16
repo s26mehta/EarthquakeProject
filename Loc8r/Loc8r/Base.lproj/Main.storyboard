@@ -284,11 +284,11 @@ In emergency situations, Emergency Services will also provide citizens with dire
             <objects>
                 <tableViewController id="Def-3h-ede" customClass="GroupViewController" customModule="Loc8r" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" id="eNU-6N-TUJ">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="y6V-mo-3ff">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="325"/>
+                            <rect key="frame" x="0.0" y="64" width="600" height="325"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Emergency Groups" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-3O-BTb">
@@ -361,7 +361,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                             </variation>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Yyk-WS-Ydc">
-                            <rect key="frame" x="0.0" y="325" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="389" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
@@ -398,17 +398,17 @@ In emergency situations, Emergency Services will also provide citizens with dire
                         <viewControllerLayoutGuide type="bottom" id="Gxi-Cu-Hnj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9JM-Ka-B6T">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setup Complete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjj-n1-R6h">
-                                <rect key="frame" x="24" y="32" width="552" height="38"/>
+                                <rect key="frame" x="24" y="96" width="552" height="38"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="32"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cch-Lx-wz1">
-                                <rect key="frame" x="24" y="94" width="552" height="96"/>
+                                <rect key="frame" x="24" y="158" width="552" height="96"/>
                                 <string key="text">You have been added to the system, and your groups have been created.
 
 In an emergency, check in using the app; you will be able to request help if necessary, check on the status of your groups and get directions to the nearest Emergency Centres.</string>
@@ -417,7 +417,7 @@ In an emergency, check in using the app; you will be able to request help if nec
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djf-hr-jd0">
-                                <rect key="frame" x="268" y="420" width="63" height="41"/>
+                                <rect key="frame" x="268" y="484" width="63" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Finish"/>
                                 <connections>
@@ -731,7 +731,7 @@ In an emergency, check in using the app; you will be able to request help if nec
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Groups" id="EcM-BF-SJD">
                             <connections>
-                                <segue destination="Def-3h-ede" kind="show" identifier="changeGroup" id="K9O-nv-5GK"/>
+                                <segue destination="1U6-Uj-fkn" kind="show" identifier="changeGroup" id="f1M-bT-AGN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -866,27 +866,8 @@ Please answer the questions below.</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmb-Ze-hKO">
-                                <rect key="frame" x="16" y="229" width="568" height="57"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="XgC-qO-1U3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                <state key="normal" title="No, nobody needs help">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="bBH-8S-6Su" kind="show" identifier="mapView" id="SLx-Xn-fUp"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWj-S5-7Wf">
-                                <rect key="frame" x="16" y="298" width="568" height="57"/>
+                                <rect key="frame" x="16" y="229" width="568" height="57"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="rke-SR-uV2"/>
@@ -904,6 +885,25 @@ Please answer the questions below.</string>
                                     <segue destination="lsr-Hx-Sed" kind="show" id="A4r-Si-NMr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmb-Ze-hKO">
+                                <rect key="frame" x="16" y="298" width="568" height="57"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="XgC-qO-1U3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="No, nobody needs help">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="bBH-8S-6Su" kind="show" identifier="mapView" id="SLx-Xn-fUp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -913,8 +913,10 @@ Please answer the questions below.</string>
                             <constraint firstItem="bWj-S5-7Wf" firstAttribute="top" secondItem="gmb-Ze-hKO" secondAttribute="bottom" constant="12" id="DuT-K9-KW7"/>
                             <constraint firstAttribute="trailing" secondItem="5kx-1V-83M" secondAttribute="trailing" constant="24" id="VUB-b7-4yi"/>
                             <constraint firstAttribute="trailing" secondItem="bWj-S5-7Wf" secondAttribute="trailing" constant="16" id="XeR-jL-g5v"/>
+                            <constraint firstItem="gmb-Ze-hKO" firstAttribute="top" secondItem="bWj-S5-7Wf" secondAttribute="bottom" constant="12" id="atg-ew-Ud8"/>
                             <constraint firstItem="bWj-S5-7Wf" firstAttribute="leading" secondItem="Ote-am-s8G" secondAttribute="leading" constant="16" id="h9v-dQ-hbl"/>
                             <constraint firstItem="9Kh-0A-317" firstAttribute="leading" secondItem="Ote-am-s8G" secondAttribute="leading" constant="24" id="hqP-5e-Hxd"/>
+                            <constraint firstItem="bWj-S5-7Wf" firstAttribute="top" secondItem="i5v-yg-hWm" secondAttribute="bottom" constant="16" id="kdd-oE-qQf"/>
                             <constraint firstAttribute="trailing" secondItem="i5v-yg-hWm" secondAttribute="trailing" constant="24" id="nEg-fO-0tf"/>
                             <constraint firstItem="gmb-Ze-hKO" firstAttribute="top" secondItem="i5v-yg-hWm" secondAttribute="bottom" constant="16" id="qAX-Gc-KG5"/>
                             <constraint firstItem="gmb-Ze-hKO" firstAttribute="leading" secondItem="Ote-am-s8G" secondAttribute="leading" constant="16" id="smf-te-dBc"/>
@@ -923,6 +925,12 @@ Please answer the questions below.</string>
                             <constraint firstItem="9Kh-0A-317" firstAttribute="top" secondItem="5kx-1V-83M" secondAttribute="bottom" id="y2i-5q-6Pr"/>
                             <constraint firstItem="i5v-yg-hWm" firstAttribute="top" secondItem="9Kh-0A-317" secondAttribute="bottom" constant="54" id="yXv-wy-nEI"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="DuT-K9-KW7"/>
+                                <exclude reference="qAX-Gc-KG5"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1MC-mX-Mpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1013,7 +1021,7 @@ Please answer the questions below.</string>
                                     <constraint firstAttribute="height" constant="57" id="JhT-Zg-5Pd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                <state key="normal" title="Yes, I am mobile">
+                                <state key="normal" title="Confirm">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -1148,7 +1156,7 @@ Please answer the questions below.</string>
                                     <constraint firstAttribute="height" constant="57" id="2tv-s5-DCE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                <state key="normal" title="Yes, I am mobile">
+                                <state key="normal" title="Confirm">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -1570,8 +1578,8 @@ Please answer the questions below.</string>
                                 <constraint firstItem="XCe-XP-5jH" firstAttribute="leading" secondItem="Qjv-a3-ZPr" secondAttribute="leading" constant="16" id="ybr-xZ-5rq"/>
                             </constraints>
                         </view>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="H4r-fn-tgZ">
-                            <rect key="frame" x="0.0" y="152" width="600" height="44"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="YUs-nG-vdZ">
+                            <rect key="frame" x="0.0" y="152" width="600" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -1628,9 +1636,9 @@ Please answer the questions below.</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="U8w-jP-xgK"/>
-        <segue reference="jHx-rx-DN5"/>
+        <segue reference="tf4-Qi-2dU"/>
         <segue reference="te7-L7-czT"/>
-        <segue reference="K9O-nv-5GK"/>
-        <segue reference="HBF-Jg-Vs2"/>
+        <segue reference="f1M-bT-AGN"/>
+        <segue reference="dWg-yI-8EO"/>
     </inferredMetricsTieBreakers>
 </document>

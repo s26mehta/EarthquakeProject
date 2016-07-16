@@ -103,7 +103,7 @@ class WhereToGoViewController: UIViewController, MKMapViewDelegate, UITableViewD
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
         renderer.strokeColor = UIColor(colorLiteralRed: 0, green: 122/255, blue: 255/255, alpha: 1.0)
-        renderer.lineWidth = 2.0
+        renderer.lineWidth = 4.0
         return renderer
     }
     
