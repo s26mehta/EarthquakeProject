@@ -1,23 +1,37 @@
 [
   {
-    "name": "cell1",
+    "name": "Wind1",
     "location": {
-      "lat": 43.473065,
-      "lng": -80.540156
+      "lat": 43.4864,
+      "lng": -80.5467
     }
   },
   {
-    "name": "cell2",
+    "name": "Rogers1",
     "location": {
-      "lat": 43.467065,
-      "lng": -80.541156
+      "lat": 43.4889,
+      "lng": -80.4906
     }
   },
   {
-    "name": "cell3",
+    "name": "Bell1",
     "location": {
-      "lat": 43.463065,
-      "lng": -80.543156
+      "lat": 43.5036,
+      "lng": -80.5286
+    }
+  },
+  {
+    "name": "Rogers2",
+    "location": {
+      "lat": 43.5169,
+      "lng": -80.5136
+    }
+  },
+  {
+    "name": "Bell2",
+    "location": {
+      "lat": 43.4919,
+      "lng": -80.5163
     }
   }
 ]
