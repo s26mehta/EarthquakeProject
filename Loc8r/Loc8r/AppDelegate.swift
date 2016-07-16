@@ -36,9 +36,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         locationServices.initialize()
-//        getContacts()
         notificationCenter.addObserver(self, selector:#selector(AppDelegate.getContacts), name: "GetContacts", object: nil)
+        
         getData()
+        
+        if onboardingComplete {
+            getContacts()
+            print("Getting contacts")
+        }
+        
+        
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert , .Badge], categories: nil))
         return true

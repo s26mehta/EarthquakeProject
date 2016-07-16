@@ -38,6 +38,7 @@ class GroupViewController: UITableViewController {
                 return true
             }
         } else {
+            firstTimeOpenComplete = true
             notificationCenter.postNotificationName("GetContacts", object: nil)
             return true
         }

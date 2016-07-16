@@ -18,6 +18,7 @@ class GroupTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        people.removeAll()
         tv.reloadData()
         tv.rowHeight = 62
     }

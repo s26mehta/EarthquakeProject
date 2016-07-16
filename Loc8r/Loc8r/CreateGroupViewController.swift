@@ -25,7 +25,6 @@ class CreateGroupViewController: UITableViewController, UISearchBarDelegate, UIS
         for _ in contactList {
             checked.append(false)
         }
-        print(checked)
     }
     
     @IBAction func cancelPeople(sender: AnyObject) {
@@ -61,7 +60,11 @@ class CreateGroupViewController: UITableViewController, UISearchBarDelegate, UIS
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        searchActive = true;
+//        searchActive = true;
+    }
+    
+    func searchBarTextDidChange(searchBar: UISearchBar) {
+        searchActive = true
     }
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
@@ -77,7 +80,6 @@ class CreateGroupViewController: UITableViewController, UISearchBarDelegate, UIS
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        
         filteredData = contactList.filter({ (text) -> Bool in
             let tmp: NSString = text
             let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
