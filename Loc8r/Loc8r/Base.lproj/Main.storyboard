@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tF7-Hy-PAC">
     <dependencies>
         <deployment identifier="iOS"/>
+        <development version="7000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
@@ -23,7 +24,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fO-co-mlm" userLabel="Message">
-                                <rect key="frame" x="24" y="198" width="552" height="95.5"/>
+                                <rect key="frame" x="24" y="198" width="552" height="96"/>
                                 <string key="text">In the event of an emergency, you will receive a push notification alerting you of potential danger in your area.
 
 You will be able to mark yourself safe from danger, see the status of family and friends, and get help finding your way to a safe zone.</string>
@@ -41,7 +42,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cP4-FS-Pnd">
-                                <rect key="frame" x="156" y="487" width="289" height="41"/>
+                                <rect key="frame" x="155" y="487" width="289" height="41"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <state key="normal" title="Set Up Emergency Services"/>
                                 <connections>
@@ -49,7 +50,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cP4-FS-Pnd" secondAttribute="bottom" constant="72" id="0eR-G9-hQN"/>
                             <constraint firstItem="6fO-co-mlm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1E6-BK-Lsz"/>
@@ -92,7 +93,7 @@ You will be able to mark yourself safe from danger, see the status of family and
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjr-cp-YaM">
-                                <rect key="frame" x="24" y="178" width="552" height="243.5"/>
+                                <rect key="frame" x="24" y="178" width="552" height="244"/>
                                 <string key="text">Emergency Services allows citizens in disaster-affected regions to respond to questions that provide first responders with real-time updates as to which areas of a region have been most hard-hit by a disaster.
 
 Before an emergency, citizens are able to set up groups of family or friends; in the event of an emergency, citizens will be able to verify the status of their loved ones to get a quick idea of how they are doing.
@@ -103,7 +104,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="hjr-cp-YaM" secondAttribute="trailing" constant="24" id="BoD-xo-6zY"/>
                             <constraint firstItem="hjr-cp-YaM" firstAttribute="leading" secondItem="WSg-eU-e4Y" secondAttribute="leading" constant="24" id="EH5-c6-oeb"/>
@@ -120,10 +121,10 @@ In emergency situations, Emergency Services will also provide citizens with dire
         <scene sceneID="iPj-fT-wOf">
             <objects>
                 <tableViewController id="Zal-SK-6bM" customClass="NameEntryViewController" customModule="Loc8r" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" id="9eU-yB-tGl">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" id="9eU-yB-tGl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="aaF-JY-lJG">
                             <rect key="frame" x="0.0" y="64" width="600" height="164"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -140,7 +141,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="94P-5l-6kf" firstAttribute="centerX" secondItem="aaF-JY-lJG" secondAttribute="centerX" id="4go-KR-UYe"/>
                                 <constraint firstItem="z8n-km-upx" firstAttribute="centerX" secondItem="aaF-JY-lJG" secondAttribute="centerX" id="Fzp-0U-QK2"/>
@@ -155,7 +156,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                         <view key="tableFooterView" contentMode="scaleToFill" id="8vS-KM-Iec">
                             <rect key="frame" x="0.0" y="352" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                         <sections>
                             <tableViewSection id="f47-as-bld">
@@ -285,7 +286,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" id="eNU-6N-TUJ">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="y6V-mo-3ff">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="325"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -332,7 +333,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="rJe-Ow-cqq" secondAttribute="trailing" id="34b-ho-eo5"/>
                                 <constraint firstAttribute="trailing" secondItem="lzi-fE-Mbl" secondAttribute="trailing" id="5MH-tP-KO2"/>
@@ -362,7 +363,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                         <view key="tableFooterView" contentMode="scaleToFill" id="Yyk-WS-Ydc">
                             <rect key="frame" x="0.0" y="325" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                         <sections/>
                         <connections>
@@ -407,7 +408,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cch-Lx-wz1">
-                                <rect key="frame" x="24" y="94" width="552" height="95.5"/>
+                                <rect key="frame" x="24" y="94" width="552" height="96"/>
                                 <string key="text">You have been added to the system, and your groups have been created.
 
 In an emergency, check in using the app; you will be able to request help if necessary, check on the status of your groups and get directions to the nearest Emergency Centres.</string>
@@ -416,7 +417,7 @@ In an emergency, check in using the app; you will be able to request help if nec
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djf-hr-jd0">
-                                <rect key="frame" x="269" y="420" width="63" height="41"/>
+                                <rect key="frame" x="268" y="420" width="63" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Finish"/>
                                 <connections>
@@ -426,7 +427,7 @@ In an emergency, check in using the app; you will be able to request help if nec
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Gxi-Cu-Hnj" firstAttribute="top" secondItem="djf-hr-jd0" secondAttribute="top" constant="72" id="3B3-df-cVA"/>
                             <constraint firstItem="Kjj-n1-R6h" firstAttribute="top" secondItem="eRq-yp-1QN" secondAttribute="bottom" constant="32" id="6dh-X6-ZVF"/>
@@ -452,7 +453,7 @@ In an emergency, check in using the app; you will be able to request help if nec
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" id="zw8-WF-na6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="V04-tK-00O">
                             <rect key="frame" x="0.0" y="64" width="600" height="300"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -529,7 +530,7 @@ In an emergency, check in using the app; you will be able to request help if nec
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="sm0-Mh-Ilo" firstAttribute="top" secondItem="V04-tK-00O" secondAttribute="top" constant="32" id="4Gb-di-6AE"/>
                                 <constraint firstItem="qyk-H5-y3O" firstAttribute="top" secondItem="VE1-zg-EJu" secondAttribute="bottom" constant="70" id="79B-ia-7kV"/>
@@ -562,7 +563,7 @@ In an emergency, check in using the app; you will be able to request help if nec
                         <view key="tableFooterView" contentMode="scaleToFill" id="4Ud-EI-P8C">
                             <rect key="frame" x="0.0" y="364" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                         <sections/>
                         <connections>
@@ -598,7 +599,7 @@ In an emergency, check in using the app; you will be able to request help if nec
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hMN-FG-e5p">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="JDT-XF-IAV">
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -663,7 +664,7 @@ In an emergency, check in using the app; you will be able to request help if nec
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9iD-1u-kCH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -690,7 +691,7 @@ In an emergency, check in using the app; you will be able to request help if nec
                                 <rect key="frame" x="0.0" y="220" width="600" height="95"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdd-ER-R1u">
-                                        <rect key="frame" x="24" y="20" width="552" height="57.5"/>
+                                        <rect key="frame" x="24" y="20" width="552" height="58"/>
                                         <string key="text">Region-wide government alerts will be displayed here. If an alert does exist, you will be able to check in as safe, and check on the status of group members.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -703,7 +704,7 @@ In an emergency, check in using the app; you will be able to request help if nec
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="6Wc-PZ-VNi" firstAttribute="top" secondItem="lIX-u7-HbF" secondAttribute="top" id="0re-uG-nwA"/>
                                     <constraint firstItem="6Wc-PZ-VNi" firstAttribute="leading" secondItem="lIX-u7-HbF" secondAttribute="leading" constant="24" id="1Rv-I9-VEE"/>
@@ -715,7 +716,7 @@ In an emergency, check in using the app; you will be able to request help if nec
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="lIX-u7-HbF" secondAttribute="trailing" id="Wi6-XX-l86"/>
                             <constraint firstItem="lIX-u7-HbF" firstAttribute="centerY" secondItem="7nZ-OW-r4o" secondAttribute="centerY" id="cDx-Ln-m8f"/>
@@ -776,7 +777,7 @@ Please answer the questions below.</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <state key="normal" title="Yes, I need assistance">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -795,7 +796,7 @@ Please answer the questions below.</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <state key="normal" title="No, I do not need assistance">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -807,7 +808,7 @@ Please answer the questions below.</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="U1J-W2-2Sr" secondAttribute="trailing" constant="16" id="5NI-RH-4AP"/>
                             <constraint firstItem="U1J-W2-2Sr" firstAttribute="leading" secondItem="hug-LJ-KTE" secondAttribute="leading" constant="16" id="7BZ-8I-Nso"/>
@@ -823,7 +824,13 @@ Please answer the questions below.</string>
                             <constraint firstAttribute="trailing" secondItem="dm1-rp-INl" secondAttribute="trailing" constant="16" id="wi9-vB-99O"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1QC-A3-GvT"/>
+                    <navigationItem key="navigationItem" id="1QC-A3-GvT">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0ML-tp-lPl">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="cj9-ZI-ze5" id="Wq9-IG-GaP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ky8-HR-2SW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -867,7 +874,7 @@ Please answer the questions below.</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <state key="normal" title="No, nobody needs help">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -886,7 +893,7 @@ Please answer the questions below.</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <state key="normal" title="Yes, someone needs help">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -898,7 +905,7 @@ Please answer the questions below.</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="5kx-1V-83M" firstAttribute="top" secondItem="gl3-Kr-rWs" secondAttribute="bottom" constant="32" id="2Zd-kQ-Z5O"/>
                             <constraint firstItem="i5v-yg-hWm" firstAttribute="leading" secondItem="Ote-am-s8G" secondAttribute="leading" constant="24" id="4L5-2R-wre"/>
@@ -935,20 +942,20 @@ Please answer the questions below.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What type of assistance do they need?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkF-Pv-obM">
-                                <rect key="frame" x="16" y="169" width="568" height="21"/>
+                                <rect key="frame" x="16" y="125" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If necessary, select more than 1." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQ4-TO-vpO">
-                                <rect key="frame" x="16" y="190" width="568" height="21"/>
+                                <rect key="frame" x="16" y="146" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J0n-XR-2Qx">
-                                <rect key="frame" x="8" y="228" width="592" height="132"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="8" y="184" width="592" height="132"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="CAk-iv-BQF"/>
                                 </constraints>
@@ -980,7 +987,7 @@ Please answer the questions below.</string>
                                 <sections/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVH-lN-0eH" userLabel="Grey Label Top">
-                                <rect key="frame" x="16" y="227" width="584" height="1"/>
+                                <rect key="frame" x="16" y="183" width="584" height="1"/>
                                 <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="PhR-yj-60o"/>
@@ -990,7 +997,7 @@ Please answer the questions below.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgf-JQ-92H" userLabel="Grey Label Bottom">
-                                <rect key="frame" x="16" y="360" width="584" height="1"/>
+                                <rect key="frame" x="16" y="316" width="584" height="1"/>
                                 <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="0fe-MJ-ksL"/>
@@ -1007,7 +1014,7 @@ Please answer the questions below.</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <state key="normal" title="Yes, I am mobile">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1019,7 +1026,7 @@ Please answer the questions below.</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="jkF-Pv-obM" firstAttribute="leading" secondItem="Lg4-WJ-Str" secondAttribute="leading" constant="16" id="42Y-Dd-Ubi"/>
                             <constraint firstAttribute="trailing" secondItem="Kgf-JQ-92H" secondAttribute="trailing" id="6uD-DP-1sw"/>
@@ -1083,7 +1090,7 @@ Please answer the questions below.</string>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qI4-8t-wYn">
                                 <rect key="frame" x="8" y="251" width="592" height="132"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="Ocv-zZ-c6M"/>
                                 </constraints>
@@ -1142,7 +1149,7 @@ Please answer the questions below.</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <state key="normal" title="Yes, I am mobile">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1154,7 +1161,7 @@ Please answer the questions below.</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ehS-xs-ghW" secondAttribute="trailing" id="3Ek-2K-xAN"/>
                             <constraint firstItem="8JM-zL-awf" firstAttribute="bottom" secondItem="qI4-8t-wYn" secondAttribute="bottom" id="Aj1-ED-KTI"/>
@@ -1206,13 +1213,13 @@ Please answer the questions below.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="c38-33-oba">
-                                <rect key="frame" x="0.0" y="64" width="600" height="392"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="392"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="392" id="8S7-vs-OAH"/>
                                 </constraints>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gq5-z4-dWN">
-                                <rect key="frame" x="0.0" y="456" width="600" height="93"/>
+                                <rect key="frame" x="0.0" y="412" width="600" height="93"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearest Emergency Centre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eG4-RQ-UZS">
                                         <rect key="frame" x="16" y="16" width="200" height="20"/>
@@ -1220,14 +1227,14 @@ Please answer the questions below.</string>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grand River Hospital" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laT-rO-ZbX">
-                                        <rect key="frame" x="16" y="36" width="149" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ron Eydt Village (REV)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laT-rO-ZbX">
+                                        <rect key="frame" x="16" y="36" width="162" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q40-fX-eKJ">
-                                        <rect key="frame" x="0.0" y="72" width="600" height="1"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="1"/>
                                         <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Mxy-L0-W75"/>
@@ -1236,46 +1243,77 @@ Please answer the questions below.</string>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculating...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZ8-eI-T74">
+                                        <rect key="frame" x="16" y="56" width="99" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="zZ8-eI-T74" firstAttribute="top" secondItem="laT-rO-ZbX" secondAttribute="bottom" id="9R4-Vl-y7L"/>
                                     <constraint firstAttribute="trailing" secondItem="q40-fX-eKJ" secondAttribute="trailing" id="Ild-bg-ATf"/>
                                     <constraint firstItem="laT-rO-ZbX" firstAttribute="top" secondItem="eG4-RQ-UZS" secondAttribute="bottom" id="NDq-NM-ARG"/>
                                     <constraint firstItem="q40-fX-eKJ" firstAttribute="top" secondItem="laT-rO-ZbX" secondAttribute="bottom" constant="16" id="Uok-g4-TvE"/>
+                                    <constraint firstItem="zZ8-eI-T74" firstAttribute="leading" secondItem="laT-rO-ZbX" secondAttribute="leading" id="cdU-4S-3ln"/>
                                     <constraint firstItem="q40-fX-eKJ" firstAttribute="leading" secondItem="Gq5-z4-dWN" secondAttribute="leading" id="kcV-O4-rK6"/>
                                     <constraint firstAttribute="height" constant="93" id="oUB-eD-fe0"/>
                                     <constraint firstItem="eG4-RQ-UZS" firstAttribute="leading" secondItem="Gq5-z4-dWN" secondAttribute="leading" constant="16" id="pa5-hb-JkP"/>
+                                    <constraint firstItem="q40-fX-eKJ" firstAttribute="top" secondItem="zZ8-eI-T74" secondAttribute="bottom" constant="16" id="xSn-HC-Iqi"/>
                                     <constraint firstItem="eG4-RQ-UZS" firstAttribute="top" secondItem="Gq5-z4-dWN" secondAttribute="top" constant="16" id="yM4-cH-dqU"/>
                                     <constraint firstItem="laT-rO-ZbX" firstAttribute="leading" secondItem="eG4-RQ-UZS" secondAttribute="leading" id="znX-e3-3k7"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Uok-g4-TvE"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCb-wf-KoY">
-                                <rect key="frame" x="0.0" y="549" width="600" height="112"/>
+                                <rect key="frame" x="0.0" y="505" width="600" height="112"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4UK-m7-poj">
-                                        <rect key="frame" x="0.0" y="-20" width="600" height="27"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4UK-m7-poj">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="51"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="goBack" id="goT-pJ-ZZZ" customClass="MapPageTableViewCell" customModule="Loc8r" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="goBack" id="goT-pJ-ZZZ" customClass="MapPageTableViewCell" customModule="Loc8r" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="600" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="goT-pJ-ZZZ" id="4TO-9o-DSm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="567" height="119.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBA-bQ-J17">
-                                                            <rect key="frame" x="279" y="12" width="42" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Your Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBA-bQ-J17">
+                                                            <rect key="frame" x="16" y="16" width="551" height="20"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If your condition changes or someone else around needs help, tap here to indicate that assistance is required." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfB-o9-zGW">
+                                                            <rect key="frame" x="16" y="40" width="551" height="20"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="tfB-o9-zGW" firstAttribute="leading" secondItem="4TO-9o-DSm" secondAttribute="leading" constant="16" id="585-Q6-7Df"/>
+                                                        <constraint firstItem="tfB-o9-zGW" firstAttribute="top" secondItem="nBA-bQ-J17" secondAttribute="bottom" constant="4" id="7KK-0h-DyJ"/>
+                                                        <constraint firstItem="nBA-bQ-J17" firstAttribute="top" secondItem="4TO-9o-DSm" secondAttribute="top" constant="16" id="hdv-Pa-Rnd"/>
+                                                        <constraint firstAttribute="trailing" secondItem="tfB-o9-zGW" secondAttribute="trailing" id="k4h-Oh-XmU"/>
+                                                        <constraint firstAttribute="trailing" secondItem="nBA-bQ-J17" secondAttribute="trailing" id="kQ4-aG-W6U"/>
+                                                        <constraint firstItem="nBA-bQ-J17" firstAttribute="leading" secondItem="4TO-9o-DSm" secondAttribute="leading" constant="16" id="v5g-YJ-fnC"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="cellLabel" destination="nBA-bQ-J17" id="3P1-cc-Kap"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="4UK-m7-poj" firstAttribute="leading" secondItem="TCb-wf-KoY" secondAttribute="leading" id="QP1-xT-ach"/>
                                     <constraint firstAttribute="trailing" secondItem="4UK-m7-poj" secondAttribute="trailing" id="ZjU-nm-Xpi"/>
@@ -1283,7 +1321,7 @@ Please answer the questions below.</string>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="c38-33-oba" firstAttribute="top" secondItem="OdQ-YZ-9VE" secondAttribute="bottom" id="6hp-d4-CLE"/>
                             <constraint firstItem="4UK-m7-poj" firstAttribute="top" secondItem="q40-fX-eKJ" secondAttribute="bottom" id="KN5-xv-mTY"/>
@@ -1304,13 +1342,16 @@ Please answer the questions below.</string>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="distanceLabel" destination="zZ8-eI-T74" id="VQp-uf-DpK"/>
                         <outlet property="mapView" destination="c38-33-oba" id="g1I-S5-MUk"/>
+                        <outlet property="mapViewHeightConstraint" destination="8S7-vs-OAH" id="XjV-cU-970"/>
                         <outlet property="tv" destination="4UK-m7-poj" id="VIY-om-Ob5"/>
+                        <segue destination="iq0-V9-der" kind="show" identifier="resetStatus" id="jHx-rx-DN5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tj1-he-2VU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4126" y="2722"/>
+            <point key="canvasLocation" x="4200" y="2722"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R4g-kn-bwl">
@@ -1338,7 +1379,7 @@ Please answer the questions below.</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DpD-bM-Ji4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1420,7 +1461,7 @@ Please answer the questions below.</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="NKD-ni-SOl" firstAttribute="centerY" secondItem="uKX-a8-8Cf" secondAttribute="centerY" id="1nS-ht-VZ1"/>
                             <constraint firstItem="EXF-D0-bUh" firstAttribute="top" secondItem="iSy-Xb-eDN" secondAttribute="bottom" constant="21" id="1qK-CA-b1l"/>
@@ -1469,7 +1510,7 @@ Please answer the questions below.</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="zLD-WD-ziw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1502,6 +1543,7 @@ Please answer the questions below.</string>
     <inferredMetricsTieBreakers>
         <segue reference="aJG-X4-f7A"/>
         <segue reference="K9O-nv-5GK"/>
-        <segue reference="U8w-jP-xgK"/>
+        <segue reference="SLx-Xn-fUp"/>
+        <segue reference="jHx-rx-DN5"/>
     </inferredMetricsTieBreakers>
 </document>

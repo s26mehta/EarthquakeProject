@@ -22,6 +22,19 @@ class UpdateNameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // Keyboard hiding function
+    // Return button on keyboard
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // Touch anywhere outside of the keyboard
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
 
     @IBAction func saveButton(sender: AnyObject) {
         if ((firstNameTextLabel.text == "") || (lastNameTextLabel.text == "")) {

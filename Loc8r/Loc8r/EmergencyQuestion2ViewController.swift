@@ -120,13 +120,18 @@ class EmergencyQuestion2ViewController: UIViewController, UITableViewDelegate, U
     
     func setStatus() {
         let status = String(Int(medical)) + String(Int(fire)) + String(Int(police))
+        let time = String(Int(NSDate().timeIntervalSince1970))
         
         let url = "http://waterloo.matthewgougeon.me:1801/setStatus"
-        let name = "name=" + fullName + "lat=" + String(currentLocation[0])
-        let location = "lon=" + String(currentLocation[1]) + "status=" + status
+        let name = "name=" + fullName + "&lat=" + String(currentLocation[0])
+        let location = "&lon=" + String(currentLocation[1]) + "&status=" + status + "&time=" + time
         let message = name + location
         
+        print(status)
+        
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        
+        print(request)
         request.HTTPBody = message.dataUsingEncoding(NSUTF8StringEncoding)
         let session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"

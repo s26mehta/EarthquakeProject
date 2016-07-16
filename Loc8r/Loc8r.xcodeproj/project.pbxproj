@@ -31,6 +31,7 @@
 		214E680F1D383E3D00FD1233 /* EmergencyQuestion3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E680E1D383E3D00FD1233 /* EmergencyQuestion3ViewController.swift */; };
 		214E68111D38423000FD1233 /* EmergencyQuestion4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E68101D38423000FD1233 /* EmergencyQuestion4ViewController.swift */; };
 		214E68131D38AD0C00FD1233 /* MapPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E68121D38AD0C00FD1233 /* MapPageTableViewCell.swift */; };
+		214E68151D39CBA900FD1233 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E68141D39CBA900FD1233 /* extension.swift */; };
 		21A3F44F1D2CBB090074DDF9 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */; };
 		21A3F4531D2D82C80074DDF9 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		214E680E1D383E3D00FD1233 /* EmergencyQuestion3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyQuestion3ViewController.swift; sourceTree = "<group>"; };
 		214E68101D38423000FD1233 /* EmergencyQuestion4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyQuestion4ViewController.swift; sourceTree = "<group>"; };
 		214E68121D38AD0C00FD1233 /* MapPageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPageTableViewCell.swift; sourceTree = "<group>"; };
+		214E68141D39CBA900FD1233 /* extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +117,7 @@
 		210530951D2602FE00B9BDB4 = {
 			isa = PBXGroup;
 			children = (
+				214E68141D39CBA900FD1233 /* extension.swift */,
 				210530A01D2602FE00B9BDB4 /* Loc8r */,
 				210530B51D2602FE00B9BDB4 /* Loc8rTests */,
 				210530C01D2602FE00B9BDB4 /* Loc8rUITests */,
@@ -298,7 +301,7 @@
 				TargetAttributes = {
 					2105309D1D2602FE00B9BDB4 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 8HV35P9NWN;
+						DevelopmentTeam = YEQY6SUCH6;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -372,6 +375,7 @@
 				214E68071D36FD6C00FD1233 /* EmergencyQuestion2ViewController.swift in Sources */,
 				211248D71D3348320049AE53 /* EmergencyAlertViewController.swift in Sources */,
 				211248E01D35F6E20049AE53 /* GroupMemberTableViewCell.swift in Sources */,
+				214E68151D39CBA900FD1233 /* extension.swift in Sources */,
 				214E68021D36CCF600FD1233 /* UpdateNameViewController.swift in Sources */,
 				210530D01D2609AD00B9BDB4 /* NameEntryViewController.swift in Sources */,
 				214E68041D36E2A200FD1233 /* EmergencyQuestion1ViewController.swift in Sources */,
