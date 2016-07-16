@@ -98,6 +98,9 @@ class People():
                     log.debug(i['name'])
                     if i["last_seen"] != None:
                         time = datetime.fromtimestamp(int(i['last_seen']))
-                    self.array.append(Person(i['name'], _status=i['status'], _last_seen=time, _location=i['location']))
+                    loc = None
+                    if i['location'] != None:
+                        loc=i['location']
+                    self.array.append(Person(i['name'], _status=i['status'], _last_seen=time, _location=loc))
         except Exception, e:
             log.error("Error reading file: " + e.message)
