@@ -67,7 +67,7 @@ def getCells():
 
 @app.post('/newPerson')
 def newPerson():
-    return people.newPerson(request.forms['name'])
+    people.newPerson(request.forms['name'])
     log.debug("new person: " + str(request.forms['name']))
     people.writeToFile()
 
