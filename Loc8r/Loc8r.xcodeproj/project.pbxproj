@@ -35,6 +35,7 @@
 		21A3F44F1D2CBB090074DDF9 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */; };
 		21A3F4531D2D82C80074DDF9 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */; };
 		21D39CE01D3A71B900FAA620 /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D39CDF1D3A71B900FAA620 /* GroupTableViewController.swift */; };
+		21D39CE21D3AE7BF00FAA620 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D39CE11D3AE7BF00FAA620 /* AboutAppViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		21A3F44E1D2CBB090074DDF9 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 		21D39CDF1D3A71B900FAA620 /* GroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
+		21D39CE11D3AE7BF00FAA620 /* AboutAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				210530A31D2602FE00B9BDB4 /* ViewController.swift */,
+				21D39CE11D3AE7BF00FAA620 /* AboutAppViewController.swift */,
 				210530CF1D2609AD00B9BDB4 /* NameEntryViewController.swift */,
 				210530D21D26CDDC00B9BDB4 /* GroupViewController.swift */,
 				211248DD1D3595DF0049AE53 /* CreateGroupViewControllers */,
@@ -375,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D39CE21D3AE7BF00FAA620 /* AboutAppViewController.swift in Sources */,
 				214E68071D36FD6C00FD1233 /* EmergencyQuestion2ViewController.swift in Sources */,
 				211248D71D3348320049AE53 /* EmergencyAlertViewController.swift in Sources */,
 				211248E01D35F6E20049AE53 /* GroupMemberTableViewCell.swift in Sources */,
