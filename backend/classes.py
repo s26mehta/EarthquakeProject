@@ -37,6 +37,11 @@ class Person():
             return True
         return False
 
+    def isUnSafe(self):
+        if self.status > 0: # anything bigger than 0 is unsafe
+            return True
+        return False
+
     def updateLocation(self, _loc):
         self.location = _loc
 
@@ -62,7 +67,7 @@ class People():
             return 0
         j = 0
         for i in self.array:
-            if not i.isSafe():
+            if i.isUnSafe():
                 j+=1
         return j
 
