@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnboardingCompleteViewController: UIViewController {
+class OnboardingCompleteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
