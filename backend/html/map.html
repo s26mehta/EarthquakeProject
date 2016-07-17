@@ -24,52 +24,22 @@
                 </div>
             </div>
         </div>
-
         <div class="map-layers">
             <h3>Map Layers</h3>
-            <p>Select layers to display on map.</p>
-        </div>
+            <p>Select layers to display on map</p>
 
-        <div class="legend">
-            <h3>Legend</h3>
-            <div class="legend-marker"><img src="/img/unsafe.png" alt=""></div>
-            <div class="legend-title">Unsafe</div>
-            <div class="legend-marker"><img src="/img/safe.png" alt=""></div>
-            <div class="legend-title">Safe</div>
-        </div>
-
-
-
-
-        <!-- old heatmap and severity map code that toggles -->
-
-        <!-- <button onclick="heatMap()" class="toggle-button" id="heat-map-btn"><img src="/img/heat-map.svg" alt=""><span>Heat Map</span></button>
-        <button onclick="severityMap()" class="toggle-button" id="severity-map-btn"><img src="/img/first-aid.svg" alt=""><span>Severity Level Map</span></button> -->
-
-<!--         <div id="severity_map_info">
-            <div class="info_title"><h2>Severity Map</h2></div>
-            <div class="legend">
-                    <h3>Legend</h3>
-                    <div class="legend-marker"><img src="/img/yellow.png" alt=""></div>
-                    <div class="legend-title">Low</div>
-                    <div class="legend-marker"><img src="/img/orange.png" alt=""></div>
-                    <div class="legend-title">Medium</div>
-                    <div class="legend-marker"><img src="/img/red.png" alt=""></div>
-                    <div class="legend-title">High</div>
+            <div class="map_options">
+                    <form action="">
+                        <input type="checkbox" checked onclick="updateChecks()" id="medical_check"><img src="/img/red.png" alt="" class="map-indicator"><span>Requiring Medical Assistance</span><br>
+                        <input type="checkbox" checked onclick="updateChecks()" id="fire_check"><img src="/img/orange.png" alt="" class="map-indicator"><span>Requiring Fire Assistance</span><br>
+                        <input type="checkbox" checked onclick="updateChecks()" id="police_check"><img src="/img/blue.png" alt="" class="map-indicator"><span>Requiring Police Assistance</span><br>
+                        <input type="checkbox" checked onclick="updateChecks()" id="safe_check"><img src="/img/green.png" alt="" class="map-indicator"><span>Safe Respondents</span><br>
+                        <input type="checkbox" checked onclick="updateChecks()" id="cell_check"><img src="/img/cell icon-20w.png" alt="" class="map-indicator"><span>Downed Cell Towers</span><br>
+                    </form>
             </div>
-        </div> 
-        <div id="heat_map_info">
-            <div class="info_title clearfix"><h2>Heat Map</h2></div>
-            <div class="legend">
-                    <h3>Legend</h3>
-                    <div class="legend-marker"><img src="/img/unsafe.png" alt=""></div>
-                    <div class="legend-title">Unsafe</div>
-                    <div class="legend-marker"><img src="/img/safe.png" alt=""></div>
-                    <div class="legend-title">Safe</div>
-            </div>
-        </div>    -->  
-        <!-- <div id="currentMap">Location of Distressed Citizens</div> -->
-<!--         <p>Emergency State: </p><span id="emergencyState"></span> -->
+        </div>
+        <div id="map_info">
+
 
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>

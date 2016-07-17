@@ -1,6 +1,7 @@
-var map, heatmap, currentMap;
+var map, heatmap, currentMap, towers;
 
 function initMap() {
+    getStatus();
     // create map options
     var mapOptions = {
         zoom: 13,
@@ -15,17 +16,17 @@ function initMap() {
         map: map
     });
     Medical_heatmap = new google.maps.visualization.HeatmapLayer({
-        map: null
+        map: map
     });
 
     Police_heatmap = new google.maps.visualization.HeatmapLayer({
-        map: null
+        map: map
     });
     Fire_heatmap = new google.maps.visualization.HeatmapLayer({
-        map: null
+        map: map
     });
 
-    // define gradients for each heatmap
+    // define gradients for eaB4EC51ch heatmap
     var safeGradient = [
         'rgba(0, 255, 255, 0)',
         'rgba(0, 255, 255, 1)',
@@ -59,35 +60,34 @@ function initMap() {
         'rgba(255, 0, 0, 1)'
         ]
     // var red = 'rgba(255, 0, 0, 0)';
+    var green = [ 'rgba(66, 147, 33, 0)'].concat(Array(9).fill('rgba(66, 147, 33, 1)'))
     var red = [ 'rgba(255, 0, 0, 0)'].concat(Array(9).fill('rgba(255, 0, 0, 1)'))
-    var yellow = [ 'rgba(255, 221, 56, 0)'].concat(Array(9).fill('rgba(255, 221, 56, 1)'))
+    var yellow = [ 'rgba(255, 207, 4, 0)'].concat(Array(9).fill('rgba(255, 207, 4, 1)'))
     var orange = ['rgba(255, 138, 26, 0)'].concat(Array(9).fill('rgba(255, 138, 26, 1)'))
-    var blue = ['rgba(255, 138, 26, 0)'].concat(Array(9).fill('rgba(52, 85, 224, 1)'))
+    var blue = ['rgba(48, 35, 174, 0)'].concat(Array(9).fill('rgba(48, 35, 174, 1)'))
 
-    safeheatmap.set('gradient', safeGradient);
-    Medical_heatmap.set('gradient', orange);
-    Fire_heatmap.set('gradient', yellow);
+    safeheatmap.set('gradient', green);
+    Medical_heatmap.set('gradient', red);
+    Fire_heatmap.set('gradient', orange);
     Police_heatmap.set('gradient', blue);
     // turn on heatMap initially
     getPoints();
-    heatMap();
+    updateChecks();
 
+    towers = [];
     $.getJSON('/getCells', function(data) {
-    for (var j=0; j < data.length; j++) {
-        console.log(j.name)
-        console.log(j.location)
-        var marker = new google.maps.Marker({
-          position: data[j].location,
-          map: map,
-          icon: {
-            path: "M28.77,29.669 C28.759,29.629 28.739,29.594 28.726,29.555 C28.725,29.551 28.723,29.547 28.721,29.542 C28.58,29.132 28.332,28.788 28.012,28.534 C27.998,28.523 27.983,28.514 27.968,28.503 C27.871,28.43 27.769,28.363 27.661,28.306 C27.632,28.291 27.6,28.279 27.569,28.265 C27.47,28.219 27.369,28.178 27.263,28.147 C27.249,28.143 27.237,28.136 27.223,28.132 C27.19,28.123 27.158,28.123 27.125,28.115 C27.034,28.095 26.943,28.077 26.849,28.068 C26.78,28.061 26.712,28.061 26.643,28.061 C26.574,28.061 26.507,28.061 26.438,28.068 C26.344,28.077 26.253,28.094 26.162,28.115 C26.129,28.122 26.097,28.123 26.064,28.132 C26.05,28.136 26.038,28.143 26.024,28.147 C25.918,28.178 25.817,28.219 25.718,28.265 C25.688,28.279 25.656,28.291 25.627,28.306 C25.519,28.362 25.418,28.429 25.321,28.502 C25.307,28.513 25.291,28.522 25.277,28.533 C24.957,28.786 24.71,29.13 24.569,29.54 C24.567,29.545 24.565,29.549 24.564,29.554 C24.551,29.593 24.531,29.627 24.52,29.667 C24.512,29.694 15.271,63.373 15.273,63.373 C15.027,64.506 15.704,65.646 16.835,65.958 C17.966,66.27 19.132,65.637 19.501,64.538 C19.501,64.538 20.607,60.517 22.053,55.253 C25.969,58.571 34.23,65.571 34.23,65.57 C34.689,65.93 35.252,66.079 35.797,66.027 C36.014,66.034 36.233,66.019 36.453,65.959 C37.584,65.647 38.261,64.507 38.016,63.374 C38.019,63.375 28.777,29.696 28.77,29.669 L28.77,29.669 Z M26.645,38.538 C27.17,40.451 27.758,42.588 28.364,44.796 C27.292,45.352 25.752,46.15 24.356,46.873 C25.161,43.943 25.956,41.048 26.645,38.538 L26.645,38.538 Z M29.555,49.131 C30.417,52.268 31.259,55.333 31.963,57.896 C29.385,55.709 26.44,53.211 24.634,51.679 C26.365,50.782 28.186,49.839 29.555,49.131 L29.555,49.131 Z",
-            // size: new google.maps.Size(30, 30),
-            scale: 0.5,
-            fillColor: "#F00",
-            fillOpacity: 1,
-            strokeWeight: 0
-            }
-        });
+        for (var j=0; j < data.length; j++) {
+            var marker = new google.maps.Marker({
+              position: data[j].location,
+              map: map,
+              icon: {
+                        url: '/img/cell icon-20w.png',
+                        size: new google.maps.Size(20, 32)
+                        // origin: new google.maps.Point(0, 0),
+                        // anchor: new google.maps.Point(0, 32)
+                      }
+            });
+            towers.push(marker)
         // marker.setIcon('/img/cell.png')
     }
     });
@@ -99,40 +99,35 @@ function initMap() {
     }, 3000);
 }
 
-function heatMap() {
-    // put safe and unsafe heatmaps on map
-    safeheatmap.setMap(map);
-    // remove severity maps from map
-    Medical_heatmap.setMap(null);
-    Fire_heatmap.setMap(null);
-    Police_heatmap.setMap(null);
 
-    // change classes on buttons so that their styles change
-    $("#heat-map-btn").addClass("active");
-    $("#severity-map-btn").removeClass("active");
-
-    // show the correct legend and other information
-    document.getElementById("severity_map_info").style.display = "none";
-    document.getElementById("heat_map_info").style.display = "block";
-}
-
-function severityMap() {
-    // remove save and unsafe heatmaps from the map
-    safeheatmap.setMap(null);
-
-    // add severity level maps to the map
-    Medical_heatmap.setMap(map);
-    Fire_heatmap.setMap(map);
-    Police_heatmap.setMap(map);
-
-    // change classes on buttons so that their styles change
-    $("#heat-map-btn").removeClass("active");
-    $("#severity-map-btn").addClass("active");
-
-    // show the correct legend and other information
-    document.getElementById("severity_map_info").style.display = "block";
-    document.getElementById("heat_map_info").style.display = "none";
-
+function updateChecks() {
+    // update checked maps
+    if (document.getElementById("safe_check").checked)
+        safeheatmap.setMap(map);
+    else
+        safeheatmap.setMap(null);
+    if (document.getElementById("police_check").checked)
+        Police_heatmap.setMap(map);
+    else
+        Police_heatmap.setMap(null);
+    if (document.getElementById("fire_check").checked)
+        Fire_heatmap.setMap(map);
+    else
+        Fire_heatmap.setMap(null);
+    if (document.getElementById("medical_check").checked)
+        Medical_heatmap.setMap(map);
+    else 
+        Medical_heatmap.setMap(null);
+    if (document.getElementById("cell_check").checked){
+        for (var j=0; j < towers.length; j++) {
+            towers[j].setMap(map);
+        }
+    }
+    else {
+        for (var j=0; j < towers.length; j++) {
+            towers[j].setMap(null);
+        }
+    }
 }
 
 function getPoints() {
@@ -178,12 +173,17 @@ function getPoints() {
 }
 
 function getStatus(){
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 && xhttp.status == 200) {
-        document.getElementById("emergencyState").innerHTML = xhttp.responseText;
-        }
+
+    var doSomethingAJAX = function (el, url) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.onload = function () { el.innerHTML = xhr.responseText; };
+        xhr.onerror = function () { /* ... */ };
+        xhr.send();
     };
-    xhttp.open("GET", "getEmergData", true);
-    xhttp.send();
+
+    doSomethingAJAX(document.getElementById("emergencyInfo"), '/getEmergData')
+    doSomethingAJAX(document.getElementById("countUnsafe"), '/countUnSafe')
+    doSomethingAJAX(document.getElementById("countSafe"), '/countSafe')
+
 }

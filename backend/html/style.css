@@ -69,6 +69,10 @@ html {
     margin: 0;
 }
 
+#sidebar .map_options img{
+    width: 18px;
+}
+
 #sidebar .sidebar-header .assistance-people, #sidebar .sidebar-header .safe-people {
     float: left;
     width: 50%;
@@ -155,12 +159,15 @@ form label {
 
 form input {
     font-size: 14px;
-    width: 250px;
     padding: 10px 12px;
-    margin: 12px 0 36px 0;
     background: #f2f2f2;
     border-radius: 3px;
     border: 1px solid #afafaf;
+}
+
+form input[type="text"] {
+    width: 250px;
+    margin: 12px 0 36px 0;
 }
 
 form input[type="submit"] {
@@ -168,7 +175,16 @@ form input[type="submit"] {
     border: none;
 }
 
+form input[type="checkbox"] {
+    margin: 8px 8px 8px 0;
+}
 
+
+img.map-indicator {
+    position: relative;
+    top: 4px;
+    margin-right: 8px;
+}
 
 
 

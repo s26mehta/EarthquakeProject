@@ -16,7 +16,7 @@ class Location():
 
 class Person():
     """docstring for Person"""
-    def __init__(self, _name, _status = 0, _last_seen = None, _location = None):
+    def __init__(self, _name, _status = -1, _last_seen = None, _location = None):
         self.name = _name
         self.status = _status
         self.location = _location
@@ -37,6 +37,11 @@ class Person():
             return True
         return False
 
+    def isUnSafe(self):
+        if self.status > 0: # anything bigger than 0 is unsafe
+            return True
+        return False
+
     def updateLocation(self, _loc):
         self.location = _loc
 
@@ -47,7 +52,10 @@ class People():
         self.isEmergency = False
         self.region = "null"
         self.emergencyType = "null"
+
     def countSafe(self):
+        if len(self.array) == 0:
+            return 0
         j = 0
         for i in self.array:
             if i.isSafe():
@@ -55,9 +63,11 @@ class People():
         return j
 
     def countUnsafe(self):
+        if len(self.array) == 0:
+            return 0
         j = 0
         for i in self.array:
-            if not i.isSafe():
+            if i.isUnSafe():
                 j+=1
         return j
 
