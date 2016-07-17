@@ -72,7 +72,6 @@ function initMap() {
     Police_heatmap.set('gradient', blue);
     // turn on heatMap initially
     getPoints();
-    updateChecks();
 
     towers = [];
     $.getJSON('/getCells', function(data) {
@@ -92,6 +91,7 @@ function initMap() {
     }
     });
 
+    updateChecks();
     // get new data from server every 3s
     window.setInterval(function() {
         getPoints();
