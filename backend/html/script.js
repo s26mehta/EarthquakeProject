@@ -16,14 +16,14 @@ function initMap() {
         map: map
     });
     Medical_heatmap = new google.maps.visualization.HeatmapLayer({
-        map: null
+        map: map
     });
 
     Police_heatmap = new google.maps.visualization.HeatmapLayer({
-        map: null
+        map: map
     });
     Fire_heatmap = new google.maps.visualization.HeatmapLayer({
-        map: null
+        map: map
     });
 
     // define gradients for eaB4EC51ch heatmap
@@ -72,6 +72,7 @@ function initMap() {
     Police_heatmap.set('gradient', blue);
     // turn on heatMap initially
     getPoints();
+    updateChecks();
 
     towers = [];
     $.getJSON('/getCells', function(data) {
