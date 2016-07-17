@@ -1,6 +1,7 @@
 var map, heatmap, currentMap, towers;
 
 function initMap() {
+    getStatus();
     // create map options
     var mapOptions = {
         zoom: 13,
