@@ -16,7 +16,7 @@ class Location():
 
 class Person():
     """docstring for Person"""
-    def __init__(self, _name, _status = 0, _last_seen = None, _location = None):
+    def __init__(self, _name, _status = -1, _last_seen = None, _location = None):
         self.name = _name
         self.status = _status
         self.location = _location
@@ -47,7 +47,7 @@ class People():
         self.isEmergency = False
         self.region = "null"
         self.emergencyType = "null"
-        
+
     def countSafe(self):
         if len(self.array) == 0:
             return 0
