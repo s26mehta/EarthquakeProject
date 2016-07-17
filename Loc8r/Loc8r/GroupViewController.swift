@@ -85,6 +85,13 @@ class GroupViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tv.deselectRowAtIndexPath(indexPath, animated: true)
+        let index = groupNameMemberDict.startIndex.advancedBy(indexPath.row)
+        gn = groupNameMemberDict.keys[index]
+        performSegueWithIdentifier("editOnboardingGroup", sender: self)
+    }
+    
     func finishOnboarding() {
         performSegueWithIdentifier("FinishOnboarding", sender: nil)
     }

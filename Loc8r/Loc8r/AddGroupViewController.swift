@@ -49,6 +49,7 @@ class AddGroupViewController: UITableViewController {
         } else {
             groupNames.append(groupNameTextField.text!)
             groupNameMemberDict.updateValue(people, forKey: groupNames.last!)
+            defaults.setObject(groupNameMemberDict, forKey: "Groups")
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
@@ -72,5 +73,20 @@ class AddGroupViewController: UITableViewController {
         let cell = tv.dequeueReusableCellWithIdentifier("personCell") as! GroupMemberTableViewCell
         cell.memberName.text = people[indexPath.row]
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == .Delete) {
+            people.removeAtIndex(indexPath.row)
+//            groupNameMemberDict.updateValue(people, forKey: gn)
+//            defaults.setObject(groupNameMemberDict, forKey: "Groups")
+            UIView.animateWithDuration(0.4, animations: {
+                self.tv.reloadData()
+            })
+        }
     }
 }

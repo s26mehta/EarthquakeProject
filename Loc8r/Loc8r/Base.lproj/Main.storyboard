@@ -395,6 +395,7 @@ In emergency situations, Emergency Services will also provide citizens with dire
                     <connections>
                         <outlet property="NextBarButtonItem" destination="77c-Z5-yK5" id="QkZ-R1-ZQp"/>
                         <outlet property="tv" destination="eNU-6N-TUJ" id="bdz-rr-NQ4"/>
+                        <segue destination="As7-xJ-HSf" kind="show" identifier="editOnboardingGroup" id="qKd-sZ-ZaE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KpC-WG-D5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1614,17 +1615,17 @@ Please answer the questions below.</string>
             <objects>
                 <tableViewController id="As7-xJ-HSf" customClass="PeopleStatusTableViewController" customModule="Loc8r" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ly6-l5-3G2">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Rve-Kp-6Ih">
-                            <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="personStatusCell" id="A2L-Lx-Adh" customClass="StatusTableViewCell" customModule="Loc8r" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A2L-Lx-Adh" id="MVK-kq-8v4">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -1720,7 +1721,8 @@ Please answer the questions below.</string>
         <segue reference="U8w-jP-xgK"/>
         <segue reference="tf4-Qi-2dU"/>
         <segue reference="aJG-X4-f7A"/>
+        <segue reference="qKd-sZ-ZaE"/>
+        <segue reference="HBF-Jg-Vs2"/>
         <segue reference="f1M-bT-AGN"/>
-        <segue reference="dWg-yI-8EO"/>
     </inferredMetricsTieBreakers>
 </document>

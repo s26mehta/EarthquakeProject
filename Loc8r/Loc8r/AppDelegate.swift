@@ -42,10 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         if onboardingComplete {
             getContacts()
-            print("Getting contacts")
         }
-        
-        
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert , .Badge], categories: nil))
         return true
@@ -127,7 +124,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         } else {
             defaults.setBool(onboardingComplete, forKey: "OnboardingComplete")
         }
-        print("onboarding complete" + String(onboardingComplete))
         
         // Group Member Dictionary
         if (defaults.objectForKey("Groups") != nil) {
@@ -142,7 +138,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         } else {
             defaults.setObject(fullName, forKey: "Name")
         }
-        print(fullName)
         
         // Safety Status Key
         if (defaults.objectForKey("SafetyStatus") != nil) {

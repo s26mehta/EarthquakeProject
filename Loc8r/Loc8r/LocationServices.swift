@@ -42,7 +42,6 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        print(counter)
         currentLocation.removeAll()
         currentLocation.append((locations.last?.coordinate.latitude)!)
         currentLocation.append((locations.last?.coordinate.longitude)!)
@@ -51,7 +50,6 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
         if (counter%5 == 0) {
             checkForEarthquake()
             getPeople()
-//            print("Checking for earthquakes")
         }
     }
     
@@ -133,7 +131,6 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
     }
     
     private func parseJSONResponse(data: NSData) {
-        print("parsing shit")
         let options:NSJSONReadingOptions = [.AllowFragments]
         var json: AnyObject!
         do {
@@ -143,6 +140,5 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
         }
         let obj = json as! NSArray
         peopleStatus = obj
-        print(peopleStatus)
     }
 }

@@ -68,15 +68,9 @@ class GroupTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if (setEarthquakeNotifications && !earthquakeOver)  {
-            tv.deselectRowAtIndexPath(indexPath, animated: true)
-            let index = groupNameMemberDict.startIndex.advancedBy(indexPath.row)
-            gn = groupNameMemberDict.keys[index]
-            performSegueWithIdentifier("groupStatus", sender: indexPath.row)
-        } else {
-    
-        }
-    
+        tv.deselectRowAtIndexPath(indexPath, animated: true)
+        let index = groupNameMemberDict.startIndex.advancedBy(indexPath.row)
+        gn = groupNameMemberDict.keys[index]
+        performSegueWithIdentifier("groupStatus", sender: indexPath.row)
     }
 }
