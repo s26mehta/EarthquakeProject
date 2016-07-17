@@ -101,22 +101,22 @@ function initMap() {
 
 function updateChecks() {
     // update checked maps
-    if (document.getElementById("medical_check").checked)
-        Medical_heatmap.setMap(map);
-    else 
-        Medical_heatmap.setMap(null);
-    if (document.getElementById("fire_check").checked)
-        Fire_heatmap.setMap(map);
-    else
-        Fire_heatmap.setMap(null);
-    if (document.getElementById("police_check").checked)
-        Police_heatmap.setMap(map);
-    else
-        Police_heatmap.setMap(null);
     if (document.getElementById("safe_check").checked)
         safeheatmap.setMap(map);
     else
         safeheatmap.setMap(null);
+    if (document.getElementById("police_check").checked)
+        Police_heatmap.setMap(map);
+    else
+        Police_heatmap.setMap(null);
+    if (document.getElementById("fire_check").checked)
+        Fire_heatmap.setMap(map);
+    else
+        Fire_heatmap.setMap(null);
+    if (document.getElementById("medical_check").checked)
+        Medical_heatmap.setMap(map);
+    else 
+        Medical_heatmap.setMap(null);
     if (document.getElementById("cell_check").checked){
         for (var j=0; j < towers.length; j++) {
             towers[j].setMap(map);
