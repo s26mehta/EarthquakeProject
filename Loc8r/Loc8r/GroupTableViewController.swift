@@ -28,6 +28,7 @@ class GroupTableViewController: UITableViewController {
         people.removeAll()
         tv.reloadData()
         tv.rowHeight = 62
+        self.navigationController?.topViewController?.title = "Group Members"
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
