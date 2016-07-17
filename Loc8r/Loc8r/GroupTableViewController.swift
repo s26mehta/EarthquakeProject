@@ -17,6 +17,13 @@ class GroupTableViewController: UITableViewController {
         tableView.registerNib(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "firstCell")
     }
     
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
+        if identifier == "groupStatus" {
+            return true
+        }
+        return true
+    }
+    
     override func viewWillAppear(animated: Bool) {
         people.removeAll()
         tv.reloadData()
@@ -57,7 +64,19 @@ class GroupTableViewController: UITableViewController {
         
         cell.groupLabel.text = groupLabelText
         cell.nameLabel.text = nameLabelText
-        cell
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if (setEarthquakeNotifications && !earthquakeOver)  {
+            tv.deselectRowAtIndexPath(indexPath, animated: true)
+            let index = groupNameMemberDict.startIndex.advancedBy(indexPath.row)
+            gn = groupNameMemberDict.keys[index]
+            performSegueWithIdentifier("groupStatus", sender: indexPath.row)
+        } else {
+    
+        }
+    
     }
 }

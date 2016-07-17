@@ -1536,7 +1536,7 @@ Please answer the questions below.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Qjv-a3-ZPr">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="152"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="117"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Groups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTj-BE-yNu">
@@ -1591,7 +1591,7 @@ Please answer the questions below.</string>
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="YUs-nG-vdZ">
-                            <rect key="frame" x="0.0" y="152" width="600" height="128"/>
+                            <rect key="frame" x="0.0" y="117" width="600" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -1602,11 +1602,81 @@ Please answer the questions below.</string>
                     </tableView>
                     <connections>
                         <outlet property="tv" destination="BRB-2N-ysJ" id="bIw-Xc-s5P"/>
+                        <segue destination="As7-xJ-HSf" kind="show" identifier="groupStatus" id="YHa-eM-kcL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAa-vD-jLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1374" y="4186"/>
+            <point key="canvasLocation" x="1410" y="4474"/>
+        </scene>
+        <!--People Status Table View Controller-->
+        <scene sceneID="CQT-IW-AqW">
+            <objects>
+                <tableViewController id="As7-xJ-HSf" customClass="PeopleStatusTableViewController" customModule="Loc8r" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ly6-l5-3G2">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="Rve-Kp-6Ih">
+                            <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="personStatusCell" id="A2L-Lx-Adh" customClass="StatusTableViewCell" customModule="Loc8r" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A2L-Lx-Adh" id="MVK-kq-8v4">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxw-0a-B5Z">
+                                            <rect key="frame" x="24" y="12" width="43" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="94" translatesAutoresizingMaskIntoConstraints="NO" id="xg3-J8-tD3">
+                                            <rect key="frame" x="490" y="12" width="94" height="18"/>
+                                            <color key="backgroundColor" red="1" green="0.54117647058823526" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="94" id="Vb4-Gj-Otc"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="xg3-J8-tD3" firstAttribute="centerY" secondItem="MVK-kq-8v4" secondAttribute="centerY" id="24o-kv-KYK"/>
+                                        <constraint firstItem="wxw-0a-B5Z" firstAttribute="centerY" secondItem="MVK-kq-8v4" secondAttribute="centerY" id="9px-vB-FNw"/>
+                                        <constraint firstItem="wxw-0a-B5Z" firstAttribute="leading" secondItem="MVK-kq-8v4" secondAttribute="leading" constant="24" id="bGW-L8-1rc"/>
+                                        <constraint firstAttribute="trailing" secondItem="xg3-J8-tD3" secondAttribute="trailing" constant="16" id="sf5-9h-MpR"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="wxw-0a-B5Z" id="GSx-0Z-nOt"/>
+                                    <outlet property="statusLabel" destination="xg3-J8-tD3" id="Ghq-SX-dq6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="As7-xJ-HSf" id="SVK-Pf-Y9F"/>
+                            <outlet property="delegate" destination="As7-xJ-HSf" id="Thb-Gz-QsY"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="tv" destination="ly6-l5-3G2" id="bhM-e9-7El"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7bp-4s-CUV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2246" y="4480"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="olW-34-s2b">

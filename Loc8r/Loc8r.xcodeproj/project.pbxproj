@@ -36,6 +36,8 @@
 		21A3F4531D2D82C80074DDF9 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */; };
 		21D39CE01D3A71B900FAA620 /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D39CDF1D3A71B900FAA620 /* GroupTableViewController.swift */; };
 		21D39CE21D3AE7BF00FAA620 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D39CE11D3AE7BF00FAA620 /* AboutAppViewController.swift */; };
+		21D39CE41D3AEDC200FAA620 /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D39CE31D3AEDC200FAA620 /* StatusTableViewCell.swift */; };
+		21D39CE61D3AEE6300FAA620 /* PeopleStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D39CE51D3AEE6300FAA620 /* PeopleStatusTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		21A3F4521D2D82C80074DDF9 /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 		21D39CDF1D3A71B900FAA620 /* GroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		21D39CE11D3AE7BF00FAA620 /* AboutAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
+		21D39CE31D3AEDC200FAA620 /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
+		21D39CE51D3AEE6300FAA620 /* PeopleStatusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleStatusTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +201,7 @@
 		211248D51D333C0A0049AE53 /* Custom Cell */ = {
 			isa = PBXGroup;
 			children = (
+				21D39CE31D3AEDC200FAA620 /* StatusTableViewCell.swift */,
 				214E68121D38AD0C00FD1233 /* MapPageTableViewCell.swift */,
 				214E680C1D37489F00FD1233 /* EmergencyTableViewCell.swift */,
 				211248D11D332F130049AE53 /* TableViewCell.swift */,
@@ -215,6 +220,7 @@
 				214E68051D36E2AD00FD1233 /* EmergencyQuestionViewControllers */,
 				211248D91D33F4880049AE53 /* WhereToGoViewController.swift */,
 				21D39CDF1D3A71B900FAA620 /* GroupTableViewController.swift */,
+				21D39CE51D3AEE6300FAA620 /* PeopleStatusTableViewController.swift */,
 			);
 			name = MainAppViewControllers;
 			sourceTree = "<group>";
@@ -386,6 +392,8 @@
 				214E68021D36CCF600FD1233 /* UpdateNameViewController.swift in Sources */,
 				210530D01D2609AD00B9BDB4 /* NameEntryViewController.swift in Sources */,
 				214E68041D36E2A200FD1233 /* EmergencyQuestion1ViewController.swift in Sources */,
+				21D39CE61D3AEE6300FAA620 /* PeopleStatusTableViewController.swift in Sources */,
+				21D39CE41D3AEDC200FAA620 /* StatusTableViewCell.swift in Sources */,
 				21A3F4531D2D82C80074DDF9 /* AddGroupViewController.swift in Sources */,
 				211248D31D332F130049AE53 /* TableViewCell.swift in Sources */,
 				210530D31D26CDDC00B9BDB4 /* GroupViewController.swift in Sources */,

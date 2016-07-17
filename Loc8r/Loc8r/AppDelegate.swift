@@ -127,6 +127,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         } else {
             defaults.setBool(onboardingComplete, forKey: "OnboardingComplete")
         }
+        print("onboarding complete" + String(onboardingComplete))
         
         // Group Member Dictionary
         if (defaults.objectForKey("Groups") != nil) {
@@ -137,10 +138,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         // Full Name
         if (defaults.objectForKey("Name") != nil) {
-            fullName = defaults.objectForKey("Name") as? String ?? ""
+            fullName = defaults.objectForKey("Name") as! String
         } else {
             defaults.setObject(fullName, forKey: "Name")
         }
+        print(fullName)
         
         // Safety Status Key
         if (defaults.objectForKey("SafetyStatus") != nil) {

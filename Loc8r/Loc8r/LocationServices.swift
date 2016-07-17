@@ -13,6 +13,7 @@ import CoreLocation
 var setEarthquakeNotifications: Bool = false
 var earthquakeOver: Bool = false
 var currentLocation: [Double] = []
+var peopleStatus: AnyObject!
 
 class LocationServices: CLLocationManager, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
@@ -49,6 +50,7 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
         
         if (counter%5 == 0) {
             checkForEarthquake()
+            getPeople()
 //            print("Checking for earthquakes")
         }
     }
@@ -109,5 +111,38 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
                 earthquakeOver = true
             }
         }
+    }
+    
+    func getPeople() {
+        // FUCK
+        let url = "http://waterloo.matthewgougeon.me:1801/getPeople"
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        let session = NSURLSession.sharedSession()
+        request.HTTPMethod = "GET"
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            if error == nil {
+                self.parseJSONResponse(data!)
+            } else {
+                // TODO: Deal with the Error of the user not having a data connection or the server being down
+                
+            }
+        })
+        task.resume()
+    }
+    
+    private func parseJSONResponse(data: NSData) {
+        print("parsing shit")
+        let options:NSJSONReadingOptions = [.AllowFragments]
+        var json: AnyObject!
+        do {
+            json = try NSJSONSerialization.JSONObjectWithData(data, options: options)
+        } catch {
+            return
+        }
+        let obj = json as! NSArray
+        peopleStatus = obj
+        print(peopleStatus)
     }
 }

@@ -126,6 +126,7 @@ class EmergencyQuestion4ViewController: UIViewController, UITableViewDelegate, U
         let time = String(Int(NSDate().timeIntervalSince1970))
         
         let url = "http://waterloo.matthewgougeon.me:1801/setStatus"
+        print(newPerson)
         let name = "name=" + newPerson + "&lat=" + String(currentLocation[0])
         let location = "&lon=" + String(currentLocation[1]) + "&status=" + status + "&time=" + time
         let message = name + location
