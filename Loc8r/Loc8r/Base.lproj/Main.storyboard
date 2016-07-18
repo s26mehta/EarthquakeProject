@@ -682,6 +682,7 @@ In an emergency, check in using the app; you will be able to request help if nec
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Aa4-VJ-1tD"/>
+                        <segue destination="jEd-sy-h1R" kind="show" identifier="onboardingComplete" id="1US-mz-3Rl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fav-5L-hNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1713,8 +1714,8 @@ Please answer the questions below.</string>
         <segue reference="jHx-rx-DN5"/>
         <segue reference="FGz-TU-2nk"/>
         <segue reference="MEc-uU-Ssy"/>
-        <segue reference="te7-L7-czT"/>
         <segue reference="dWg-yI-8EO"/>
         <segue reference="YHa-eM-kcL"/>
+        <segue reference="1US-mz-3Rl"/>
     </inferredMetricsTieBreakers>
 </document>

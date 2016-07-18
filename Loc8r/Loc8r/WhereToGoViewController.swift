@@ -98,6 +98,10 @@ class WhereToGoViewController: UIViewController, MKMapViewDelegate, UITableViewD
                 self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0), animated: true)
             }
         }
+        
+        let pin = MKPointAnnotation()
+        pin.coordinate = hospital
+        mapView.addAnnotation(pin)
     }
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
