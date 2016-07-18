@@ -49,6 +49,7 @@ class AddGroupViewController: UITableViewController {
         } else {
             groupNames.append(groupNameTextField.text!)
             groupNameMemberDict.updateValue(people, forKey: groupNames.last!)
+            people.removeAll()
             defaults.setObject(groupNameMemberDict, forKey: "Groups")
             dismissViewControllerAnimated(true, completion: nil)
         }

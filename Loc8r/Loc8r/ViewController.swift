@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         if onboardingComplete {
+            dismissViewControllerAnimated(true, completion: nil)
             performSegueWithIdentifier("onboardingComplete", sender: nil)
         }
     }

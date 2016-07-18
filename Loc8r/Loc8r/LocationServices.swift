@@ -91,7 +91,7 @@ class LocationServices: CLLocationManager, CLLocationManagerDelegate {
                         let localNotification = UILocalNotification()
                         localNotification.fireDate = NSDate(timeIntervalSinceNow: 0)
                         localNotification.alertTitle = "Earthquake Alert"
-                        localNotification.alertBody = "Earthquake detected in your area. Slide to mark yourself safe."
+                        localNotification.alertBody = "Earthquake detected in your area. Slide to update your status."
                         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
                         setEarthquakeNotifications = true
                         earthquakeOver = false

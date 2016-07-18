@@ -98,6 +98,10 @@ class WhereToGoViewController: UIViewController, MKMapViewDelegate, UITableViewD
                 self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0), animated: true)
             }
         }
+        
+        let pin = MKPointAnnotation()
+        pin.coordinate = hospital
+        mapView.addAnnotation(pin)
     }
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
@@ -111,7 +115,7 @@ class WhereToGoViewController: UIViewController, MKMapViewDelegate, UITableViewD
         if distance >= 1000 {
             let distanceKM = distance / 1000
             UIView.animateWithDuration(0.4, animations: {
-                self.distanceLabel.text = String(round(distanceKM * 10) / 10) + " Km"
+                self.distanceLabel.text = String(round(distanceKM * 10) / 10) + " km"
             })
         } else {
             UIView.animateWithDuration(0.4, animations: {
