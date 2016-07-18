@@ -32,7 +32,17 @@ class CreateGroupViewController: UITableViewController, UISearchBarDelegate, UIS
     }
     
     @IBAction func addPeople(sender: AnyObject) {
-        print("People Added")
+        for index in 0...checked.count - 1 {
+            if (checked[index]) {
+                if people.contains(contactList[index]) {
+                    // Do not add person to list
+                } else {
+                    people.append(contactList[index])
+                }
+                
+            }
+        }
+        groupMembers.append(people)
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -50,7 +60,11 @@ class CreateGroupViewController: UITableViewController, UISearchBarDelegate, UIS
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        searchActive = true;
+//        searchActive = true;
+    }
+    
+    func searchBarTextDidChange(searchBar: UISearchBar) {
+        searchActive = true
     }
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
@@ -66,7 +80,6 @@ class CreateGroupViewController: UITableViewController, UISearchBarDelegate, UIS
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        
         filteredData = contactList.filter({ (text) -> Bool in
             let tmp: NSString = text
             let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)

@@ -1,4 +1,5 @@
 var map, heatmap, currentMap, towers;
+var lastData = [true,true,true,true,true]
 
 function initMap() {
     getStatus();
@@ -102,31 +103,46 @@ function initMap() {
 
 function updateChecks() {
     // update checked maps
-    if (document.getElementById("safe_check").checked)
-        safeheatmap.setMap(map);
-    else
-        safeheatmap.setMap(null);
-    if (document.getElementById("police_check").checked)
-        Police_heatmap.setMap(map);
-    else
-        Police_heatmap.setMap(null);
-    if (document.getElementById("fire_check").checked)
-        Fire_heatmap.setMap(map);
-    else
-        Fire_heatmap.setMap(null);
-    if (document.getElementById("medical_check").checked)
-        Medical_heatmap.setMap(map);
-    else 
-        Medical_heatmap.setMap(null);
-    if (document.getElementById("cell_check").checked){
-        for (var j=0; j < towers.length; j++) {
-            towers[j].setMap(map);
-        }
+    if (document.getElementById("safe_check").checked != lastData[0]){
+        if (document.getElementById("safe_check").checked)
+            safeheatmap.setMap(map);
+        else
+            safeheatmap.setMap(null);
+        lastData[0] = document.getElementById("safe_check").checked
     }
-    else {
-        for (var j=0; j < towers.length; j++) {
-            towers[j].setMap(null);
+    if (document.getElementById("police_check").checked != lastData[1]){
+        if (document.getElementById("police_check").checked)
+            Police_heatmap.setMap(map);
+        else
+            Police_heatmap.setMap(null);
+        lastData[1] = document.getElementById("police_check").checked
+    }
+    if (document.getElementById("fire_check").checked != lastData[2]){
+        if (document.getElementById("fire_check").checked)
+            Fire_heatmap.setMap(map);
+        else
+            Fire_heatmap.setMap(null);
+        lastData[2] = document.getElementById("fire_check").checked
+    }
+    if (document.getElementById("medical_check").checked != lastData[3]){
+        if (document.getElementById("medical_check").checked)
+            Medical_heatmap.setMap(map);
+        else 
+            Medical_heatmap.setMap(null);
+        lastData[3] = document.getElementById("medical_check").checked
+    }
+    if (document.getElementById("cell_check").checked != lastData[4]){
+        if (document.getElementById("cell_check").checked){
+            for (var j=0; j < towers.length; j++) {
+                towers[j].setMap(map);
+            }
         }
+        else {
+            for (var j=0; j < towers.length; j++) {
+                towers[j].setMap(null);
+            }
+        }
+        lastData[4] = document.getElementById("cell_check").checked
     }
 }
 
@@ -139,12 +155,9 @@ function getPoints() {
         people = data
         for (var j=0; j < people.length; j++) {
             // loop through each person in the json data
-            console.log(people[j].name)
             if (people[j].location){
                 var a = new google.maps.LatLng(people[j].location.lat, people[j].location.lon);
                 // create new maps point for this person
-                console.log(people[j].status)
-
                 if (people[j].status == 0){
                     // person is safe
                     safe_arr.push(a);

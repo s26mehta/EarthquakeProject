@@ -15,18 +15,36 @@ import Contacts
 var contactList: [String] = []
 var firstName: String = ""
 var lastName: String = ""
-var groups: [String] = []
+var fullName: String = ""
+var groupNames: [String] = []
+var groupMembers: [[String]] = []
+var groupNameMemberDict: [String:[String]] = [:]
+var onboardingComplete: Bool = false
+var safetyStatus: String = ""
+var safetyLevel: Int = 3
+let defaults = NSUserDefaults.standardUserDefaults()
+
+var firstTimeOpenComplete: Bool = false
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate{
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
     let locationServices = LocationServices()
+    let notificationCenter = NSNotificationCenter.defaultCenter()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         locationServices.initialize()
-        getContacts()
+        notificationCenter.addObserver(self, selector:#selector(AppDelegate.getContacts), name: "GetContacts", object: nil)
+        
+        getData()
+        
+        if onboardingComplete {
+            getContacts()
+        }
+        
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert , .Badge], categories: nil))
         return true
     }
 
@@ -50,6 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        setData()
     }
     
     func getContacts() {
@@ -79,10 +98,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             let request = CNContactFetchRequest(keysToFetch: [CNContactIdentifierKey, CNContactFormatter.descriptorForRequiredKeysForStyle(.FullName)])
             do {
                 try store.enumerateContactsWithFetchRequest(request) { contact, stop in
-                    contacts.append(contact)
+                    if (contact.givenName != "" || contact.familyName != "") {
+                        contacts.append(contact)
+                    }
+                    
                 }
             } catch {
-                print(error)
+                print("Hello")
             }
             
             // do something with the contacts array (e.g. print the names)
@@ -93,6 +115,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 contactList.append(formatter.stringFromContact(contact)!)
             }
         }
+    }
+    
+    func getData() {
+        // Onboarding key
+        if (defaults.objectForKey("OnboardingComplete") != nil) {
+            onboardingComplete = defaults.boolForKey("OnboardingComplete")
+        } else {
+            defaults.setBool(onboardingComplete, forKey: "OnboardingComplete")
+        }
+        
+        // Group Member Dictionary
+        if (defaults.objectForKey("Groups") != nil) {
+            groupNameMemberDict = defaults.objectForKey("Groups") as! Dictionary
+        } else {
+            defaults.setObject(groupNameMemberDict, forKey: "Groups")
+        }
+        
+        // Full Name
+        if (defaults.objectForKey("Name") != nil) {
+            fullName = defaults.objectForKey("Name") as! String
+        } else {
+            defaults.setObject(fullName, forKey: "Name")
+        }
+        
+        // Safety Status Key
+        if (defaults.objectForKey("SafetyStatus") != nil) {
+            safetyStatus = defaults.objectForKey("SafetyStatus") as? String ?? ""
+        } else {
+            defaults.setObject("unsafe", forKey: "SafetyStatus")
+        }
+        
+        // Safety Level Key
+        if (defaults.objectForKey("SafetyLevel") != nil) {
+            safetyLevel = defaults.integerForKey("SafetyLevel") ?? 3
+        } else {
+            defaults.setInteger(3, forKey: "SafetyLevel")
+        }
+    }
+    
+    func setData() {
+        defaults.setBool(onboardingComplete, forKey: "OnboardingComplete")
+        defaults.setObject(groupNameMemberDict, forKey: "Groups")
+        defaults.setObject(fullName, forKey: "Name")
+        defaults.setObject(safetyStatus, forKey: "SafetyStatus")
+        defaults.setInteger(safetyLevel, forKey: "SafetyLevel")
+        defaults.synchronize()
     }
 }
 
