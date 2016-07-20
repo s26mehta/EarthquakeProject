@@ -27,6 +27,10 @@ def serve_static(filename):
         return static_file("map.html", root='html')
     return static_file(filename, root='./html/')
 
+@app.route('/eq')
+def function():
+    return static_file("resetEarthquake.html", root='html')
+
 @app.route('/img/<filename>')
 def serve_static(filename):
     return static_file(filename, root='./html/img')
@@ -52,6 +56,7 @@ def set_earthquake_now():
         people.isEmergency = False
     log.debug("setting earthquake to: " + str(people.isEmergency))
     people.writeToFile()
+    redirect('/')
 
 @app.get('/getEmergData')
 def getEmergData():
